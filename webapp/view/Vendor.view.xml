@@ -1,0 +1,9 @@
+<mvc:View controllerName="sudeep.inventorytransfer.controller.Vendor"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page title="Vendor Page" showNavButton="true" navButtonPress=".onNavBack">
+
+    </Page>
+
+</mvc:View>

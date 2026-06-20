@@ -86,6 +86,20 @@
           "target": [
             "TargetSignup"
           ]
+        },
+        {
+          "name": "RouteInventory",
+          "pattern": "/inventory",
+          "target": [
+            "TargetInventory"
+          ]
+        },
+        {
+          "name": "RouteVendor",
+          "pattern": "/vendor",
+          "target": [
+            "TargetVendor"
+          ]
         }
       ],
       "targets": {
@@ -96,6 +110,14 @@
         "TargetSignup": {
           "id": "Signup",
           "name": "Signup"
+        },
+        "TargetInventory": {
+          "id": "Inventory",
+          "name": "Inventory"
+        },
+        "TargetVendor": {
+          "id": "Vendor",
+          "name": "Vendor"
         }
       }
     },

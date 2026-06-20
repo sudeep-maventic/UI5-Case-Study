@@ -40,6 +40,13 @@ sap.ui.define([
             MessageToast.show("Signup Successful");
             const oRouter = this.getOwnerComponent().getRouter();
             oRouter.navTo("RouteLogin");
+
+            oSignupModel.setProperty("/name", "");
+            oSignupModel.setProperty("/email", "");
+            oSignupModel.setProperty("/password", "");
+            oSignupModel.setProperty("/role", "");
+            oSignupModel.setProperty("/company", "");
+            oSignupModel.setProperty("/location", "");
         },
 
         onNavBack: function () {
