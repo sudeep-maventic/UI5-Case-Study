@@ -1,0 +1,18 @@
+<core:FragmentDefinition xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt">
+
+        <m:Button text="Menu" press="onMenuButtonPress" icon="sap-icon://menu2" />
+
+        <tnt:SideNavigation id="sideNavigation" selectedKey="key1" expanded="true">
+            <tnt:NavigationList >
+                <tnt:NavigationListItem text="Dashboard" icon="sap-icon://home" />
+                <tnt:NavigationListItem text="Inventory" icon="sap-icon://inventory" key="keyInventory" press="onInventoryPress"/>
+                <tnt:NavigationListItem text="Transfer Request" icon="sap-icon://request" key="keyTransferRequest" press="onTransferRequestPress"/>
+                <tnt:NavigationListItem text="Vendor Management" icon="sap-icon://supplier" key="keyVendorManagement" press="onVendorManagementPress"/>
+                <tnt:NavigationListItem text="Transfer History" icon="sap-icon://history" key="keyTransferHistory" press="onTransferHistoryPress"/>
+                <tnt:NavigationListItem text="Low Stock Alerts" icon="sap-icon://alert" key="keyLowStockAlerts" press="onLowStockAlertsPress"/>
+            </tnt:NavigationList>
+        </tnt:SideNavigation>
+
+</core:FragmentDefinition>

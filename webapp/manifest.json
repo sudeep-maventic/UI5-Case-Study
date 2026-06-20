@@ -77,7 +77,7 @@
           "name": "RouteLogin",
           "pattern": "",
           "target": [
-            "TargetLogin"
+            "TargetInventory"
           ]
         },
         {
