@@ -1,0 +1,33 @@
+{
+    "users": [
+        {
+            "email": "manager1@company.com",
+            "password": "manager123",
+            "role": "WarehouseManager",
+            "name": "John Doe",
+            "location": "Bangalore"
+        },
+        {
+            "email": "vendor1@company.com",
+            "password": "vendor123",
+            "role": "Vendor",
+            "name": "Jane Smith",
+            "company": "ABC Supplies"
+        },
+        {
+            "email": "vendor2@company.com",
+            "password": "vendor456",
+            "role": "Vendor",
+            "name": "Bob Johnson",
+            "company": "XYZ Distributors"
+        },
+        {
+            "email": "manager2@company.com",
+            "password": "manager456",
+            "role": "WarehouseManager",
+            "name": "Alice Brown",
+            "location": "Mumbai"
+        }
+
+    ]
+}

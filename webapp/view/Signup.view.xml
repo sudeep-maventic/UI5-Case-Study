@@ -1,0 +1,44 @@
+<mvc:View controllerName="sudeep.inventorytransfer.controller.Signup"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page title="Create Account" showNavButton="true" navButtonPress=".onNavBack">
+
+        <content>
+
+                    <VBox class="sapUiMediumMargin">
+
+                        <Label text="Name"></Label>
+                        <Input value="{signup>/name}" placeholder="Enter Name" width="500px"></Input>
+
+                        <Label text="Email" class="sapUiSmallMarginTop"></Label>
+                        <Input value="{signup>/email}" placeholder="Enter Email" width="500px"></Input>
+
+                        <Label text="Password" class="sapUiSmallMarginTop"></Label>
+                        <Input value="{signup>/password}" placeholder="Enter Password" type="Password" width="500px"></Input>
+
+                        <Label text="Role" class="sapUiSmallMarginTop"></Label>
+                        <Select selectedKey="{signup>/role}" width="500px">
+                            <items>
+                                <core:Item key="" text="Select Role"></core:Item>
+                                <core:Item key="Warehouse Manager" text="Warehouse Manager"></core:Item>
+                                <core:Item key="Vendor" text="Vendor"></core:Item>
+                            </items>
+                        </Select>
+
+                        <Label text="Location" visible="{= ${signup>/role} === 'Warehouse Manager' }" class="sapUiSmallMarginTop"/>
+                        <Input value="{signup>/location}" placeholder="Enter Location" width="500px" visible="{= ${signup>/role} === 'Warehouse Manager' }"></Input>
+
+                        <Label text="Company Name" visible="{= ${signup>/role} === 'Vendor' }" class="sapUiSmallMarginTop" />
+                        <Input value="{signup>/companyName}" placeholder="Enter Company Name" width="500px" visible="{= ${signup>/role} === 'Vendor' }"></Input>
+
+                        <HBox justifyContent="SpaceAround" class="sapUiMediumMarginTop" width="500px">
+                            <Button text="Sign Up" type="Emphasized" press=".onSignUpPress"></Button>
+                            <Button text="Cancel" type="Transparent" press=".onNavBack"></Button>
+                        </HBox>
+                    </VBox>
+        </content>
+
+    </Page>
+</mvc:View>

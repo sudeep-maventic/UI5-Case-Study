@@ -14,6 +14,28 @@ function (JSONModel, Device) {
             var oModel = new JSONModel(Device);
             oModel.setDefaultBindingMode("OneWay");
             return oModel;
+        },
+
+        createLoginModel: function() {
+            return new JSONModel({
+                email: "",
+                password: ""
+            });
+        },
+
+        createSignupModel: function() {
+            return new JSONModel({
+                name: "",
+                email: "",
+                password: "",
+                role: "",
+                company: "",
+                location: ""
+            });
+        },
+
+        createUserModel: function() {
+            return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/users.json"));
         }
     };
 

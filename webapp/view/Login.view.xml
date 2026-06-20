@@ -1,6 +1,37 @@
 <mvc:View controllerName="sudeep.inventorytransfer.controller.Login"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    <Page id="page" title="{i18n>title}" showHeader="false">
+        
+        <content>
+            <VBox width="100%"
+                height="80%"
+                justifyContent="Center"
+                alignItems="Center"
+                class="sapUiSmallMarginTop">
+
+                <Panel headerText="Log In"
+                        width="400px"
+                        class="sapUiLargeMarginTop sapUiLargeMarginBegin">
+
+                        <VBox class="sapUiMediumMargin">
+
+                            <Label text="Email"></Label>
+                            <Input value="{login>/email}" placeholder="Enter Email"></Input>
+
+                            <Label text="Password" class="sapUiSmallMarginTop"></Label>
+                            <Input value="{login>/password}" placeholder="Enter Password" type="Password"></Input>
+
+                            <HBox justifyContent="SpaceBetween" class="sapUiMediumMarginTop">
+                                <Button text="Sign In" type="Emphasized" press="onLoginPress"></Button>
+
+                                <Button text="Sign Up" type="Transparent" press="onSignUpPress"></Button>
+                            </HBox>
+                        </VBox>
+
+                </Panel>
+            </VBox>
+        </content>
+
     </Page>
 </mvc:View>
