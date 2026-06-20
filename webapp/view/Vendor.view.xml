@@ -1,9 +1,27 @@
 <mvc:View controllerName="sudeep.inventorytransfer.controller.Vendor"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:core="sap.ui.core">
 
-    <Page title="Vendor Page" showNavButton="true" navButtonPress=".onNavBack">
+    <tnt:ToolPage >
+        <tnt:header>
+            <tnt:ToolHeader >
+                <Button
+                icon="sap-icon://menu2"
+                press="onMenuButtonPress"/>
+                <Title text="Vendor Management" />
+            </tnt:ToolHeader>
+        </tnt:header>
 
-    </Page>
+        <tnt:sideContent>
+            <core:Fragment fragmentName="sudeep.inventorytransfer.fragments.SideNavigation" type="XML" />
+        </tnt:sideContent>
 
+        <tnt:mainContents>
+            <Page title="Vendor Page" showNavButton="true" navButtonPress=".onNavBack">
+
+            </Page>
+        </tnt:mainContents>
+    </tnt:ToolPage>
 </mvc:View>

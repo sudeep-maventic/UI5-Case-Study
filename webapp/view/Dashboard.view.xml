@@ -1,0 +1,35 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page title="Dashboard Page" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+
+            <GenericTile class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" header="Total Products"
+                        subheader="Available Products" width="200px" >
+                <TileContent unit="INR">
+                    <NumericContent value="100" icon="sap-icon://product"></NumericContent>
+                </TileContent>
+            </GenericTile>
+
+            <GenericTile class="sapUiLargeMarginTop sapUiSmallMarginBegin tileLayout" header="Pending Transfers" subheader="Transfers to be approved" width="200px" >
+                <TileContent unit="INR">
+                    <NumericContent value="5" icon="sap-icon://pending"></NumericContent>
+                </TileContent>
+            </GenericTile>
+
+            <GenericTile class="sapUiLargeMarginTop sapUiSmallMarginBegin tileLayout" header="Completed Transfers" subheader="Transfers that are complete" width="200px" >
+                <TileContent unit="INR">
+                    <NumericContent value="5" icon="sap-icon://complete"></NumericContent>
+                </TileContent>
+            </GenericTile>
+
+            <GenericTile class="sapUiLargeMarginTop sapUiSmallMarginBegin tileLayout" header="Low Stock Items" subheader="Items with low inventory" width="200px" >
+                <TileContent unit="INR">
+                    <NumericContent value="10" icon="sap-icon://alert"></NumericContent>
+                </TileContent>
+            </GenericTile>
+        </content>
+    </Page>
+
+</mvc:View>

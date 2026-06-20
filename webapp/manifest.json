@@ -100,6 +100,13 @@
           "target": [
             "TargetVendor"
           ]
+        },
+        {
+          "name": "RouteDashboard",
+          "pattern": "/dashboard",
+          "target": [
+            "TargetDashboard"
+          ]
         }
       ],
       "targets": {
@@ -118,6 +125,10 @@
         "TargetVendor": {
           "id": "Vendor",
           "name": "Vendor"
+        },
+        "TargetDashboard": {
+          "id": "Dashboard",
+          "name": "Dashboard"
         }
       }
     },

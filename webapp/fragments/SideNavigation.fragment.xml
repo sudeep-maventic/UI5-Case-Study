@@ -1,17 +1,22 @@
-<core:FragmentDefinition xmlns:m="sap.m"
+<core:FragmentDefinition 
+    controllerName="com.sap.build.standard.inventoryManagement.controller.Main"
+    xmlns:m="sap.m"
     xmlns:core="sap.ui.core"
-    xmlns:tnt="sap.tnt">
+    xmlns:tnt="sap.tnt"
+    height="100%">
 
-        <m:Button text="Menu" press="onMenuButtonPress" icon="sap-icon://menu2" />
-
-        <tnt:SideNavigation id="sideNavigation" selectedKey="key1" expanded="true">
-            <tnt:NavigationList >
-                <tnt:NavigationListItem text="Dashboard" icon="sap-icon://home" />
-                <tnt:NavigationListItem text="Inventory" icon="sap-icon://inventory" key="keyInventory" press="onInventoryPress"/>
-                <tnt:NavigationListItem text="Transfer Request" icon="sap-icon://request" key="keyTransferRequest" press="onTransferRequestPress"/>
-                <tnt:NavigationListItem text="Vendor Management" icon="sap-icon://supplier" key="keyVendorManagement" press="onVendorManagementPress"/>
-                <tnt:NavigationListItem text="Transfer History" icon="sap-icon://history" key="keyTransferHistory" press="onTransferHistoryPress"/>
-                <tnt:NavigationListItem text="Low Stock Alerts" icon="sap-icon://alert" key="keyLowStockAlerts" press="onLowStockAlertsPress"/>
+        <tnt:SideNavigation id="sideNavigation" selectedKey="key1" expanded="true" itemSelect="onItemSelect">
+            <tnt:NavigationList>
+                <tnt:NavigationListItem text="Dashboard" icon="sap-icon://home" key="key1" />
+                <tnt:NavigationListItem text="Inventory" icon="sap-icon://inventory" key="key2"/>
+                <tnt:NavigationListItem text="Transfer Request" icon="sap-icon://request" key="key3"/>
+                <tnt:NavigationListItem text="Vendor Management" icon="sap-icon://supplier" key="key4"/>
+                <tnt:NavigationListItem text="Transfer History" icon="sap-icon://history" key="key5"/>
+                <tnt:NavigationListItem text="Low Stock Alerts" icon="sap-icon://alert" key="key6">
+                    <tnt:tag>
+                        <m:ObjectStatus text="low stock" state="Indication18" inverted="true"></m:ObjectStatus>
+                    </tnt:tag>
+                </tnt:NavigationListItem>
             </tnt:NavigationList>
         </tnt:SideNavigation>
 

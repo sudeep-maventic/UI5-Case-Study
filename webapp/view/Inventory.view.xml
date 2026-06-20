@@ -1,27 +1,8 @@
 <mvc:View controllerName="sudeep.inventorytransfer.controller.Inventory"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:tnt="sap.tnt"
     xmlns:core="sap.ui.core">
-
-    <tnt:ToolPage >
-
-        <tnt:header>
-            <tnt:ToolHeader >
-                <Title text="Inventory Transfer Management" />
-            </tnt:ToolHeader>
-        </tnt:header>
-
-        <tnt:sideContent>
-            <core:Fragment fragmentName="sudeep.inventorytransfer.fragments.SideNavigation" type="XML" />
-        </tnt:sideContent>
-
-        <tnt:mainContents>
             <Page title="Inventory Page" showNavButton="true" navButtonPress=".onNavBack">
     
             </Page>
-        </tnt:mainContents>
-
-    </tnt:ToolPage>
-
 </mvc:View>
