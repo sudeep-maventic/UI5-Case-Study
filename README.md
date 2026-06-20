@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Application Details
 |               |
 | ------------- |
@@ -33,3 +34,7 @@ Inventory Transfer Management System for Warehouse Managers and Vendors
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
 
+=======
+# UI5-Case-Study
+SAP UI5 Project Case Study  "Inventory Transfer Management Dashboard Project"
+>>>>>>> c257c6542554a0eb79dba0c1e8857511c4966668
