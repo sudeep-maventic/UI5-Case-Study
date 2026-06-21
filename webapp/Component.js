@@ -22,7 +22,10 @@ sap.ui.define([
             // set the user model
             this.setModel(models.createLoginModel(), "login");
             this.setModel(models.createUserModel(), "users");
-            this.setModel(models.createSignupModel(), "signup");  
+            this.setModel(models.createSignupModel(), "signup");
+            this.setModel(models.createTicketModel(), "tickets");
+            this.setModel(models.createSupplyModel(), "supply");
+            this.setModel(models.createWarehouseModel(), "warehouse");  
 
             // enable routing
             this.getRouter().initialize();

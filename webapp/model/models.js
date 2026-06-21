@@ -36,6 +36,19 @@ function (JSONModel, Device) {
 
         createUserModel: function() {
             return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/users.json"));
+        },
+
+        
+        createTicketModel: function() {
+            return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/tickets.json"));
+        },
+
+        createSupplyModel: function() {
+            return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/supplyHistory.json"));
+        },
+
+        createWarehouseModel: function() {  
+            return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/warehouseProducts.json"));
         }
     };
 

@@ -1,0 +1,34 @@
+{
+    "supplyHistory": [
+        {
+            "supplyId": 1,
+            "ticketId": 1,
+            "vendorId": 301,
+            "warehouseId": 201,
+            "productNo": "P12345",
+            "suppliedQuantity": 100,
+            "supplyDate": "2024-06-05T15:00:00Z",
+            "status": "Completed"
+        },
+        {
+            "supplyId": 2,
+            "ticketId": 2,
+            "vendorId": 302,
+            "warehouseId": 202,
+            "productNo": "P67890",
+            "suppliedQuantity": 150,
+            "supplyDate": "2024-06-06T10:30:00Z",
+            "status": "In Progress"
+        },
+        {
+            "supplyId": 3,
+            "ticketId": 3,
+            "vendorId": 303,
+            "warehouseId": 203,
+            "productNo": "P11111",
+            "suppliedQuantity": 200,
+            "supplyDate": "2024-06-07T14:45:00Z",
+            "status": "Completed"
+        }
+    ]
+}

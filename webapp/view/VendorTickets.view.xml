@@ -1,0 +1,51 @@
+<mvc:View controllerName="sudeep.inventorytransfer.controller.VendorTickets"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    
+    <Page title="Pending Tickets" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <SearchField width="300px" placeholder="Search tickets..." liveChange=".onSearch" class="sapUiSmallMarginBottom" />
+                <Table items="{tickets>/pendingTickets}" class="sapUiResponsiveMargin">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Pending Tickets" />
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="Ticket ID" />
+                        </Column>
+                        <Column>
+                            <Text text="Product Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Quantity" />
+                        </Column>
+                        <Column>
+                            <Text text="Requested By" />
+                        </Column>
+                        <Column>
+                            <Text text="Actions" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{tickets>id}" />
+                                <Text text="{tickets>productName}" />
+                                <Text text="{tickets>quantity}" />
+                                <Text text="{tickets>requestedBy}" />
+                                <HBox class="sapUiSmallMarginBottom">
+                                    <Button text="Approve" type="Success" press=".onApprove" />
+                                    <Button text="Reject" type="Reject" press=".onReject" class="sapUiSmallMarginBegin" />
+                                </HBox>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+
+</mvc:View>

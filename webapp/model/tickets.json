@@ -1,0 +1,45 @@
+{
+    "tickets": [
+        {
+            "ticketId": 1,
+            "managerId": 101,
+            "managerName": "John Doe",
+            "warehouseId": 201,
+            "location": "Warehouse A",
+            "vendorId": 301,
+            "productNo": "P12345",
+            "productName": "Product A",
+            "requestedQuantity": 100,
+            "requestedDate": "2024-06-01T10:00:00Z",
+            "status": "Open"
+        },
+        {
+            "ticketId": 2,
+            "managerId": 102,
+            "managerName": "Jane Smith",
+            "warehouseId": 202,
+            "location": "Warehouse B",
+            "vendorId": 302,
+            "productNo": "P67890",
+            "productName": "Product B", 
+            "status": "In Progress",
+            "priority": "Medium",
+            "createdDate": "2024-06-02T09:30:00Z",
+            "updatedDate": "2024-06-02T11:45:00Z"
+        },
+        {
+            "ticketId": 3,
+            "managerId": 103,
+            "managerName": "Bob Johnson",
+            "warehouseId": 203,
+            "location": "Warehouse C",
+            "vendorId": 303,
+            "productNo": "P11111",
+            "productName": "Product C",
+            "status": "Closed",
+            "priority": "Low",
+            "createdDate": "2024-06-03T08:15:00Z",
+            "updatedDate": "2024-06-03T10:20:00Z"
+        }
+    ]
+}

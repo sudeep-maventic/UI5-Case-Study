@@ -1,0 +1,31 @@
+{
+    "warehouseProducts": [
+        {
+            "warehouseId": "W001",
+            "location": "Warehouse A",
+            "productNo": "P12345",
+            "productName": "Product A",
+            "availableQuantity": 500,
+            "vendorId": "V001",
+            "lastUpdated": "2024-06-01T12:00:00Z"
+        },
+        {
+            "warehouseId": "W002",
+            "location": "Warehouse B",
+            "productNo": "P67890",
+            "productName": "Product B",
+            "availableQuantity": 300,
+            "vendorId": "V002",
+            "lastUpdated": "2024-06-02T14:30:00Z"
+        },
+        {
+            "warehouseId": "W003",
+            "location": "Warehouse C",
+            "productNo": "P11111",
+            "productName": "Product C",
+            "availableQuantity": 200,
+            "vendorId": "V003",
+            "lastUpdated": "2024-06-03T09:45:00Z"
+        }
+    ]
+}

@@ -1,27 +1,75 @@
 <mvc:View controllerName="sudeep.inventorytransfer.controller.Vendor"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:tnt="sap.tnt"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards"
     xmlns:core="sap.ui.core">
+    <Page title="Vendor Portal" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <VBox class="sapUiLargeMargin">
+                <Title text="Welcome ABC Suppliers" level="H2" />
+                <Text text="Manage your products, orders and shipments" class="sapUiSmallMarginBottom" />
 
-    <tnt:ToolPage >
-        <tnt:header>
-            <tnt:ToolHeader >
-                <Button
-                icon="sap-icon://menu2"
-                press="onMenuButtonPress"/>
-                <Title text="Vendor Management" />
-            </tnt:ToolHeader>
-        </tnt:header>
+                
+                <HBox justifyContent="SpaceAround">
+                
+                    <!-- Pending Tickets -->
+                <GenericTile frameType="OneByOne" width="250px" header="Pending Tickets" subheader="Warehouse Requests" press=".onTicketPress" class="sapUiTinyMargin">
+                    <TileContent >
+                        <NumericContent value="45" icon="sap-icon://alert"></NumericContent>
+                    </TileContent>
+                </GenericTile>
+                <!-- Supply Products -->
+                <GenericTile frameType="OneByOne" width="250px" header="Supply Products" subheader="Add products to Warehouse" press=".onSupplyPress" class="sapUiTinyMargin">
+                    <TileContent >
+                        <NumericContent value="12" icon="sap-icon://order"></NumericContent>
+                    </TileContent>
+                </GenericTile>
+            
+                <!-- Supply History -->
+                <GenericTile frameType="OneByOne" width="250px" header="Supply History" subheader="Previously Supplied Products" press=".onHistoryPress" class="sapUiTinyMargin">
+                    <TileContent >
+                        <NumericContent value="8" icon="sap-icon://history"></NumericContent>
+                    </TileContent>
+                </GenericTile>
+                <!-- My Profile -->
+                <GenericTile frameType="OneByOne" width="250px" header="My Profile" subheader="Manage your profile" press=".onProfilePress" class="sapUiTinyMargin">
+                    <TileContent >
+                        <NumericContent value="1" icon="sap-icon://employee"></NumericContent>
+                    </TileContent>
+                </GenericTile>
+                </HBox>
 
-        <tnt:sideContent>
-            <core:Fragment fragmentName="sudeep.inventorytransfer.fragments.SideNavigation" type="XML" />
-        </tnt:sideContent>
+                <Panel headerText="Recent Warehouse Requests" class="sapUiLargeMarginTop">
+                    <Table id="recentTicketsTable" inset="false" items="{/recentTickets}">
+                        <columns>
+                            <Column>
+                                <Text text="Ticket ID" />
+                            </Column>
+                            <Column>
+                                <Text text="Product Name" />
+                            </Column>
+                            <Column>
+                                <Text text="Quantity" />
+                            </Column>
+                            <Column>
+                                <Text text="Status" />
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <ObjectIdentifier title="{ticketId}" />
+                                    <Text text="{productName}" />
+                                    <Text text="{quantity}" />
+                                    <Text text="{status}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
 
-        <tnt:mainContents>
-            <Page title="Vendor Page" showNavButton="true" navButtonPress=".onNavBack">
-
-            </Page>
-        </tnt:mainContents>
-    </tnt:ToolPage>
+                </Panel>
+            </VBox>
+        </content>
+    </Page>
 </mvc:View>
