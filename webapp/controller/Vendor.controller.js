@@ -29,9 +29,5 @@ sap.ui.define([
             oRouter.navTo("RouteVendorProfile");
         },
 
-        onHistoryPress: function () {
-            const oRouter = this.getOwnerComponent().getRouter();
-            oRouter.navTo("RouteVendorHistory");
-        }
     });
 });

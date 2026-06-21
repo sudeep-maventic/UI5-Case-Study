@@ -119,13 +119,6 @@
           ]
         },
         {
-          "name": "RouteVendorHistory",
-          "pattern": "/vendor/history",
-          "target": [
-            "TargetVendorHistory"
-          ]
-        },
-        {
           "name": "RouteVendorSupply",
           "pattern": "/vendor/supply/{ticketId}",
           "target": [
@@ -164,10 +157,6 @@
         "TargetVendorProfile": {
           "id": "VendorProfile",
           "name": "VendorProfile"
-        },
-        "TargetVendorHistory": {
-          "id": "VendorHistory",
-          "name": "VendorHistory"
         },
         "TargetVendorSupply": {
           "id": "VendorSupply", 

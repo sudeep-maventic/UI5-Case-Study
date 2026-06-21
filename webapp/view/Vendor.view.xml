@@ -26,12 +26,6 @@
                     </TileContent>
                 </GenericTile>
             
-                <!-- Supply History -->
-                <GenericTile frameType="OneByOne" width="250px" header="Supply History" subheader="Previously Supplied Products" press=".onHistoryPress" class="sapUiTinyMargin">
-                    <TileContent >
-                        <NumericContent value="8" icon="sap-icon://history"></NumericContent>
-                    </TileContent>
-                </GenericTile>
                 <!-- My Profile -->
                 <GenericTile frameType="OneByOne" width="250px" header="My Profile" subheader="Manage your profile" press=".onProfilePress" class="sapUiTinyMargin">
                     <TileContent >
