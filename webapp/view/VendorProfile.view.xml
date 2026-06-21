@@ -1,5 +1,34 @@
-<mvc:View controllerName="sudeep.inventorytransfer.controller.VendorProfile"
+<mvc:View xmlns:form="sap.ui.layout.form" controllerName="sudeep.inventorytransfer.controller.VendorProfile"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
+    <Page title="Vendor Profile" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <VBox alignItems="Center" class="sapUiSmallMargin">
+                <Avatar src="https://ui-avatars.com/api/?name=Vendor+Name" displaySize="XL" displayShape="Circle" class="sapUiMediumMarginBottom" />
+                <Title text="Vendor Name" level="H2" class="sapUiMediumMarginBottom" />
+                <Text text="Contact: John Doe" />
+
+                <Button text="Edit Profile" press="onEditProfile" type="Emphasized" icon="sap-icon://edit" />
+                
+                <Panel width="500px" class="sapUiMediumMarginTop">
+                    <form:SimpleForm editable="false">
+                        <form:content>
+                            <Label text="Company Name" />
+                            <Text text="ABC Supplies Inc." />
+
+                            <Label text="Address" />
+                            <Text text="123 Main Street, City, Country" />
+
+                            <Label text="Phone" />
+                            <Text text="+1 234 567 8900" />
+
+                            <Label text="Email" />
+                            <Text text="vendor@abcsupplies.com" />
+                        </form:content>
+                    </form:SimpleForm>
+                </Panel> 
+            </VBox>
+        </content>
+    </Page>
 
 </mvc:View>

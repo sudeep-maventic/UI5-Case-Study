@@ -6,44 +6,69 @@
         <content>
             <VBox class="sapUiMediumMargin">
                 <SearchField width="300px" placeholder="Search tickets..." liveChange=".onSearch" class="sapUiSmallMarginBottom" />
-                <Table items="{tickets>/pendingTickets}" class="sapUiResponsiveMargin">
+
+                <List id="ticketList" width="95%" items="{tickets>/tickets}" class="sapUiResponsiveMargin">
+                    <ObjectListItem title="{tickets>ticketId}"
+                                    intro="{tickets>location}"
+                                    number="{= ${tickets>products}.length }"
+                                    numberUnit="Products"
+                                    type="Navigation" press=".onTicketPress">
+                        <firstStatus>
+                            <ObjectStatus text="{tickets>status}" state="{= ${tickets>status} === 'Pending' ? 'Warning' : (${tickets>status} === 'In Progress' ? 'Success' : 'None') }"></ObjectStatus>
+                        </firstStatus>
+                        <attributes>
+                            <ObjectAttribute text="Requested Date: {tickets>requestedDate}" />
+                        </attributes>
+                    </ObjectListItem>
+                </List>
+
+                <!-- <Table id="ticketsTable" width="95%" items="{tickets>/tickets}" class="sapUiResponsiveMargin">
                     <headerToolbar>
                         <Toolbar>
                             <Title text="Pending Tickets" />
                         </Toolbar>
                     </headerToolbar>
                     <columns>
-                        <Column>
+                        <Column width="7rem">
                             <Text text="Ticket ID" />
                         </Column>
-                        <Column>
+                        <Column width="10rem">
+                            <Text text="Location" />
+                        </Column>
+                        <Column width="10rem">
                             <Text text="Product Name" />
                         </Column>
-                        <Column>
+                        <Column width="5rem">
                             <Text text="Quantity" />
                         </Column>
-                        <Column>
+                        <Column width="7rem">
                             <Text text="Requested By" />
                         </Column>
-                        <Column>
+                        <Column width="7rem">
+                            <Text text="Requested Date"></Text>
+                        </Column>
+                        <Column width="15rem">
                             <Text text="Actions" />
                         </Column>
                     </columns>
                     <items>
                         <ColumnListItem>
                             <cells>
-                                <Text text="{tickets>id}" />
+                                <Text text="{tickets>ticketId}" />
+                                <Text text="{tickets>location}" />
                                 <Text text="{tickets>productName}" />
-                                <Text text="{tickets>quantity}" />
-                                <Text text="{tickets>requestedBy}" />
+                                <Text text="{tickets>requestedQuantity}" />
+                                <Text text="{tickets>managerName}" />
+                                <Text text="{tickets>requestedDate}" />
                                 <HBox class="sapUiSmallMarginBottom">
                                     <Button text="Approve" type="Success" press=".onApprove" />
                                     <Button text="Reject" type="Reject" press=".onReject" class="sapUiSmallMarginBegin" />
+                                    <Button text="Supply" type="Emphasized" press=".onSupply" class="sapUiSmallMarginBegin" />
                                 </HBox>
                             </cells>
                         </ColumnListItem>
                     </items>
-                </Table>
+                </Table> -->
             </VBox>
         </content>
     </Page>

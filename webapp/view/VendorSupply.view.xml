@@ -1,5 +1,71 @@
-<mvc:View controllerName="sudeep.inventorytransfer.controller.VendorSupply"
+<mvc:View 
+    xmlns:uxap="sap.uxap" 
+    controllerName="sudeep.inventorytransfer.controller.VendorSupply"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
 
+    <Page title="Ticket Details" showNavButton="true" navButtonPress=".onNavBack">
+        <uxap:ObjectPageLayout id="objectPageLayout" 
+            showHeaderContent="true" 
+            showFooter="true">
+                
+            <uxap:headerTitle>
+                <uxap:ObjectPageDynamicHeaderTitle >
+                    <uxap:expandedHeading>
+                        <Text text="{selectedTicket>/ticketId}"></Text>
+                        <!-- <Text text="{tickets>/selectedTicket/productName}" /> -->
+                    </uxap:expandedHeading>
+
+                    <uxap:expandedContent>
+                        <VBox >
+                            <Text text="Warehouse: {selectedTicket>/location}"></Text>
+                            <Text text="Manager: {selectedTicket>/managerName}"></Text>
+                            <Text text="Requested Date: {selectedTicket>/requestedDate}"></Text>
+                            <!-- <Text text="Warehouse: {selectedTicket>/location}"></Text> -->
+                        </VBox>
+                    </uxap:expandedContent>
+
+                    <uxap:actions>
+                        <ObjectStatus text="Accepted"
+                                        state="Success"></ObjectStatus>
+                    </uxap:actions>
+                </uxap:ObjectPageDynamicHeaderTitle>
+            </uxap:headerTitle>
+
+            <uxap:sections>
+                <uxap:ObjectPageSection >
+                    <uxap:ObjectPageSubSection title="Product Information"></uxap:ObjectPageSubSection>
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection >
+                            <uxap:blocks>
+                                <List id="productList" items="{selectedTicket>/products}">
+                                    <CustomListItem >
+                                        <HBox justifyContent="SpaceBetween" 
+                                            alignItems="Center" width="100%" class="sapUiSmallMargin">
+                                            <Image src="" height="80px" width="80px"></Image>
+                                            <VBox width="70%">
+                                                <Title text="Product Name: {selectedTicket>productName}" level="H5"></Title>
+                                                <Text text="Product No: {selectedTicket>productNo}" />
+                                                <Text text="Requested Quantity: {selectedTicket>requestedQuantity}" />
+                                                <Text text="Available Quantity: {selectedTicket>availableQuantity}" />
+                                            </VBox>
+                                        </HBox>
+                                    </CustomListItem>
+                                </List>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+            </uxap:sections>
+
+            <uxap:footer>
+                <OverflowToolbar >
+                    <ToolbarSpacer />
+                    <Button text="Add to Warehouse" type="Emphasized" press=".onAddToWarehouse" icon="sap-icon://shipping-status" />
+                </OverflowToolbar>
+            </uxap:footer>
+
+        </uxap:ObjectPageLayout>    
+    </Page> 
 </mvc:View>
