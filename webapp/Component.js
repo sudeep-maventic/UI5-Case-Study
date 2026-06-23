@@ -29,6 +29,7 @@ sap.ui.define([
             this.setModel(models.createWarehouseModel(), "warehouseProfile");  
             this.setModel(models.createProductsModel(), "products");
             this.setModel(models.createAddProductsModel(), "addProducts");
+            this.setModel(models.createTransferModel(), "transfers");
 
             // enable routing
             this.getRouter().initialize();
