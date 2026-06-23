@@ -6,7 +6,7 @@
             "password": "manager123",
             "role": "WarehouseManager",
             "name": "John Doe",
-            "warehouseId": "WH001",
+            "warehouseId": "W001",
             "location": "Bangalore"
         },
         {
@@ -33,7 +33,7 @@
             "password": "manager456",
             "role": "WarehouseManager",
             "name": "Alice Brown",
-            "warehouseId": "WH002",
+            "warehouseId": "W002",
             "location": "Mumbai"
         }
 

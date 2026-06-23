@@ -1,0 +1,60 @@
+<mvc:View controllerName="sudeep.inventorytransfer.controller.InventoryProducts"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Inventory Products">
+        <content>
+            <MessageStrip text="Manage your warehouse products"
+                    type="Information"
+                    showIcon="true"
+                    showCloseButton="true" />
+
+            <SearchField width="50%" search=".onSearch" liveChange=".onSearch" class="sapUiSmallMarginTop sapUiSmallMarginBegin" />
+
+            <Button text="Add Product" type="Emphasized" press=".onAddProductPress" class="sapUiSmallMarginTop sapUiSmallMarginBegin" />
+
+            <Table id="productsTable" items="{inventory>/products}" class="sapUiResponsiveMargin sapUiSmallMarginTop" width="80%">
+                <columns>
+                    <Column>
+                        <Text text="Product ID" />
+                    </Column>
+                    <Column >
+                        <Text text="Product Name" />
+                    </Column>
+                    <Column >
+                        <Text text="Category" />
+                    </Column>
+                    <Column >
+                        <Text text="Quantity" />
+                    </Column>
+                    <Column >
+                        <Text text="Price" />
+                    </Column>
+                    <Column >
+                        <Text text="Status" />
+                    </Column>
+                    <Column >
+                        <Text text="Actions" />
+                    </Column>
+                </columns>
+
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Text text="{inventory>productId}" />
+                            <Text text="{inventory>productName}" />
+                            <Text text="{inventory>category}" />
+                            <Text text="{inventory>quantity}" />
+                            <Text text="{inventory>price}" />
+                            <ObjectStatus text="{inventory>status}" />
+                            <HBox >
+                                <Button icon="sap-icon://edit" type="Transparent" press=".onEditProductPress" class="sapUiSmallMarginEnd" />
+                                <Button icon="sap-icon://delete" type="Transparent" press=".onDeleteProducts" class="sapUiSmallMarginEnd" />
+                                <Button icon="sap-icon://shipping-status" type="Transparent" press=".onTransferProduct" />
+                            </HBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

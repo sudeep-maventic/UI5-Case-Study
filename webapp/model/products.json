@@ -1,0 +1,24 @@
+{
+    "products": [
+        {
+            "productId": "P001",
+            "productName": "Product A",
+            "category": "Electronics",
+            "warehouseId": "W001",
+            "vendorId": "V001",
+            "status": "Available",
+            "price": 100.0,
+            "quantity": 50
+        },
+        {
+            "productId": "P002",
+            "productName": "Product B",
+            "category": "Apparel",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Out of Stock",
+            "price": 50.0,
+            "quantity": 100
+        }
+    ]
+}

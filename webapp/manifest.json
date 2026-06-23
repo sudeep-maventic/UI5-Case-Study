@@ -145,6 +145,13 @@
           "target": [
             "TargetProfile"
           ]
+        },
+        {
+          "name": "RouteProducts",
+          "pattern": "/products",
+          "target": [
+            "TargetProducts"
+          ]
         }
       ],
       "targets": {
@@ -183,6 +190,10 @@
         "TargetProfile": {
           "id": "WarehouseProfile",
           "name": "WarehouseProfile"
+        },
+        "TargetProducts": {
+          "id": "InventoryProducts",
+          "name": "InventoryProducts"
         }
       }
     },

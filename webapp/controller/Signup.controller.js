@@ -35,7 +35,7 @@ sap.ui.define([
             let sVendorId = "";
 
             if(oSignupModel.getProperty("/role") === "Warehouse Manager") {
-                sWarehouseId = "WH" + (aUsers.filter(user => user.role === "Warehouse Manager").length + 1).toString().padStart(3, 0);
+                sWarehouseId = "W" + (aUsers.filter(user => user.role === "Warehouse Manager").length + 1).toString().padStart(3, 0);
             } else if(oSignupModel.getProperty("/role") === "Vendor") {
                 sVendorId = "V" + (aUsers.filter(user => user.role === "Vendor").length + 1).toString().padStart(3, 0);
             }

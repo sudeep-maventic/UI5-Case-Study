@@ -44,7 +44,22 @@ function (JSONModel, Device) {
             return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/warehouses.json"));
         },
 
-        
+        createProductsModel: function() {
+            const oModel = new JSONModel();
+            oModel.loadData(sap.ui.require.toUrl("sudeep/inventorytransfer/model/products.json"));
+            return oModel;
+        },
+
+        createAddProductsModel: function() {
+            return new JSONModel({
+                productName: "",
+                category: "",
+                quantity: 0,
+                price: 0.0,
+                status: "Available"
+            })
+        },
+
         createTicketModel: function() {
             return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/tickets.json"));
         },
