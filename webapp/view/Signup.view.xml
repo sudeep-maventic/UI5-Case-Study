@@ -9,16 +9,16 @@
 
                     <VBox class="sapUiMediumMargin">
 
-                        <Label text="Name"></Label>
-                        <Input value="{signup>/name}" placeholder="Enter Name" width="500px"></Input>
+                        <Label text="Name" required="true"></Label>
+                        <Input value="{signup>/name}" placeholder="Enter Name" width="500px" required="true"></Input>
 
-                        <Label text="Email" class="sapUiSmallMarginTop"></Label>
-                        <Input value="{signup>/email}" placeholder="Enter Email" width="500px"></Input>
+                        <Label text="Email" class="sapUiSmallMarginTop" required="true"></Label>
+                        <Input value="{signup>/email}" placeholder="Enter Email" width="500px" required="true"></Input>
 
-                        <Label text="Password" class="sapUiSmallMarginTop"></Label>
-                        <Input value="{signup>/password}" placeholder="Enter Password" type="Password" width="500px"></Input>
+                        <Label text="Password" class="sapUiSmallMarginTop" required="true"></Label>
+                        <Input value="{signup>/password}" placeholder="Enter Password" type="Password" width="500px" required="true"></Input>
 
-                        <Label text="Role" class="sapUiSmallMarginTop"></Label>
+                        <Label text="Role" class="sapUiSmallMarginTop" required="true"></Label>
                         <Select selectedKey="{signup>/role}" width="500px">
                             <items>
                                 <core:Item key="" text="Select Role"></core:Item>
@@ -35,7 +35,7 @@
 
                         <HBox justifyContent="SpaceAround" class="sapUiMediumMarginTop" width="500px">
                             <Button text="Sign Up" type="Emphasized" press=".onSignUpPress"></Button>
-                            <Button text="Cancel" type="Transparent" press=".onNavBack"></Button>
+                            <Button text="Back to Login" type="Transparent" press=".onNavBack"></Button>
                         </HBox>
                     </VBox>
         </content>

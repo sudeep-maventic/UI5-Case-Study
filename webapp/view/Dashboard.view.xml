@@ -1,34 +1,76 @@
 <mvc:View
+    controllerName="sudeep.inventorytransfer.controller.Dashboard"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:core="sap.ui.core">
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+    xmlns:cards="sap.f.cards"
+    xmlns:layout="sap.ui.layout">
     <Page title="Dashboard Page" showNavButton="true" navButtonPress=".onNavBack">
         <content>
 
-            <GenericTile class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" header="Total Products"
+            <MessageStrip text="Some products are below reorder"
+                        type="Warning"
+                        showIcon="true"
+                        showCloseButton="true"></MessageStrip>
+
+            <layout:Grid defaultSpan="L3 M6 S12" 
+                        hSpacing="1"
+                        vSpacing="1" class="sapUiLargeMarginTop">
+            <GenericTile class="tileLayout" header="Total Products"
                         subheader="Available Products" width="200px" >
                 <TileContent unit="INR">
                     <NumericContent value="100" icon="sap-icon://product"></NumericContent>
                 </TileContent>
             </GenericTile>
 
-            <GenericTile class="sapUiLargeMarginTop sapUiSmallMarginBegin tileLayout" header="Pending Transfers" subheader="Transfers to be approved" width="200px" >
+            <GenericTile class="tileLayout" header="Pending Transfers" subheader="Transfers to be approved" width="200px" >
                 <TileContent unit="INR">
                     <NumericContent value="5" icon="sap-icon://pending"></NumericContent>
                 </TileContent>
             </GenericTile>
 
-            <GenericTile class="sapUiLargeMarginTop sapUiSmallMarginBegin tileLayout" header="Completed Transfers" subheader="Transfers that are complete" width="200px" >
+            <GenericTile class="tileLayout" header="Completed Transfers" subheader="Transfers that are complete" width="250px" >
                 <TileContent unit="INR">
                     <NumericContent value="5" icon="sap-icon://complete"></NumericContent>
                 </TileContent>
             </GenericTile>
 
-            <GenericTile class="sapUiLargeMarginTop sapUiSmallMarginBegin tileLayout" header="Low Stock Items" subheader="Items with low inventory" width="200px" >
+            <GenericTile class="tileLayout" header="Low Stock Items" subheader="Items with low inventory" width="200px" >
                 <TileContent unit="INR">
                     <NumericContent value="10" icon="sap-icon://alert"></NumericContent>
                 </TileContent>
             </GenericTile>
+            </layout:Grid>
+
+            <Panel headerText="Recent Transfers" class="sapUiLargeMarginTop" width="80%">
+                <Table items="{dashboard>/recentTransfers}" class="sapUiResponsiveMargin" width="80%">
+                    <columns>
+                        <Column>
+                            <Text text="Transfer ID"></Text>
+                        </Column>
+                        <Column>
+                            <Text text="Product Name"></Text>
+                        </Column>
+                        <Column>
+                            <Text text="Quantity"></Text>
+                        </Column>
+                        <Column>
+                            <Text text="Status"></Text>
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Active" press=".onTransferPress">
+                            <cells>
+                                <ObjectIdentifier title="{dashboard>transferId}"></ObjectIdentifier>
+                                <ObjectIdentifier title="{dashboard>productName}"></ObjectIdentifier>
+                                <ObjectNumber number="{dashboard>quantity}"></ObjectNumber>
+                                <ObjectStatus text="{dashboard>status}"></ObjectStatus>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </Panel>
         </content>
     </Page>
 

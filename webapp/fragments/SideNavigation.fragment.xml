@@ -1,11 +1,11 @@
 <core:FragmentDefinition 
-    controllerName="com.sap.build.standard.inventoryManagement.controller.Main"
+    controllerName="com.sap.build.standard.inventoryManagement.controller.Inventory"
     xmlns:m="sap.m"
     xmlns:core="sap.ui.core"
     xmlns:tnt="sap.tnt"
     height="100%">
 
-        <tnt:SideNavigation id="sideNavigation" selectedKey="key1" expanded="true" itemSelect="onItemSelect">
+        <!-- <tnt:SideNavigation id="sideNavigation" selectedKey="key1" expanded="true" itemSelect="onItemSelect">
             <tnt:NavigationList>
                 <tnt:NavigationListItem text="Dashboard" icon="sap-icon://home" key="key1" />
                 <tnt:NavigationListItem text="Inventory" icon="sap-icon://inventory" key="key2"/>
@@ -17,6 +17,18 @@
                         <m:ObjectStatus text="low stock" state="Indication18" inverted="true"></m:ObjectStatus>
                     </tnt:tag>
                 </tnt:NavigationListItem>
+            </tnt:NavigationList>
+        </tnt:SideNavigation> -->
+
+        <tnt:SideNavigation itemSelect=".onItemSelect" >
+            <tnt:NavigationList >
+                                <tnt:NavigationListItem key="dashboard" text="Dashboard" icon="sap.icon://home" />
+                                <tnt:NavigationListItem key="products" text="Inventory Products" icon="sap.icon://product" />
+                                <tnt:NavigationListItem key="transfer" text="Transfer Products" icon="sap.icon://shipping-status" />
+                                <tnt:NavigationListItem key="history" text="Transfer History" icon="sap.icon://history" />
+                                <tnt:NavigationListItem key="vendor" text="Vendor Requests" icon="sap.icon://supplier" />
+                                <tnt:NavigationListItem key="profile" text="Profile" icon="sap.icon://employee" />
+                                <tnt:NavigationListItem key="notifications" text="Notifications" icon="sap.icon://notification" />
             </tnt:NavigationList>
         </tnt:SideNavigation>
 

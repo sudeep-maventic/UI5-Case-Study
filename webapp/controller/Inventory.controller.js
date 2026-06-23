@@ -1,12 +1,20 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "sudeep/inventorytransfer/controller/BaseController",
     "sap/m/MessageToast",
     "sap/m/MessageBox"
-], (Controller, MessageToast, MessageBox) => {
+], (BaseController, MessageToast, MessageBox) => {
     "use strict";
 
-    return Controller.extend("sudeep.inventorytransfer.controller.Inventory", {
+    return BaseController.extend("sudeep.inventorytransfer.controller.Inventory", {
         onInit() {
+            const sUser = localStorage.getItem("currentUser");
+            console.log("Local Storage User:", sUser);
+
+            const oCurrentUser = JSON.parse(sUser);
+            console.log("Parsed User:", oCurrentUser);
+
+            const oUserModel = this.getOwnerComponent().getModel("user");
+            console.log("User Model:", oUserModel);
         },
 
         onNavBack: function () {
@@ -21,13 +29,14 @@ sap.ui.define([
 
         onItemSelect: function (oEvent) {
             const sKey = oEvent.getParameter("item").getKey();
+            const oNavContainer = this.byId("NavContainer");
 
             switch (sKey) {
-                case "key1":
-                    this.getOwnerComponent().getRouter().navTo("RouteInventory");
+                case "dashboard":
+                    this.getOwnerComponent().getRouter().navTo("RouteDashboard");
                     break;
-                case "key2":
-                    this.getOwnerComponent().getRouter().navTo("RouteInventory");
+                case "profile":
+                    this.getOwnerComponent().getRouter().navTo("RouteVendorProfile");
                     break;
                 case "key4":
                     this.getOwnerComponent().getRouter().navTo("RouteVendor");

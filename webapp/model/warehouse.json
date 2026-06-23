@@ -1,0 +1,48 @@
+{
+    "warehouses": [
+        {
+            "warehouseId": "WH001",
+            "warehouseName": "Bangalore Warehouse",
+            "location": "Bangalore",
+            "managerId": "EMP001",
+            "products": [
+                {
+                    "productNo": "P12345",
+                    "productName": "Product A",
+                    "availableQuantity": 500,
+                    "vendorId": "V001",
+                    "lastUpdated": "2024-06-01T12:00:00Z"
+                },
+                {
+                    "productNo": "P67890",
+                    "productName": "Product B",
+                    "availableQuantity": 300,
+                    "vendorId": "V002",
+                    "lastUpdated": "2024-06-02T14:30:00Z"
+                }
+            ]
+        },
+        {
+            "warehouseId": "WH002",
+            "warehouseName": "Mumbai Warehouse",
+            "location": "Mumbai",
+            "managerId": "EMP004",
+            "products": [
+                {
+                    "productNo": "P11111",
+                    "productName": "Product C",
+                    "availableQuantity": 200,
+                    "vendorId": "V003",
+                    "lastUpdated": "2024-06-03T09:45:00Z"
+                },
+                {
+                    "productNo": "P22222",
+                    "productName": "Product D",
+                    "availableQuantity": 150,
+                    "vendorId": "V004",
+                    "lastUpdated": "2024-06-04T11:15:00Z"
+                }
+            ]
+        }
+    ]
+}

@@ -12,37 +12,47 @@ sap.ui.define([
         onLoginPress: function () {
 
             const oLoginModel = this.getOwnerComponent().getModel("login");
-            const oUsersModel = this.getOwnerComponent().getModel("users");
+            // const oUsersModel = this.getOwnerComponent().getModel("users");
 
-            const aUsers = oUsersModel.getData().users || [];
+            // const aUsers = oUsersModel.getData().users || [];
 
-            const sUsername = oLoginModel.getProperty("/email");
+            const sEmail = oLoginModel.getProperty("/email");
             const sPassword = oLoginModel.getProperty("/password");
 
-            const oUser = aUsers.find(user =>
-                user.email === sUsername &&
+            if(!sEmail || !sPassword) {
+                MessageBox.error("Please enter Email and Password");
+                return;
+            }
+
+            const oUsersData = JSON.parse(localStorage.getItem("users")) || { users: [] };
+
+            const oUser = oUsersData.users.find(user =>
+                user.email === sEmail &&
                 user.password === sPassword
             );
 
-            if (oUser) {
-                if (oUser.role === "Vendor") {
-                    const oRouter = this.getOwnerComponent().getRouter();
-                    oRouter.navTo("RouteVendor");
-                } else if (oUser.role === "WarehouseManager") {
-                    const oRouter = this.getOwnerComponent().getRouter();
-                    oRouter.navTo("RouteInventory");
-                }
-                MessageToast.show("Login successful");
-
-                oLoginModel.setProperty("/email", "");
-                oLoginModel.setProperty("/password", "");
-
-            } else {
+            if(!oUser) {
                 MessageBox.error("Invalid Email or Password");
-
-                oLoginModel.setProperty("/email", "");
-                oLoginModel.setProperty("/password", "");
+                return;
             }
+
+            // Store the logged-in user in localStorage
+            localStorage.setItem("currentUser", JSON.stringify(oUser));
+            MessageToast.show("Login Successful");
+
+            const oRouter = this.getOwnerComponent().getRouter();
+            if(oUser.role === "Warehouse Manager") {
+                oRouter.navTo("RouteInventory");
+            } else if(oUser.role === "Vendor") {
+                oRouter.navTo("RouteVendor");
+            } else {
+                MessageBox.error("Unknown user role");
+            }
+
+            oLoginModel.setData({
+                email: "",
+                password: ""
+            });
         },
 
         onSignUpPress: function () {

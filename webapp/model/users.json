@@ -1,31 +1,39 @@
 {
     "users": [
         {
+            "id": "EMP001",
             "email": "manager1@company.com",
             "password": "manager123",
             "role": "WarehouseManager",
             "name": "John Doe",
+            "warehouseId": "WH001",
             "location": "Bangalore"
         },
         {
+            "id": "EMP002",
             "email": "vendor1@company.com",
             "password": "vendor123",
             "role": "Vendor",
             "name": "Jane Smith",
+            "vendorId": "V001",
             "company": "ABC Supplies"
         },
         {
+            "id": "EMP003",
             "email": "vendor2@company.com",
             "password": "vendor456",
             "role": "Vendor",
             "name": "Bob Johnson",
+            "vendorId": "V002",
             "company": "XYZ Distributors"
         },
         {
+            "id": "EMP004", 
             "email": "manager2@company.com",
             "password": "manager456",
             "role": "WarehouseManager",
             "name": "Alice Brown",
+            "warehouseId": "WH002",
             "location": "Mumbai"
         }
 

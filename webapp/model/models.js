@@ -30,12 +30,18 @@ function (JSONModel, Device) {
                 password: "",
                 role: "",
                 company: "",
-                location: ""
+                location: "",
+                warehouseId: "",
+                vendorId: "",
             });
         },
 
         createUserModel: function() {
             return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/users.json"));
+        },
+
+        createWarehouseModel: function() {
+            return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/warehouses.json"));
         },
 
         
@@ -47,7 +53,7 @@ function (JSONModel, Device) {
             return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/supplyHistory.json"));
         },
 
-        createWarehouseModel: function() {  
+        createWarehouseProductsModel: function() {  
             return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/warehouseProducts.json"));
         }
     };

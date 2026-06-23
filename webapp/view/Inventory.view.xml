@@ -1,8 +1,30 @@
 <mvc:View controllerName="sudeep.inventorytransfer.controller.Inventory"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:core="sap.ui.core">
-            <Page title="Inventory Page" showNavButton="true" navButtonPress=".onNavBack">
-    
-            </Page>
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt">
+            <!-- <Page title="Inventory Page" showNavButton="true" navButtonPress=".onNavBack">
+                
+            </Page> -->
+
+            <App>
+            <!-- <Button text="Menu" press="onMenuButtonPress"></Button> -->
+                <tnt:ToolPage >
+                    <tnt:sideContent>
+                        <core:Fragment fragmentName="sudeep.inventorytransfer.fragments.SideNavigation" type="XML" />
+                    </tnt:sideContent>
+
+                    <tnt:mainContents>
+                        <NavContainer id="NavContainer">
+                            <mvc:XMLView id="dashboardView" viewName="sudeep.inventorytransfer.view.Dashboard" />                            
+                            <!-- <mvc:XMLView id="productsView" viewName="sudeep.inventorytransfer.view.InventoryProducts" />
+                            <mvc:XMLView id="transferView" viewName="sudeep.inventorytransfer.view.TransferProducts" />
+                            <mvc:XMLView id="historyView" viewName="sudeep.inventorytransfer.view.TransferHistory" />
+                            <mvc:XMLView id="vendorView" viewName="sudeep.inventorytransfer.view.VendorRequests" />
+                            <mvc:XMLView id="notificationsView" viewName="sudeep.inventorytransfer.view.Notifications" /> -->
+                            <mvc:XMLView id="profileView" viewName="sudeep.inventorytransfer.view.VendorProfile" />
+                        </NavContainer>
+                    </tnt:mainContents>
+                </tnt:ToolPage>
+            </App>
 </mvc:View>

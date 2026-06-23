@@ -27,7 +27,7 @@
 
                                 <Button text="Sign Up" type="Transparent" press="onSignUpPress"></Button>
                             </HBox>
-                        </VBox>
+                        </VBox> 
 
                 </Panel>
             </VBox>

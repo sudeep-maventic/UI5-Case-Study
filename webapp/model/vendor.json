@@ -1,0 +1,19 @@
+{
+    "vendors": [
+        {
+            "vendorId": "V001",
+            "company": "ABC Supplies",
+            "contactEmail": "contact@abcsupplies.com",
+            "contactPhone": "+1-555-1234",
+            "productsSupplied": ["P12345", "P67890"]
+        },
+        {
+            "vendorId": "V002",
+            "company": "XYZ Distributors",
+            "contactEmail": "info@xyzdistributors.com",
+            "contactPhone": "+1-555-5678",
+            "address": "456 Oak Ave, Mumbai, India",
+            "productsSupplied": ["P12345", "P67890"]
+        }
+    ]
+}

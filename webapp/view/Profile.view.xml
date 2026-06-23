@@ -1,0 +1,77 @@
+<mvc:View 
+    controllerName="sudeep.inventorytransfer.controller.Profile"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="User Profile">
+        <content>
+
+            <HBox class="sapUiMediumMargin"
+                  alignItems="Center"
+                 justifyContent="End">
+                <Button text="Edit Profile"
+                        type="Emphasized"
+                        press=".onEditProfile"></Button>
+
+                <Button text="Logout"
+                        press=".onLogout"
+                        type="Default"
+                        class="sapUiMediumMarginBegin"></Button>
+            </HBox>
+
+            <!-- Profile Header -->
+            <VBox class="sapUiMediumMargin">
+                <HBox alignItems="Center">
+                    <Avatar displaySize="XL" 
+                            initials="WM"
+                            backgroundColor="Accent6"
+                            class="sapUiMediumMarginEnd"/>
+                    <VBox >
+                        <Title text="User Name"/>
+                        <Text text="{user>/role}"></Text>
+                        <ObjectStatus text="{warehouse>/status}"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <Panel headerText="Personal Information"
+                   class="sapUiMediumMargin"
+                   expandable="true"
+                   width="60%"
+                   expanded="true">
+                <VBox class="sapUiSmallMargin">
+                    <Label text="Employee Id: "></Label>
+                    <Text text="{user>/employeeId}"/>
+
+                    <Label text="Employee Name: "></Label>
+                    <Text text="{user>/name}"/>
+
+                    <Label text="Email: "></Label>
+                    <Text text="{user>/email}"/>
+
+                    <Label text="Phone: "></Label>
+                    <Text text="{user>/phone}"/>
+
+                </VBox>
+            </Panel>
+
+            <!-- Warehouse Information -->
+            <Panel headerText="Warehouse Information"
+                   class="sapUiMediumMargin"
+                   expandable="true"
+                   width="60%"
+                   expanded="true">
+                <VBox class="sapUiSmallMargin">
+                    <Label text="Warehouse Name: "></Label>
+                    <Text text="{warehouse>/name}"/>
+
+                    <Label text="Location: "></Label>
+                    <Text text="{warehouse>/location}"/>
+
+                    <Label text="Status: "></Label>
+                    <ObjectStatus text="{warehouse>/status}"/>
+                </VBox>
+            </Panel>
+        </content>
+    </Page>
+
+</mvc:View>

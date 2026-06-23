@@ -25,7 +25,8 @@ sap.ui.define([
             this.setModel(models.createSignupModel(), "signup");
             this.setModel(models.createTicketModel(), "tickets");
             this.setModel(models.createSupplyModel(), "supply");
-            this.setModel(models.createWarehouseModel(), "warehouse");  
+            this.setModel(models.createWarehouseProductsModel(), "warehouse");  
+            this.setModel(models.createWarehouseModel(), "warehouseProfile");  
 
             // enable routing
             this.getRouter().initialize();

@@ -80,7 +80,7 @@
           "name": "RouteLogin",
           "pattern": "",
           "target": [
-            "TargetVendor"
+            "TargetLogin"
           ]
         },
         {
@@ -119,6 +119,13 @@
           ]
         },
         {
+          "name": "RouteVendorProfile",
+          "pattern": "/vendor/profile",
+          "target": [
+            "TargetVendorProfile"
+          ]
+        },
+        {
           "name": "RouteVendorSupply",
           "pattern": "/vendor/supply/{ticketId}",
           "target": [
@@ -130,6 +137,13 @@
           "pattern": "/vendor/tickets",
           "target": [
             "TargetVendorTickets"
+          ]
+        },
+        {
+          "name": "RouteProfile",
+          "pattern": "/profile",
+          "target": [
+            "TargetProfile"
           ]
         }
       ],
@@ -165,6 +179,10 @@
         "TargetVendorTickets": {
           "id": "VendorTickets",
           "name": "VendorTickets"
+        },
+        "TargetProfile": {
+          "id": "WarehouseProfile",
+          "name": "WarehouseProfile"
         }
       }
     },
