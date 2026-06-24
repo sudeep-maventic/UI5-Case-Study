@@ -1,0 +1,70 @@
+<mvc:View controllerName="sudeep.inventorytransfer.controller.TransferProducts"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page title="Transfer Products">
+        <MessageStrip text="Transfer multiple products between warehouses"
+                type="Information"
+                showIcon="true">
+        </MessageStrip>
+
+        <VBox class="sapUiSmallMargin">
+            <HBox >
+                <Label text="Select Source Warehouse" class="sapUiSmallMarginBegin" />
+            <Select selectedKey="{transferForm>/fromWarehouse}"
+                    enabled="false"
+                    items="{warehouseProfile>/warehouses}"
+                    class="sapUiSmallMarginBegin">
+                <core:Item key="{warehouseProfile>warehouseId}" text="{warehouseProfile>location}"></core:Item>
+            </Select>
+            <Label text="Select Destination Warehouse" class="sapUiSmallMarginBegin" />
+            <Select selectedKey="{transferForm>/toWarehouse}"
+                    items="{warehouseProfile>/warehouses}"
+                    class="sapUiSmallMarginBegin">
+                <core:Item key="{warehouseProfile>warehouseId}" text="{warehouseProfile>location}"></core:Item>
+            </Select>
+            </HBox>
+
+            <Button text="Add Item"
+                    icon="sap-icon://add"
+                    press=".onAddItem"
+                    class="sapUiSmallMarginBegin"></Button>
+        </VBox>
+
+        <Table items="{transferForm>/items}" width="80%" class="sapUiSmallMargin">
+            <columns>
+                <Column >
+                    <Text text="Product"></Text>
+                </Column>
+                <Column >
+                    <Text text="Quantity"></Text>
+                </Column>
+                <Column >
+                    <Text text="Action"></Text>
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <Select selectedKey="{transferForm>productId}"
+                            items="{products>/products}">
+                            <core:Item key="{products>productId}"
+                                    text="{products>productName}" />
+                        </Select>
+                        <Input value="{transferForm>quantity}" type="Number"></Input>
+                        <Button text="Remove" type="Transparent" press=".onRemoveItem"></Button>
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+
+        <HBox justifyContent="End" width="70%">
+        <Button text="Submit Transfer"
+                press=".onSubmitTransfer"
+                class="sapUiSmallMarginTop sapUiLargeMarginEnd">
+        </Button>
+        </HBox>
+    </Page>
+
+</mvc:View>

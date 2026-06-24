@@ -152,6 +152,20 @@
           "target": [
             "TargetProducts"
           ]
+        },
+        {
+          "name": "RouteTransferProducts",
+          "pattern": "/transfer-products",
+          "target": [
+            "TargetTransferProducts"
+          ]
+        },
+        {
+          "name": "RouteVendorRequest",
+          "pattern": "/vendor/request",
+          "target": [
+            "TargetVendorRequest"
+          ]
         }
       ],
       "targets": {
@@ -194,6 +208,14 @@
         "TargetProducts": {
           "id": "InventoryProducts",
           "name": "InventoryProducts"
+        },
+        "TargetTransferProducts": {
+          "id": "TransferProducts",
+          "name": "TransferProducts"
+        },
+        "TargetVendorRequest": {
+          "id": "VendorRequests",
+          "name": "VendorRequests"
         }
       }
     },

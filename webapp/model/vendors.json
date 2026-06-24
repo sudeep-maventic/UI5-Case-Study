@@ -1,0 +1,23 @@
+{
+    "vendors": [
+        {
+            "vendorId": "V001",
+            "company": "ABC Supplies",
+            "contactEmail": "contact@abcsupplies.com",
+            "items":[
+                {
+                    "productId": "P001",
+                    "productName": "Product A",
+                    "category": "Electronics",
+                    "price": 10.0
+                },
+                {
+                    "productId": "P002",
+                    "productName": "Product B",
+                    "category": "Electronics",
+                    "price": 15.0
+                }
+            ]
+        }
+    ]
+}

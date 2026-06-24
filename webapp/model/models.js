@@ -60,8 +60,39 @@ function (JSONModel, Device) {
             })
         },
 
-        createTransferModel: function() {
+        createTransferHistoryModel: function() {
             return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/transfers.json"));
+        },
+
+        createTransferFormModel: function() {
+            return new JSONModel({
+                fromWarehouse: "",
+                toWarehouse: "",
+                items: [
+                    {
+                        productId: "",
+                        productName: "",
+                        quantity: 0
+                    }
+                ]
+            });
+        },
+
+        createVendorRequestsModel: function() {
+            return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/vendorRequests.json"));
+        },
+
+        createVendorRequestsFormModel: function() {
+            return new JSONModel({
+                vendorId: "",
+                requestedItems: [
+                    {
+                        productId: "",
+                        productName: "",
+                        price: 0
+                    }
+            ]
+            })
         },
 
         createTicketModel: function() {

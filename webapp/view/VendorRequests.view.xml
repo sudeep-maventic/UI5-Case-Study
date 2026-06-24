@@ -1,0 +1,118 @@
+<mvc:View
+    controllerName="sudeep/inventorytransfer/controller/VendorRequests"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Page title="Vendor Requests">
+
+        <content>
+
+            <MessageStrip
+                text="Create product requests for vendors"
+                type="Information"
+                showIcon="true"
+                class="sapUiSmallMarginBottom"/>
+
+            <VBox class="sapUiMediumMargin">
+
+                <Label text="Vendor"/>
+
+                <Select
+                    selectedKey="{vendorRequest>/vendorId}"
+                    change=".onVendorChange"
+                    items="{vendors>/vendors}">
+
+                    <core:Item
+                        key="{vendors>vendorId}"
+                        text="{vendors>companyName}" />
+
+                </Select>
+
+                <HBox class="sapUiSmallMarginTop">
+
+                    <Button
+                        text="Add Item"
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        press=".onAddItem"/>
+
+                    <ToolbarSpacer/>
+
+                    <Button
+                        text="Submit Request"
+                        icon="sap-icon://paper-plane"
+                        type="Accept"
+                        press=".onSubmitRequest"/>
+
+                </HBox>
+
+            </VBox>
+
+            <Table
+                id="vendorRequestTable"
+                items="{vendorRequest>/items}"
+                class="sapUiMediumMargin">
+
+                <columns>
+
+                    <Column width="15rem">
+                        <Text text="Product"/>
+                    </Column>
+
+                    <Column width="10rem">
+                        <Text text="Quantity"/>
+                    </Column>
+
+                    <Column width="8rem">
+                        <Text text="Price"/>
+                    </Column>
+
+                    <Column width="8rem">
+                        <Text text="Action"/>
+                    </Column>
+
+                </columns>
+
+                <items>
+
+                    <ColumnListItem>
+
+                        <cells>
+
+                            <Select
+                                width="100%"
+                                selectedKey="{vendorRequest>productId}"
+                                items="{vendorProducts>/products}">
+
+                                <core:Item
+                                    key="{vendorProducts>productId}"
+                                    text="{vendorProducts>productName}" />
+
+                            </Select>
+
+                            <Input
+                                type="Number"
+                                value="{vendorRequest>quantity}"
+                                placeholder="Qty"/>
+
+                            <Text text="Vendor Price"/>
+
+                            <Button
+                                icon="sap-icon://delete"
+                                type="Reject"
+                                press=".onRemoveItem"/>
+
+                        </cells>
+
+                    </ColumnListItem>
+
+                </items>
+
+            </Table>
+
+        </content>
+
+    </Page>
+
+</mvc:View>

@@ -1,0 +1,22 @@
+{
+    "vendorRequests": [
+        {
+            "requestId": "VR001",
+            "warehouseId": "W001",
+            "vendorId": "V001",
+            "status": "Pending",
+            "requestedItems": [
+                {
+                    "productId": "P001",
+                    "productName": "Product A",
+                    "price": 10.0
+                },
+                {
+                    "productId": "P002",
+                    "productName": "Product B",
+                    "price": 15.0
+                }
+            ]
+        }
+    ]
+}
