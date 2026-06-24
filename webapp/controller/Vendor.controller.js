@@ -32,6 +32,16 @@ sap.ui.define([
         onNavBack: function () {
             const oRouter = this.getOwnerComponent().getRouter();
             oRouter.navTo("RouteLogin");
+        }, 
+
+        onWarehouseRequests: function() {
+            const oRouter = this.getRouter();
+            oRouter.navTo("RouteWarehouseRequests");
+        },
+
+        onMyProfile: function() {
+            const oRouter = this.getRouter();
+            oRouter.navTo("RouteVendorProfile");
         }
     });
 });
