@@ -1,5 +1,5 @@
 <mvc:View
-    controllerName="sudeep/inventorytransfer/controller/VendorRequests"
+    controllerName="sudeep.inventorytransfer.controller.VendorRequests"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
@@ -9,17 +9,17 @@
         <content>
 
             <MessageStrip
-                text="Create product requests for vendors"
+                text="Create Product Requests"
                 type="Information"
                 showIcon="true"
                 class="sapUiSmallMarginBottom"/>
 
             <VBox class="sapUiMediumMargin">
 
-                <Label text="Vendor"/>
+                <Label text="Select Vendor"/>
 
                 <Select
-                    selectedKey="{vendorRequest>/vendorId}"
+                    selectedKey="{vendorRequestsForm>/vendorId}"
                     change=".onVendorChange"
                     items="{vendors>/vendors}">
 
@@ -40,6 +40,7 @@
                     <ToolbarSpacer/>
 
                     <Button
+                        class="sapUiLargeMarginBegin"
                         text="Submit Request"
                         icon="sap-icon://paper-plane"
                         type="Accept"
@@ -51,7 +52,7 @@
 
             <Table
                 id="vendorRequestTable"
-                items="{vendorRequest>/items}"
+                items="{vendorRequestsForm>/requestedItems}"
                 class="sapUiMediumMargin">
 
                 <columns>
@@ -64,7 +65,7 @@
                         <Text text="Quantity"/>
                     </Column>
 
-                    <Column width="8rem">
+                    <Column width="10rem">
                         <Text text="Price"/>
                     </Column>
 
@@ -82,7 +83,7 @@
 
                             <Select
                                 width="100%"
-                                selectedKey="{vendorRequest>productId}"
+                                selectedKey="{vendorRequestsForm>productId}"
                                 items="{vendorProducts>/products}">
 
                                 <core:Item
@@ -92,11 +93,14 @@
                             </Select>
 
                             <Input
+                                value="{vendorRequestsForm>quantity}"
                                 type="Number"
-                                value="{vendorRequest>quantity}"
                                 placeholder="Qty"/>
 
-                            <Text text="Vendor Price"/>
+                            <Input
+                                value="{vendorRequestsForm>price}"
+                                type="Number"
+                                editable="false"/>
 
                             <Button
                                 icon="sap-icon://delete"

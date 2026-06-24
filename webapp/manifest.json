@@ -119,13 +119,6 @@
           ]
         },
         {
-          "name": "RouteVendorProfile",
-          "pattern": "/vendor/profile",
-          "target": [
-            "TargetVendorProfile"
-          ]
-        },
-        {
           "name": "RouteVendorSupply",
           "pattern": "/vendor/supply/{ticketId}",
           "target": [

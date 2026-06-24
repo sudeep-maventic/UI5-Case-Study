@@ -33,13 +33,25 @@ sap.ui.define([
 
             switch (sKey) {
                 case "dashboard":
-                    this.getOwnerComponent().getRouter().navTo("RouteDashboard");
+                    oNavContainer.to(this.byId("dashboardView"));
+                    break;
+                case "products":
+                    oNavContainer.to(this.byId("productsView"));
                     break;
                 case "profile":
-                    this.getOwnerComponent().getRouter().navTo("RouteVendorProfile");
+                    oNavContainer.to(this.byId("profileView"));
                     break;
-                case "key4":
-                    this.getOwnerComponent().getRouter().navTo("RouteVendor");
+                case "transfer":
+                    oNavContainer.to(this.byId("transferView"));
+                    break;
+                case "history":
+                    oNavContainer.to(this.byId("historyView"));
+                    break;
+                case "vendor":
+                    oNavContainer.to(this.byId("vendorView"));
+                    break;
+                case "notifications":
+                    oNavContainer.to(this.byId("notificationsView"));
                     break;
                 default:
                     MessageToast.show("Unknown navigation item selected.");

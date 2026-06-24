@@ -17,12 +17,12 @@
                     <tnt:mainContents>
                         <NavContainer id="NavContainer">
                             <mvc:XMLView id="dashboardView" viewName="sudeep.inventorytransfer.view.Dashboard" />                            
-                            <!-- <mvc:XMLView id="productsView" viewName="sudeep.inventorytransfer.view.InventoryProducts" />
+                            <mvc:XMLView id="productsView" viewName="sudeep.inventorytransfer.view.InventoryProducts" />
                             <mvc:XMLView id="transferView" viewName="sudeep.inventorytransfer.view.TransferProducts" />
-                            <mvc:XMLView id="historyView" viewName="sudeep.inventorytransfer.view.TransferHistory" />
+                            <!-- <mvc:XMLView id="historyView" viewName="sudeep.inventorytransfer.view.TransferHistory" /> -->
                             <mvc:XMLView id="vendorView" viewName="sudeep.inventorytransfer.view.VendorRequests" />
-                            <mvc:XMLView id="notificationsView" viewName="sudeep.inventorytransfer.view.Notifications" /> -->
-                            <mvc:XMLView id="profileView" viewName="sudeep.inventorytransfer.view.VendorProfile" />
+                            <!-- <mvc:XMLView id="notificationsView" viewName="sudeep.inventorytransfer.view.Notifications" /> -->
+                            <mvc:XMLView id="profileView" viewName="sudeep.inventorytransfer.view.WarehouseProfile" />
                         </NavContainer>
                     </tnt:mainContents>
                 </tnt:ToolPage>

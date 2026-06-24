@@ -1,8 +1,8 @@
 sap.ui.define([
-    "sap/ui/core/mvc/BaseController",
+    "sudeep/inventorytransfer/controller/BaseController",
     "sap/m/MessageToast",
     "sap/m/MessageBox",
-    "sap/ui/model/formatter"
+    "sudeep/inventorytransfer/model/formatter"
 ], (BaseController, MessageToast, MessageBox, formatter) => {
     "use strict";
 

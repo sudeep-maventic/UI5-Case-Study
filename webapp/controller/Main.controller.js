@@ -1,10 +1,10 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
-], (Controller) => {
+    "sudeep/inventorytransfer/controller/BaseController"
+], (BaseController) => {
 
     "use strict";
-    
-    return Controller.extend("sudeep.inventorytransfer.controller.Main", {
+
+    return BaseController.extend("sudeep.inventorytransfer.controller.Main", {
         onInit() {
         },
 
@@ -14,14 +14,23 @@ sap.ui.define([
             const oNavContainer = this.byId("mainContainer");
 
             switch (sKey) {
-                case "key1":
+                case "dashboard":
                     oNavContainer.to(this.byId("dashboardFragment"));
                     break;
-                case "key2":
+                case "products":
                     oNavContainer.to(this.byId("inventoryFragment"));
                     break;
-                case "key4":
+                case "transfer":
                     oNavContainer.to(this._loadView("sudeep.inventorytransfer.view.Vendor", "Vendor"));
+                    break;
+                case "history":
+                    oNavContainer.to(this._loadView("sudeep.inventorytransfer.view.VendorTickets", "VendorTickets"));
+                    break;
+                case "vendor":
+                    oNavContainer.to(this._loadView("sudeep.inventorytransfer.view.VendorSupply", "VendorSupply"));
+                    break;
+                case "profile":
+                    this.getRouter().navTo("RouteProfile");
                     break;
                 default:
                     sap.m.MessageToast.show("Unknown navigation item selected.");

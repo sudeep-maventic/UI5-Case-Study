@@ -1,103 +1,184 @@
 sap.ui.define([
     "sudeep/inventorytransfer/controller/BaseController",
     "sap/ui/model/json/JSONModel"
-], function(BaseController, JSONModel) {
+], function (BaseController, JSONModel) {
     "use strict";
 
     return BaseController.extend("sudeep.inventorytransfer.controller.VendorRequests", {
-        onInit: function() {
-            this.getView().setModel(new JSONModel({
-                products: [],
-            }), "vendorProducts");
+
+        onInit: function () {
+
+            this.getView().setModel(
+                new JSONModel({
+                    products: []
+                }),
+                "vendorProducts"
+            );
+
+            const oVendorFormModel = this.getOwnerComponent().getModel("vendorRequestsForm");
+
+            this.getView().setModel(oVendorFormModel, "RequestsForm");
         },
 
-        onVendorChange: function(oEvent) {
+        onVendorChange: function (oEvent) {
+
             const sVendorId = oEvent.getSource().getSelectedKey();
-            const aVendors = this.getView().getModel("vendors").getProperty("/vendors");
 
-            const oVendor = aVendors.find(vendor => vendor.id === sVendorId);
-            this.getView().getModel("vendorProducts").setProperty("/products", oVendor ? oVendor.products : []);
+            const aVendors = this.getOwnerComponent().getModel("vendors").getProperty("/vendors") || [];
+
+            const oVendor =
+                aVendors.find(v => v.vendorId === sVendorId);
+
+            this.getView()
+                .getModel("vendorProducts")
+                .setProperty(
+                    "/products",
+                    oVendor ? oVendor.products : []
+                );
         },
 
-        onAddItem: function() {
-            const oRequestModel = this.getView().getModel("vendorRequestsForm");
-            const aItems = oRequestModel.getProperty("/items") || [];
+        onAddItem: function () {
+
+            const oFormModel =
+                this.getView().getModel("vendorRequestsForm");
+
+            const aItems =
+                oFormModel.getProperty("/requestedItems") || [];
+
             aItems.push({
                 productId: "",
-                quantity: 0
+                productName: "",
+                price: 0,
+                quantity: 1
             });
-            oRequestModel.setProperty("/items", aItems);
-            oRequestModel.refresh();
+
+            oFormModel.setProperty("/requestedItems", aItems);
         },
 
-        onRemoveItem: function(oEvent) {
-            const sPath = oEvent.getSource().getBindingContext("vendorRequestsForm").getPath();
-            const iIndex = parseInt(sPath.split("/")[2]);
-            const oRequestModel = this.getView().getModel("vendorRequestsForm");
-            const aItems = oRequestModel.getProperty("/items");
+        onRemoveItem: function (oEvent) {
+
+            const sPath =
+                oEvent.getSource()
+                    .getBindingContext("vendorRequestsForm")
+                    .getPath();
+
+            const iIndex =
+                parseInt(sPath.split("/")[2]);
+
+            const oFormModel =
+                this.getView().getModel("vendorRequestsForm");
+
+            const aItems =
+                oFormModel.getProperty("/requestedItems");
+
             aItems.splice(iIndex, 1);
-            oRequestModel.setProperty("/items", aItems);
-            oRequestModel.refresh();
+
+            oFormModel.setProperty("/requestedItems", aItems);
         },
 
-        onSubmitRequest: function() {
-            const oRequestModel = this.getView().getModel("vendorRequestsForm");
-            const oRequestData = oRequestModel.getData();
+        onSubmitRequest: function () {
 
-            if (!oRequestData.vendorId || !oRequestData.items || oRequestData.items.length === 0) {
-                this.showToast("Please fill in all required fields.");
+            const oFormModel =
+                this.getView().getModel("vendorRequestsForm");
+
+            const oRequest =
+                oFormModel.getData();
+
+            if (!oRequest.vendorId) {
+                this.showError("Please select a vendor.");
                 return;
             }
 
-            const aVendors = this.getOwnerComponent().getModel("vendors").getProperty("/vendors");
-            const oVendor = aVendors.find(vendor => vendor.id === oRequestData.vendorId);
+            if (!oRequest.requestedItems.length) {
+                this.showError("Please add at least one product.");
+                return;
+            }
+
+            const aVendors =
+                this.getOwnerComponent()
+                    .getModel("vendors")
+                    .getProperty("/vendors") || [];
+
+            const oVendor =
+                aVendors.find(
+                    v => v.vendorId === oRequest.vendorId
+                );
 
             if (!oVendor) {
-                this.showToast("Selected vendor not found.");
+                this.showError("Vendor not found.");
                 return;
             }
 
-            const aRequestItems = [];
+            const aRequestedItems = [];
 
-            oRequestData.items.forEach(item => {
-                const oProduct = oVendor.items.find(product => product.id === item.productId);
-                if(oProduct){
-                    aRequestItems.push({
-                        productId: oProduct.id,
-                        productName: oProduct.name,
+            oRequest.requestedItems.forEach(function (oItem) {
+
+                const oProduct =
+                    oVendor.products.find(
+                        p => p.productId === oItem.productId
+                    );
+
+                if (oProduct) {
+
+                    aRequestedItems.push({
+                        productId: oProduct.productId,
+                        productName: oProduct.productName,
                         price: oProduct.price,
+                        quantity: oItem.quantity || 1
                     });
                 }
             });
 
-            const oCurrentUser = this.getCurrentUser();
+            const oCurrentUser =
+                this.getCurrentUser();
 
-            const oVendorRequestModel = this.getOwnerComponent().getModel("vendorRequests");
-            const aVendorRequests = oVendorRequestModel.getProperty("/vendorRequests") || [];
+            const oVendorRequestModel =
+                this.getOwnerComponent()
+                    .getModel("vendorRequests");
 
-            aRequestItems.push({
-                requestedId: "VR" + (aVendorRequests.length + 1).toString().padStart(4, '0'),
+            const aRequests =
+                oVendorRequestModel.getProperty("/vendorRequests") || [];
+
+            aRequests.push({
+                requestId:
+                    "VR" +
+                    (aRequests.length + 1)
+                        .toString()
+                        .padStart(4, "0"),
+
                 warehouseId: oCurrentUser.warehouseId,
-                vendorId: oRequestData.vendorId,
+                vendorId: oRequest.vendorId,
                 status: "Pending",
-                requestedItems: aRequestItems
+                requestDate: new Date().toISOString(),
+                requestedItems: aRequestedItems
             });
 
-            oVendorRequestModel.setProperty("/vendorRequests", aVendorRequests);
-            this.showToast("Vendor request submitted successfully.");
+            oVendorRequestModel.setProperty(
+                "/vendorRequests",
+                aRequests
+            );
 
-            this.getView().getModel("vendorRequestsForm").setData({
+            oVendorRequestModel.refresh(true);
+
+            this.showToast(
+                "Vendor request submitted successfully."
+            );
+
+            oFormModel.setData({
                 vendorId: "",
                 requestedItems: [
                     {
                         productId: "",
                         productName: "",
-                        price: 0
+                        price: 0,
+                        quantity: 1
                     }
                 ]
             });
 
-            this.getView().getModel("vendorProducts").setProperty("/products", []);
+            this.getView()
+                .getModel("vendorProducts")
+                .setProperty("/products", []);
         }
-    })
-})
+    });
+});

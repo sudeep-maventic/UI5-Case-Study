@@ -4,39 +4,11 @@
     xmlns:core="sap.ui.core"
     xmlns:f="sap.f"
     xmlns:layout="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
     xmlns:cards="sap.f.cards">
 
     <Page title="Warehouse Profile" showNavButton="true" navButtonPress=".onNavBack">
         <content>
-            <!-- <HBox justifyContent="End">
-                <Button text="Edit Profile" type="Emphasized" press=".onEditProfilePress" />
-            </HBox>
-            <VBox class="sapUiMediumMargin">
-                <HBox alignItems="Center">
-                    <Avatar displaySize="XL" initials="WH" backgroundColor="Accent6" class="sapUiMediumMarginEnd"/>
-                    <VBox>
-                        <Title text="{profile>/oCurrentUser/name}"/>
-                        <Text text="{profile>/oCurrentUser/location}"></Text>
-                        <ObjectStatus text="{profile>/oCurrentUser/status}"/>
-                    </VBox>
-                </HBox>
-            </VBox>
-            <Panel headerText="Warehouse Information" class="sapUiMediumMargin" expandable="true" width="60%" expanded="true">
-                <VBox class="sapUiSmallMargin">
-                    <Label text="Warehouse Id: "></Label>
-                    <Text text="{warehouse>/id}"/>
-
-                    <Label text="Warehouse Name: "></Label>
-                    <Text text="{warehouse>/name}"/>
-
-                    <Label text="Location: "></Label>
-                    <Text text="{warehouse>/location}"/>
-
-                    <Label text="Status: "></Label>
-                    <Text text="{warehouse>/status}"/>
-                </VBox>
-            </Panel> -->
-
             <HBox justifyContent="End">
                 <Button text="Edit" type="Emphasized" press=".onEditProfilePress" visible="{= !${viewState>/editMode}}" />
             </HBox>
@@ -45,44 +17,45 @@
                     <cards:Header title="{profile>/oCurrentUser/name}" subtitle="{profile>/oCurrentUser/role}" iconSrc="sap-icon://employee"></cards:Header>
                 </f:header>                
                 <f:content>
-                    <VBox class="sapUiMediumMargin">
-                        <HBox >
+                    <form:SimpleForm
+                        editable="{viewState>/editMode}"
+                        layout="ResponsiveGridLayout"
+                        labelSpanXL="3"
+                        labelSpanL="3"
+                        labelSpanM="4"
+                        labelSpanS="12"
+                        class="sapUiMediumMargin"
+                        >
                             <Label text="Name" class="sapUiMediumMarginEnd"/>
                             <Text text="{profile>/oCurrentUser/name}" visible="{= !${viewState>/editMode}}" />
                             <Input value="{profile>/oCurrentUser/name}" visible="{= ${viewState>/editMode}}" />
-                        </HBox>
-                        <HBox >
+
                             <Label text="Email" class="sapUiMediumMarginEnd"/>
                             <Text text="{profile>/oCurrentUser/email}" visible="{= !${viewState>/editMode}}" />
                             <Input value="{profile>/oCurrentUser/email}" visible="{= ${viewState>/editMode}}" />
-                        </HBox>
-                        <HBox >
+
                             <Label text="Employee Id" class="sapUiMediumMarginEnd"/>
-                            <Text text="{profile>/oCurrentUser/employeeId}" visible="{= !${viewState>/editMode}}" />
-                            <Input value="{profile>/oCurrentUser/employeeId}" visible="{= ${viewState>/editMode}}" />
-                        </HBox>
-                        <HBox class="sapUiMediumMarginTop">
+                            <Text text="{profile>/oCurrentUser/id}" visible="{= !${viewState>/editMode}}" />
+                            <Input value="{profile>/oCurrentUser/id}" visible="{= ${viewState>/editMode}}" />
+
                             <Label text="Warehouse Id" class="sapUiMediumMarginEnd"/>
                             <Text text="{profile>/oCurrentUser/warehouseId}" visible="{= !${viewState>/editMode}}" />
                             <Input value="{profile>/oCurrentUser/warehouseId}" visible="{= ${viewState>/editMode}}" />
-                        </HBox>
-                        <HBox class="sapUiMediumMarginTop">
+
                             <Label text="Location" class="sapUiMediumMarginEnd"/>
                             <Text text="{profile>/oCurrentUser/location}" visible="{= !${viewState>/editMode}}" />
                             <Input value="{profile>/oCurrentUser/location}" visible="{= ${viewState>/editMode}}" />
-                        </HBox>
-                        <HBox class="sapUiMediumMarginTop">
+
                             <Label text="Role" class="sapUiMediumMarginEnd"/>
                             <Text text="{profile>/oCurrentUser/role}" visible="{= !${viewState>/editMode}}"/>
                             <Input value="{profile>/oCurrentUser/role}" visible="{= ${viewState>/editMode}}" />
-                        </HBox>
-                        <HBox justifyContent="End" class="sapUiMediumMarginTop">                            
-                            <Button text="Save" type="Emphasized" press=".onSaveProfilePress" class="sapUiMediumMarginEnd" visible="{= ${viewState>/editMode}}" />
-                            <Button text="Cancel" type="Default" press=".onCancelEditPress" visible="{= ${viewState>/editMode}}" />
-                        </HBox>
-                    </VBox>
+                        </form:SimpleForm>
                 </f:content>
             </f:Card>
+            <HBox width="60%" justifyContent="SpaceAround" class="sapUiMediumMarginTop">                          
+                <Button text="Save" type="Emphasized" press=".onSaveProfilePress" class="sapUiMediumMarginEnd" visible="{= ${viewState>/editMode}}" />
+                <Button text="Cancel" type="Default" press=".onCancelEditPress" visible="{= ${viewState>/editMode}}" />
+            </HBox>
         </content>
     </Page>
 </mvc:View>
