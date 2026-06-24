@@ -34,6 +34,8 @@ sap.ui.define([
             this.setModel(models.createVendorRequestsModel(), "vendorRequests");
             this.setModel(models.createVendorRequestsFormModel(), "vendorRequestsForm");
 
+            this.setModel(models.createVendorsModel(), "vendors");
+
             // enable routing
             this.getRouter().initialize();
         }

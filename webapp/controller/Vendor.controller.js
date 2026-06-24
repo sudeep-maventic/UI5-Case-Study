@@ -1,33 +1,37 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
+    "sudeep/inventorytransfer/controller/BaseController",
+    "sap/ui/model/json/JSONModel",
     "sap/m/MessageToast",
     "sap/m/MessageBox"
-], (Controller, MessageToast, MessageBox) => {
+], (BaseController, JSONModel, MessageToast, MessageBox) => {
     "use strict";
 
-    return Controller.extend("sudeep.inventorytransfer.controller.Inventory", {
+    return BaseController.extend("sudeep.inventorytransfer.controller.Inventory", {
         onInit() {
+            const oCurrentUser = this.getCurrentUser();
+            const sVendorId = oCurrentUser.vendorId;
+
+            const aRequests = this.getOwnerComponent().getModel("vendorRequests").getProperty("/vendorRequests") || [];
+            const aVendorRequests = aRequests.filter(request => request.vendorId === sVendorId);
+
+            const aVendors = this.getOwnerComponent().getModel("vendors").getProperty("/vendors") || [];
+            const oVendor = aVendors.find(vendor => vendor.vendorId === sVendorId);
+
+            const oDashboardModel = {
+                company: oVendor ? oVendor.company : "",
+                pending: aVendorRequests.filter(request => request.status === "Pending").length,
+                accepted: aVendorRequests.filter(request => request.status === "Accepted").length,
+                rejected: aVendorRequests.filter(request => request.status === "Rejected").length,
+                products: oVendor ? oVendor.items.length : 0,
+                recentRequests: aVendorRequests.slice(-5).reverse()
+            }
+
+            this.getView().setModel(new JSONModel(oDashboardModel), "dashboard");
         },
 
         onNavBack: function () {
             const oRouter = this.getOwnerComponent().getRouter();
             oRouter.navTo("RouteLogin");
-        },
-
-        onTicketPress: function () {
-            const oRouter = this.getOwnerComponent().getRouter();
-            oRouter.navTo("RouteVendorTickets");
-        },
-
-        onSupplyPress: function () {
-            const oRouter = this.getOwnerComponent().getRouter();
-            oRouter.navTo("RouteVendorSupply");
-        },
-
-        onProfilePress: function () {
-            const oRouter = this.getOwnerComponent().getRouter();
-            oRouter.navTo("RouteVendorProfile");
-        },
-
+        }
     });
 });

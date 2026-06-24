@@ -95,6 +95,10 @@ function (JSONModel, Device) {
             })
         },
 
+        createVendorsModel: function() {
+            return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/vendors.json"));
+        },
+
         createTicketModel: function() {
             return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/tickets.json"));
         },

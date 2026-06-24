@@ -3,48 +3,69 @@
     xmlns="sap.m"
     xmlns:f="sap.f"
     xmlns:card="sap.f.cards"
+    xmlns:layout="sap.ui.layout"
     xmlns:core="sap.ui.core">
-    <Page title="Vendor Portal" showNavButton="true" navButtonPress=".onNavBack">
+    <Page title="Vendor Dashboard" showNavButton="true" navButtonPress=".onNavBack">
+        <MessageStrip text="View warehouse requests and manage product supplies."
+                    type="Success"
+                    showIcon="true"
+                    class="sapUiSmallMargin"></MessageStrip>
+
         <content>
-            <VBox class="sapUiLargeMargin">
-                <Title text="Welcome ABC Suppliers" level="H2" />
-                <Text text="Manage your products, orders and shipments" class="sapUiSmallMarginBottom" />
+            <VBox class="sapUiMediumMargin">
+                <Title text="Welcome {dashboard>/company}" level="H2" />
+                <Text text="Manage warehouse requests and supplies" class="sapUiSmallMarginBottom" />
+
+                <HBox justifyContent="End" class="sapUiSmallMarginEnd">
+                    <Button text="Warehouse Requests" 
+                            icon="sap-icon://shipping-status"
+                            type="Emphasized"
+                            press=".onWarehouseRequests" />
+                    <Button text="My Profile" 
+                            icon="sap-icon://employee"
+                            press=".onMyProfile"
+                            class="sapUiTinyMarginBegin" />
+                </HBox>
 
                 
                 <HBox justifyContent="SpaceAround">
                 
-                    <!-- Pending Tickets -->
-                <GenericTile frameType="OneByOne" width="250px" header="Pending Tickets" subheader="Warehouse Requests" press=".onTicketPress" class="sapUiTinyMargin">
+                <GenericTile frameType="OneByOne" width="250px" header="Pending Requests" subheader="Awaiting vendor action" class="sapUiTinyMargin">
                     <TileContent >
-                        <NumericContent value="45" icon="sap-icon://alert"></NumericContent>
+                        <NumericContent value="{dashboard>/pending}" icon="sap-icon://pending"></NumericContent>
                     </TileContent>
                 </GenericTile>
-                <!-- Supply Products -->
-                <GenericTile frameType="OneByOne" width="250px" header="Supply Products" subheader="Add products to Warehouse" press=".onSupplyPress" class="sapUiTinyMargin">
+
+                <GenericTile frameType="OneByOne" width="250px" header="Accepted Requests" subheader="Approved requests" class="sapUiTinyMargin">
                     <TileContent >
-                        <NumericContent value="12" icon="sap-icon://order"></NumericContent>
+                        <NumericContent value="{dashboard>/accepted}" icon="sap-icon://accept"></NumericContent>
                     </TileContent>
                 </GenericTile>
             
-                <!-- My Profile -->
-                <GenericTile frameType="OneByOne" width="250px" header="My Profile" subheader="Manage your profile" press=".onProfilePress" class="sapUiTinyMargin">
+                <GenericTile frameType="OneByOne" width="250px" header="Rejected Requests" subheader="Declined requests" class="sapUiTinyMargin">
                     <TileContent >
-                        <NumericContent value="1" icon="sap-icon://employee"></NumericContent>
+                        <NumericContent value="{dashboard>/rejected}" icon="sap-icon://decline"></NumericContent>
+                    </TileContent>
+                </GenericTile>
+
+                <GenericTile frameType="OneByOne" width="250px" header="Products Offered" subheader="Available vendor catalog" class="sapUiTinyMargin">
+                    <TileContent >
+                        <NumericContent value="{dashboard>/products}" icon="sap-icon://product"></NumericContent>
                     </TileContent>
                 </GenericTile>
                 </HBox>
 
-                <Panel headerText="Recent Warehouse Requests" class="sapUiLargeMarginTop">
-                    <Table id="recentTicketsTable" inset="false" items="{/recentTickets}">
+                <Panel backgroundDesign="Transparent" headerText="Recent Warehouse Requests" class="sapUiLargeMarginTop">
+                    <Table id="recentTicketsTable" items="{dashboard>/recentRequests}" class="sapUiResponsiveMargin" width="80%">
                         <columns>
                             <Column>
-                                <Text text="Ticket ID" />
+                                <Text text="Request ID" />
                             </Column>
                             <Column>
-                                <Text text="Product Name" />
+                                <Text text="Warehouse" />
                             </Column>
                             <Column>
-                                <Text text="Quantity" />
+                                <Text text="Items" />
                             </Column>
                             <Column>
                                 <Text text="Status" />
@@ -53,10 +74,10 @@
                         <items>
                             <ColumnListItem>
                                 <cells>
-                                    <ObjectIdentifier title="{ticketId}" />
-                                    <Text text="{productName}" />
-                                    <Text text="{quantity}" />
-                                    <Text text="{status}" />
+                                    <ObjectIdentifier title="{dashboard>requestId}" />
+                                    <Text text="{dashboard>warehouseId}" />
+                                    <Text text="{= ${dashboard>requestedItems}.length + ' Items' }" />
+                                    <ObjectStatus text="{dashboard>status}" state="Warning" />
                                 </cells>
                             </ColumnListItem>
                         </items>
