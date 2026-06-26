@@ -5,10 +5,15 @@ sap.ui.define([
 
     return BaseController.extend("sudeep.inventorytransfer.controller.TransferProducts", {
         onInit: function() {
-            const oCurrentUser = this.getCurrentUser();
+            let oCurrentUser = this.getCurrentUser();
 
-            const oTransferModel = this.getOwnerComponent().getModel("transferForm");
+            let oTransferModel = this.getOwnerComponent().getModel("transferForm");
             this.getView().setModel(oTransferModel, "transferForm");
+
+            const aProducts = this.getOwnerComponent().getModel("products").getProperty("/products");
+            const aWarehouseProducts = aProducts.filter(product => product.warehouseId === oCurrentUser.warehouseId);
+            this.getView().setModel(new sap.ui.model.json.JSONModel({products: aWarehouseProducts}), "warehouseProducts");
+
             this.getView().getModel("transferForm").setProperty("/fromWarehouse", oCurrentUser.warehouseId);
             
         }, 
@@ -44,10 +49,10 @@ sap.ui.define([
             const oTransfer = this.getView().getModel("transferForm").getData();
             console.log(oTransfer);
 
-            // if(oTransfer.fromWarehouse === oTransfer.toWarehouse) {
-            //     this.showToast("From and To Warehouse cannot be the same.");
-            //     return;
-            // }
+            if(oTransfer.fromWarehouse === oTransfer.toWarehouse) {
+                this.showToast("From and To Warehouse cannot be the same.");
+                return;
+            }
 
             if(oTransfer.items.length === 0) {
                 this.showError("Please add at least one item to transfer.");

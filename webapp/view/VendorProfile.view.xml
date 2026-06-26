@@ -4,29 +4,40 @@
     <Page title="Vendor Profile" showNavButton="true" navButtonPress=".onNavBack">
         <content>
             <VBox alignItems="Center" class="sapUiSmallMargin">
-                <Avatar src="https://ui-avatars.com/api/?name=Vendor+Name" displaySize="XL" displayShape="Circle" class="sapUiMediumMarginBottom" />
-                <Title text="Vendor Name" level="H2" class="sapUiMediumMarginBottom" />
-                <Text text="Contact: John Doe" />
+                <Avatar initials="{= ${profile>/name}.substring(0, 2).toUpperCase() }" displaySize="XL" displayShape="Circle" class="sapUiMediumMarginBottom" />
+                <Title text="{profile>/name}" visible="{= !${viewState>/editMode}}" level="H2" class="sapUiMediumMarginBottom" />
+                <Input value="{profile>/name}" visible="{= ${viewState>/editMode}}" class="sapUiMediumMarginBottom" />
+                <Text text="Email: {profile>/email}" visible="{= !${viewState>/editMode}}" />
+                <Input value="{profile>/email}" visible="{= ${viewState>/editMode}}" class="sapUiMediumMarginBottom" />
 
-                <Button text="Edit Profile" press="onEditProfile" type="Emphasized" icon="sap-icon://edit" />
+                <Button text="Edit Profile" press="onEditProfile" visible="{= !${viewState>/editMode}}" class="sapUiMediumMarginTop" type="Emphasized" icon="sap-icon://edit" />
                 
                 <Panel width="500px" class="sapUiMediumMarginTop">
                     <form:SimpleForm editable="false">
                         <form:content>
                             <Label text="Company Name" />
-                            <Text text="ABC Supplies Inc." />
+                            <Text text="{profile>/company}" visible="{= !${viewState>/editMode}}" />
+                            <Input value="{profile>/company}" visible="{= ${viewState>/editMode}}" />
 
                             <Label text="Address" />
-                            <Text text="123 Main Street, City, Country" />
+                            <Text text="{profile>/address}" visible="{= !${viewState>/editMode}}" />
+                            <Input value="{profile>/address}" visible="{= ${viewState>/editMode}}" />
 
                             <Label text="Phone" />
-                            <Text text="+1 234 567 8900" />
+                            <Text text="{profile>/phone}" visible="{= !${viewState>/editMode}}" />
+                            <Input value="{profile>/phone}" visible="{= ${viewState>/editMode}}" />
 
-                            <Label text="Email" />
-                            <Text text="vendor@abcsupplies.com" />
+                            <Label text="Contact Email" />
+                            <Text text="{profile>/contactEmail}" visible="{= !${viewState>/editMode}}" />
+                            <Input value="{profile>/contactEmail}" visible="{= ${viewState>/editMode}}" />
                         </form:content>
                     </form:SimpleForm>
                 </Panel> 
+
+                <HBox >
+                    <Button text="Save" press="onSaveProfile" visible="{= ${viewState>/editMode}}" class="sapUiMediumMarginTop" type="Accept" />
+                    <Button text="Cancel" press="oncancel" visible="{= ${viewState>/editMode}}" type="Reject" class="sapUiMediumMarginTop sapUiMediumMarginBegin" />
+                </HBox>
             </VBox>
         </content>
     </Page>

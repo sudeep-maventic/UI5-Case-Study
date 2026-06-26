@@ -5,14 +5,15 @@
     xmlns:core="sap.ui.core"
     xmlns:f="sap.f"
     xmlns:cards="sap.f.cards"
-    xmlns:layout="sap.ui.layout">
-    <Page title="Dashboard Page" showNavButton="true" navButtonPress=".onNavBack">
+    xmlns:layout="sap.ui.layout"
+    xmlns:mc="sap.suite.ui.microchart">
+    <Page title="Dashboard">
         <content>
 
-            <MessageStrip text="Some products are below reorder"
-                        type="Warning"
-                        showIcon="true"
-                        showCloseButton="true"></MessageStrip>
+            <VBox class="sapUiSmallMargin">
+                <Title level="H2" text="Welcome {dashboard>/managerName}"></Title>
+                <Text text="Manage your inventory efficiently." />
+            </VBox>
 
             <layout:Grid defaultSpan="L3 M6 S12" 
                         hSpacing="1"
@@ -20,28 +21,60 @@
             <GenericTile class="tileLayout" header="Total Products"
                         subheader="Available Products" width="200px" >
                 <TileContent unit="INR">
-                    <NumericContent value="100" icon="sap-icon://product"></NumericContent>
+                    <NumericContent value="{dashboard>/totalProducts}" icon="sap-icon://product"></NumericContent>
                 </TileContent>
             </GenericTile>
 
             <GenericTile class="tileLayout" header="Pending Transfers" subheader="Transfers to be approved" width="200px" >
                 <TileContent unit="INR">
-                    <NumericContent value="5" icon="sap-icon://pending"></NumericContent>
+                    <NumericContent value="{dashboard>/pendingTransfers}" icon="sap-icon://pending"></NumericContent>
                 </TileContent>
             </GenericTile>
 
             <GenericTile class="tileLayout" header="Completed Transfers" subheader="Transfers that are complete" width="250px" >
                 <TileContent unit="INR">
-                    <NumericContent value="5" icon="sap-icon://complete"></NumericContent>
+                    <NumericContent value="{dashboard>/completedTransfers}" icon="sap-icon://complete"></NumericContent>
                 </TileContent>
             </GenericTile>
 
             <GenericTile class="tileLayout" header="Low Stock Items" subheader="Items with low inventory" width="200px" >
                 <TileContent unit="INR">
-                    <NumericContent value="10" icon="sap-icon://alert"></NumericContent>
+                    <NumericContent value="{dashboard>/lowStock}" icon="sap-icon://alert"></NumericContent>
                 </TileContent>
             </GenericTile>
             </layout:Grid>
+
+            <HBox width="100%" justifyContent="SpaceAround" class="sapUiLargeMarginTop">
+                <f:Card class="sapUiResponsiveMargin" width="500px">
+                    <f:header>
+                        <cards:Header title="Inventory by Location" subtitle="Current Products" >
+                        </cards:Header>
+                    </f:header>
+                    <f:content>
+                        <mc:InteractiveBarChart id="LocationChart">
+                            <mc:bars>
+                                <mc:InteractiveBarChartBar label="Mumbai" value="20" displayedValue="20"></mc:InteractiveBarChartBar>
+                                <mc:InteractiveBarChartBar label="Bangalore" value="15" displayedValue="15"></mc:InteractiveBarChartBar>
+                                <mc:InteractiveBarChartBar label="Pune" value="25" displayedValue="25"></mc:InteractiveBarChartBar>
+                            </mc:bars>
+                        </mc:InteractiveBarChart>
+                    </f:content>
+                </f:Card>
+
+                <f:Card width="500px" class="sapUiResponsiveMargin">
+                    <f:header>
+                        <cards:Header title="Inventory by Category" subtitle="Current Products" >
+                        </cards:Header>
+                    </f:header>
+                    <f:content>
+                        <mc:InteractiveDonutChart id="CategoryChart">
+                            <mc:InteractiveDonutChartSegment label="Electronics" value="{dashboard>/electronics}"></mc:InteractiveDonutChartSegment>
+                            <mc:InteractiveDonutChartSegment label="Furniture" value="{dashboard>/furniture}"></mc:InteractiveDonutChartSegment>
+                            <mc:InteractiveDonutChartSegment label="Clothing" value="{dashboard>/clothing}"></mc:InteractiveDonutChartSegment>
+                        </mc:InteractiveDonutChart>
+                    </f:content>
+                </f:Card>
+            </HBox>
 
             <Panel headerText="Recent Transfers" class="sapUiLargeMarginTop" width="80%">
                 <Table items="{dashboard>/recentTransfers}" class="sapUiResponsiveMargin" width="80%">
@@ -71,6 +104,7 @@
                     </items>
                 </Table>
             </Panel>
+
         </content>
     </Page>
 

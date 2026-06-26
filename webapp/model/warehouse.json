@@ -1,16 +1,40 @@
 {
     "warehouses": [
         {
-            "warehouseId": "WH001",
+            "warehouseId": "W001",
             "warehouseName": "Bangalore Warehouse",
             "location": "Bangalore",
             "managerId": "EMP001"
         },
         {
-            "warehouseId": "WH002",
+            "warehouseId": "W002",
             "warehouseName": "Mumbai Warehouse",
             "location": "Mumbai",
             "managerId": "EMP004"
+        },
+        {
+            "warehouseId": "W003",
+            "warehouseName": "Delhi Warehouse",
+            "location": "New Delhi",
+            "managerId": "EMP007"
+        },
+        {
+            "warehouseId": "W004",
+            "warehouseName": "Chennai Warehouse",
+            "location": "Chennai",
+            "managerId": "EMP010"
+        },
+        {
+            "warehouseId": "W005",
+            "warehouseName": "Hyderabad Warehouse",
+            "location": "Hyderabad",
+            "managerId": "EMP013"
+        },
+        {
+            "warehouseId": "W006",
+            "warehouseName": "Pune Warehouse",
+            "location": "Pune",
+            "managerId": "EMP016"
         }
     ]
 }

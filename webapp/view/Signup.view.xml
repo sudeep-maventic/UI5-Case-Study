@@ -28,7 +28,16 @@
                         </Select>
 
                         <Label text="Location" visible="{= ${signup>/role} === 'Warehouse Manager' }" class="sapUiSmallMarginTop"/>
-                        <Input value="{signup>/location}" placeholder="Enter Location" width="500px" visible="{= ${signup>/role} === 'Warehouse Manager' }"></Input>
+                        <Select selectedKey="{signup>/location}" width="500px" visible="{= ${signup>/role} === 'Warehouse Manager' }">
+                            <items>
+                                <core:Item key="" text="Select Location"></core:Item>
+                                <core:Item key="Bangalore" text="Bangalore"></core:Item>
+                                <core:Item key="Mumbai" text="Mumbai"></core:Item>
+                                <core:Item key="Pune" text="Pune"></core:Item>
+                                <core:Item key="Hyderabad" text="Hyderabad"></core:Item>
+                                <core:Item key="Chennai" text="Chennai"></core:Item>
+                            </items>
+                        </Select>
 
                         <Label text="Company Name" visible="{= ${signup>/role} === 'Vendor' }" class="sapUiSmallMarginTop" />
                         <Input value="{signup>/companyName}" placeholder="Enter Company Name" width="500px" visible="{= ${signup>/role} === 'Vendor' }"></Input>

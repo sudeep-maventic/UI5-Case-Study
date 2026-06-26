@@ -18,16 +18,16 @@
 
                 <Label text="Select Vendor"/>
 
-                <Select
+                <ComboBox
                     selectedKey="{vendorRequestsForm>/vendorId}"
                     change=".onVendorChange"
-                    items="{vendors>/vendors}">
+                    items="{'vendors>/vendors'}">
 
                     <core:Item
                         key="{vendors>vendorId}"
                         text="{vendors>companyName}" />
 
-                </Select>
+                </ComboBox>
 
                 <HBox class="sapUiSmallMarginTop">
 

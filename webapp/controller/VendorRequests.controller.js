@@ -2,183 +2,253 @@ sap.ui.define([
     "sudeep/inventorytransfer/controller/BaseController",
     "sap/ui/model/json/JSONModel"
 ], function (BaseController, JSONModel) {
+
     "use strict";
 
-    return BaseController.extend("sudeep.inventorytransfer.controller.VendorRequests", {
+    return BaseController.extend(
+        "sudeep.inventorytransfer.controller.VendorRequests",
+        {
 
-        onInit: function () {
+            onInit: function () {
 
-            this.getView().setModel(
-                new JSONModel({
-                    products: []
-                }),
-                "vendorProducts"
-            );
-
-            const oVendorFormModel = this.getOwnerComponent().getModel("vendorRequestsForm");
-
-            this.getView().setModel(oVendorFormModel, "RequestsForm");
-        },
-
-        onVendorChange: function (oEvent) {
-
-            const sVendorId = oEvent.getSource().getSelectedKey();
-
-            const aVendors = this.getOwnerComponent().getModel("vendors").getProperty("/vendors") || [];
-
-            const oVendor =
-                aVendors.find(v => v.vendorId === sVendorId);
-
-            this.getView()
-                .getModel("vendorProducts")
-                .setProperty(
-                    "/products",
-                    oVendor ? oVendor.products : []
-                );
-        },
-
-        onAddItem: function () {
-
-            const oFormModel =
-                this.getView().getModel("vendorRequestsForm");
-
-            const aItems =
-                oFormModel.getProperty("/requestedItems") || [];
-
-            aItems.push({
-                productId: "",
-                productName: "",
-                price: 0,
-                quantity: 1
-            });
-
-            oFormModel.setProperty("/requestedItems", aItems);
-        },
-
-        onRemoveItem: function (oEvent) {
-
-            const sPath =
-                oEvent.getSource()
-                    .getBindingContext("vendorRequestsForm")
-                    .getPath();
-
-            const iIndex =
-                parseInt(sPath.split("/")[2]);
-
-            const oFormModel =
-                this.getView().getModel("vendorRequestsForm");
-
-            const aItems =
-                oFormModel.getProperty("/requestedItems");
-
-            aItems.splice(iIndex, 1);
-
-            oFormModel.setProperty("/requestedItems", aItems);
-        },
-
-        onSubmitRequest: function () {
-
-            const oFormModel =
-                this.getView().getModel("vendorRequestsForm");
-
-            const oRequest =
-                oFormModel.getData();
-
-            if (!oRequest.vendorId) {
-                this.showError("Please select a vendor.");
-                return;
-            }
-
-            if (!oRequest.requestedItems.length) {
-                this.showError("Please add at least one product.");
-                return;
-            }
-
-            const aVendors =
-                this.getOwnerComponent()
-                    .getModel("vendors")
-                    .getProperty("/vendors") || [];
-
-            const oVendor =
-                aVendors.find(
-                    v => v.vendorId === oRequest.vendorId
+                this.getView().setModel(
+                    new JSONModel({
+                        products: []
+                    }),
+                    "vendorProducts"
                 );
 
-            if (!oVendor) {
-                this.showError("Vendor not found.");
-                return;
-            }
+                this.getView().setModel(
+                    this.getOwnerComponent()
+                        .getModel("vendorRequestsForm"),
+                    "vendorRequestsForm"
+                );
+            },
 
-            const aRequestedItems = [];
+            onVendorChange: function (oEvent) {
 
-            oRequest.requestedItems.forEach(function (oItem) {
+                const sVendorId =
+                    oEvent.getSource().getSelectedKey();
+
+                const aVendors =
+                    this.getOwnerComponent()
+                        .getModel("vendors")
+                        .getProperty("/vendors") || [];
+
+                const oVendor =
+                    aVendors.find(
+                        v => v.vendorId === sVendorId
+                    );
+
+                this.getView()
+                    .getModel("vendorProducts")
+                    .setProperty(
+                        "/products",
+                        oVendor ? oVendor.products : []
+                    );
+            },
+
+            onAddItem: function () {
+
+                const oFormModel =
+                    this.getView()
+                        .getModel("vendorRequestsForm");
+
+                const aItems =
+                    oFormModel.getProperty(
+                        "/requestedItems"
+                    ) || [];
+
+                aItems.push({
+                    productId: "",
+                    productName: "",
+                    price: 0,
+                    quantity: 1
+                });
+
+                oFormModel.setProperty(
+                    "/requestedItems",
+                    aItems
+                );
+            },
+
+            onRemoveItem: function (oEvent) {
+
+                const sPath =
+                    oEvent.getSource()
+                        .getBindingContext(
+                            "vendorRequestsForm"
+                        )
+                        .getPath();
+
+                const iIndex =
+                    parseInt(
+                        sPath.split("/")[2]
+                    );
+
+                const oFormModel =
+                    this.getView()
+                        .getModel(
+                            "vendorRequestsForm"
+                        );
+
+                const aItems =
+                    oFormModel.getProperty(
+                        "/requestedItems"
+                    );
+
+                aItems.splice(iIndex, 1);
+
+                oFormModel.setProperty(
+                    "/requestedItems",
+                    aItems
+                );
+            },
+
+            onProductChange: function (oEvent) {
+
+                const sProductId =
+                    oEvent.getSource()
+                        .getSelectedKey();
+
+                const sPath =
+                    oEvent.getSource()
+                        .getBindingContext(
+                            "vendorRequestsForm"
+                        )
+                        .getPath();
+
+                const aProducts =
+                    this.getView()
+                        .getModel("vendorProducts")
+                        .getProperty("/products");
 
                 const oProduct =
-                    oVendor.products.find(
-                        p => p.productId === oItem.productId
+                    aProducts.find(
+                        p => p.productId === sProductId
                     );
 
                 if (oProduct) {
 
-                    aRequestedItems.push({
-                        productId: oProduct.productId,
-                        productName: oProduct.productName,
-                        price: oProduct.price,
-                        quantity: oItem.quantity || 1
-                    });
+                    const oFormModel =
+                        this.getView()
+                            .getModel(
+                                "vendorRequestsForm"
+                            );
+
+                    oFormModel.setProperty(
+                        sPath + "/productName",
+                        oProduct.productName
+                    );
+
+                    oFormModel.setProperty(
+                        sPath + "/price",
+                        oProduct.price
+                    );
                 }
-            });
+            },
 
-            const oCurrentUser =
-                this.getCurrentUser();
+            onSubmitRequest: function () {
 
-            const oVendorRequestModel =
-                this.getOwnerComponent()
-                    .getModel("vendorRequests");
+                const oFormModel =
+                    this.getView()
+                        .getModel(
+                            "vendorRequestsForm"
+                        );
 
-            const aRequests =
-                oVendorRequestModel.getProperty("/vendorRequests") || [];
+                const oRequest =
+                    oFormModel.getData();
 
-            aRequests.push({
-                requestId:
-                    "VR" +
-                    (aRequests.length + 1)
-                        .toString()
-                        .padStart(4, "0"),
+                if (!oRequest.vendorId) {
 
-                warehouseId: oCurrentUser.warehouseId,
-                vendorId: oRequest.vendorId,
-                status: "Pending",
-                requestDate: new Date().toISOString(),
-                requestedItems: aRequestedItems
-            });
+                    this.showError(
+                        "Please select a vendor."
+                    );
 
-            oVendorRequestModel.setProperty(
-                "/vendorRequests",
-                aRequests
-            );
+                    return;
+                }
 
-            oVendorRequestModel.refresh(true);
+                if (
+                    !oRequest.requestedItems.length
+                ) {
 
-            this.showToast(
-                "Vendor request submitted successfully."
-            );
+                    this.showError(
+                        "Please add at least one product."
+                    );
 
-            oFormModel.setData({
-                vendorId: "",
-                requestedItems: [
-                    {
+                    return;
+                }
+
+                const oVendorRequestModel =
+                    this.getOwnerComponent()
+                        .getModel(
+                            "vendorRequests"
+                        );
+
+                const aRequests =
+                    oVendorRequestModel.getProperty(
+                        "/vendorRequests"
+                    ) || [];
+
+                const oCurrentUser =
+                    this.getCurrentUser();
+
+                aRequests.push({
+
+                    requestId:
+                        "VR" +
+                        String(
+                            aRequests.length + 1
+                        ).padStart(3, "0"),
+
+                    warehouseId:
+                        oCurrentUser.warehouseId,
+
+                    vendorId:
+                        oRequest.vendorId,
+
+                    status: "Pending",
+
+                    requestDate:
+                        new Date()
+                            .toISOString(),
+
+                    requestedItems:
+                        oRequest.requestedItems
+                });
+
+                oVendorRequestModel.setProperty(
+                    "/vendorRequests",
+                    aRequests
+                );
+
+                oVendorRequestModel.refresh(true);
+
+                this.showToast(
+                    "Vendor Request Submitted Successfully"
+                );
+
+                oFormModel.setData({
+
+                    vendorId: "",
+
+                    requestedItems: [{
                         productId: "",
                         productName: "",
                         price: 0,
                         quantity: 1
-                    }
-                ]
-            });
+                    }]
+                });
 
-            this.getView()
-                .getModel("vendorProducts")
-                .setProperty("/products", []);
+                this.getView()
+                    .getModel(
+                        "vendorProducts"
+                    )
+                    .setProperty(
+                        "/products",
+                        []
+                    );
+            }
         }
-    });
+    );
 });

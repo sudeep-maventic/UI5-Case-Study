@@ -14,9 +14,7 @@ sap.ui.define([
 
         onSignUpPress: function () {
             const oSignupModel = this.getOwnerComponent().getModel("signup");
-
             let oUsersData = JSON.parse(localStorage.getItem("users")) || { users: [] };  
-
             const aUsers = oUsersData.users || [];
 
             const bUserExists = aUsers.some(user =>
@@ -46,8 +44,8 @@ sap.ui.define([
                 email: oSignupModel.getProperty("/email"),
                 password: oSignupModel.getProperty("/password"),
                 role: oSignupModel.getProperty("/role"),
-                company: oSignupModel.role === 'Vendor' ? oSignupModel.getProperty("/company") : "",
-                location: oSignupModel.role === 'Warehouse Manager' ? oSignupModel.getProperty("/location") : "",
+                company: oSignupModel.getProperty("/companyName") || "",
+                location: oSignupModel.getProperty("/location") || "",
                 warehouseId: sWarehouseId,
                 vendorId: sVendorId
             });
@@ -67,6 +65,10 @@ sap.ui.define([
                 company: "",
                 location: ""
             });
+        },
+
+        onEmailChange: function(oEvent) {
+            this.onEmailChange(oEvent.getSource());
         },
 
         onNavBack: function () {

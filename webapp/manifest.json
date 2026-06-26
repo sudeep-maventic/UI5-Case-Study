@@ -85,84 +85,84 @@
         },
         {
           "name": "RouteSignup",
-          "pattern": "/signup",
+          "pattern": "signup",
           "target": [
             "TargetSignup"
           ]
         },
         {
           "name": "RouteInventory",
-          "pattern": "/inventory",
+          "pattern": "inventory",
           "target": [
             "TargetInventory"
           ]
         },
         {
           "name": "RouteVendor",
-          "pattern": "/vendor",
+          "pattern": "vendor",
           "target": [
             "TargetVendor"
           ]
         },
         {
           "name": "RouteDashboard",
-          "pattern": "/dashboard",
+          "pattern": "dashboard",
           "target": [
             "TargetDashboard"
           ]
         },
         {
           "name": "RouteVendorProfile",
-          "pattern": "/vendor/profile",
+          "pattern": "vendor/profile",
           "target": [
             "TargetVendorProfile"
           ]
         },
         {
           "name": "RouteVendorSupply",
-          "pattern": "/vendor/supply/{ticketId}",
+          "pattern": "vendor/supply/{ticketId}",
           "target": [
             "TargetVendorSupply"
           ]
         },
         {
           "name": "RouteVendorTickets",
-          "pattern": "/vendor/tickets",
+          "pattern": "vendor/tickets",
           "target": [
             "TargetVendorTickets"
           ]
         },
         {
           "name": "RouteProfile",
-          "pattern": "/profile",
+          "pattern": "profile",
           "target": [
             "TargetProfile"
           ]
         },
         {
           "name": "RouteProducts",
-          "pattern": "/products",
+          "pattern": "products",
           "target": [
             "TargetProducts"
           ]
         },
         {
           "name": "RouteTransferProducts",
-          "pattern": "/transfer-products",
+          "pattern": "transfer-products",
           "target": [
             "TargetTransferProducts"
           ]
         },
         {
           "name": "RouteVendorRequest",
-          "pattern": "/vendor/request",
+          "pattern": "vendor/request",
           "target": [
             "TargetVendorRequest"
           ]
         },
         {
           "name": "RouteWarehouseRequests",
-          "pattern": "/warehouse-requests",
+          "pattern": "warehouse-requests",
           "target": [
             "TargetWarehouseRequests"
           ]

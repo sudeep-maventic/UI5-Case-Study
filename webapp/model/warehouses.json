@@ -1,7 +1,7 @@
 {
     "warehouses": [
         {
-            "id": "WH001",
+            "id": "W001",
             "name": "Bangalore Warehouse",
             "location": "Bangalore",
             "capacity": 1000,
@@ -9,7 +9,7 @@
             "employeeIds": ["EMP001"]
         },
         {
-            "id": "WH002",
+            "id": "W002",
             "name": "Mumbai Warehouse",
             "location": "Mumbai",
             "capacity": 1500,

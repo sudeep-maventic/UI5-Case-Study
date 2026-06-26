@@ -41,6 +41,10 @@ function (JSONModel, Device) {
         },
 
         createWarehouseModel: function() {
+            return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/warehouse.json"));
+        },
+
+        createWarehousesModel: function() {
             return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/warehouses.json"));
         },
 
@@ -96,7 +100,24 @@ function (JSONModel, Device) {
         },
 
         createVendorsModel: function() {
-            return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/vendors.json"));
+            return new JSONModel(
+                sap.ui.require.toUrl("sudeep/inventorytransfer/model/vendors.json")
+            );
+        },
+
+        createVendorsFormModel: function() {
+            return new JSONModel({
+                company: "",
+                contactEmail: "",
+                address: "",
+                phone: "",
+                items: [{
+                    "productId": "",
+                    "productName": "",
+                    "category": "",
+                    "price": 0,
+                }]
+            })
         },
 
         createTicketModel: function() {
