@@ -89,13 +89,9 @@ function (JSONModel, Device) {
         createVendorRequestsFormModel: function() {
             return new JSONModel({
                 vendorId: "",
-                requestedItems: [
-                    {
-                        productId: "",
-                        productName: "",
-                        price: 0
-                    }
-            ]
+                requestedDate: "",
+                reason: "",
+                requestedItems: []
             })
         },
 

@@ -1,8 +1,9 @@
 sap.ui.define([
     "sudeep/inventorytransfer/controller/BaseController",
     "sap/m/MessageToast",
-    "sap/m/MessageBox"
-], (BaseController, MessageToast, MessageBox) => {
+    "sap/m/MessageBox",
+    "sap/ui/model/json/JSONModel"
+], (BaseController, MessageToast, MessageBox, JSONModel) => {
     "use strict";
 
     return BaseController.extend("sudeep.inventorytransfer.controller.Inventory", {
@@ -11,10 +12,7 @@ sap.ui.define([
             console.log("Local Storage User:", sUser);
 
             const oCurrentUser = JSON.parse(sUser);
-            console.log("Parsed User:", oCurrentUser);
-
-            const oUserModel = this.getOwnerComponent().getModel("user");
-            console.log("User Model:", oUserModel);
+            this.getView().setModel(new JSONModel({ oCurrentUser }), "user");
         },
 
         onNavBack: function () {

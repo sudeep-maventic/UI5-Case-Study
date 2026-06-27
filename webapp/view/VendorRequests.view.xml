@@ -3,120 +3,95 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
-
     <Page title="Vendor Requests">
-
         <content>
-
-            <MessageStrip
-                text="Create Product Requests"
+            <MessageStrip text="Create Product Requests"
                 type="Information"
                 showIcon="true"
                 class="sapUiSmallMarginBottom"/>
-
             <VBox class="sapUiMediumMargin">
-
                 <Label text="Select Vendor"/>
-
-                <ComboBox
-                    selectedKey="{vendorRequestsForm>/vendorId}"
+                <ComboBox selectedKey="{RequestsForm>/vendorId}"
                     change=".onVendorChange"
-                    items="{'vendors>/vendors'}">
+                    items="{vendorList>/vendors}"
+                    placeholder="Select a vendor">
 
                     <core:Item
-                        key="{vendors>vendorId}"
-                        text="{vendors>companyName}" />
+                        key="{vendorList>vendorId}"
+                        text="{vendorList>company}" />
 
                 </ComboBox>
 
                 <HBox class="sapUiSmallMarginTop">
-
                     <Button
                         text="Add Item"
                         icon="sap-icon://add"
                         type="Emphasized"
                         press=".onAddItem"/>
-
                     <ToolbarSpacer/>
-
                     <Button
                         class="sapUiLargeMarginBegin"
                         text="Submit Request"
                         icon="sap-icon://paper-plane"
                         type="Accept"
                         press=".onSubmitRequest"/>
-
                 </HBox>
-
             </VBox>
 
-            <Table
-                id="vendorRequestTable"
-                items="{vendorRequestsForm>/requestedItems}"
+            <Table id="vendorRequestTable"
+                noDataText="Click 'Add Item' to create a product request"
+                items="{RequestsForm>/requestedItems}"
                 class="sapUiMediumMargin">
-
                 <columns>
 
+                    <Column width="6rem">
+                        <Text text="Product ID"/>
+                    </Column>
+
                     <Column width="15rem">
-                        <Text text="Product"/>
+                        <Text text="Product Name"/>
                     </Column>
 
                     <Column width="10rem">
-                        <Text text="Quantity"/>
-                    </Column>
-
-                    <Column width="10rem">
-                        <Text text="Price"/>
+                        <Text text="Category"/>
                     </Column>
 
                     <Column width="8rem">
+                        <Text text="Quantity"/>
+                    </Column>
+
+                    <Column width="6rem">
                         <Text text="Action"/>
                     </Column>
 
                 </columns>
-
                 <items>
-
                     <ColumnListItem>
-
                         <cells>
 
-                            <Select
-                                width="100%"
-                                selectedKey="{vendorRequestsForm>productId}"
-                                items="{vendorProducts>/products}">
+                            <Text text="{RequestsForm>productId}"/>
 
-                                <core:Item
-                                    key="{vendorProducts>productId}"
-                                    text="{vendorProducts>productName}" />
 
-                            </Select>
+                            <Input value="{RequestsForm>productName}" 
+                                    placeholder="Enter Product Name"
+                                    type="Text" />
 
-                            <Input
-                                value="{vendorRequestsForm>quantity}"
-                                type="Number"
-                                placeholder="Qty"/>
+                            <Input value="{RequestsForm>category}"
+                                    placeholder="Enter Category"
+                                    type="Text" />
 
-                            <Input
-                                value="{vendorRequestsForm>price}"
-                                type="Number"
-                                editable="false"/>
+                            <Input value="{RequestsForm>quantity}"
+                                type="Number"/>
 
-                            <Button
-                                icon="sap-icon://delete"
+                            <Button icon="sap-icon://delete"
                                 type="Reject"
                                 press=".onRemoveItem"/>
 
                         </cells>
-
                     </ColumnListItem>
-
                 </items>
-
             </Table>
 
         </content>
-
     </Page>
-
 </mvc:View>

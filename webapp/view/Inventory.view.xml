@@ -11,10 +11,7 @@
                             <Title text="Inventory Management System" />
 
                             <ToolbarSpacer />
-                            <Text text="Sudeep" class="sapUiTinyMarginEnd"></Text>
-                            <!-- <Avatar id="userAvatar" displayShape="Circle" press=".onProfilePress" class="sapUiTinyMarginEnd"></Avatar>
-                            <Button text="Logout" press=".onLogoutPress" type="Transparent" /> -->
-                            <MenuButton text="Sudeep" icon="sap-icon://employee">
+                            <MenuButton text="{user>/oCurrentUser/name}" icon="sap-icon://employee">
                                 <menu>
                                     <Menu >
                                         <MenuItem text="Profile" press=".onProfilePress" />

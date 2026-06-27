@@ -15,9 +15,12 @@ sap.ui.define([
         _onRouteMatched: function() {
             const oCurrentUser = JSON.parse(localStorage.getItem("currentUser"));
 
+            const oProductsModel = this.getOwnerComponent().getModel("products").getProperty("/products") || [];
+            const aProducts = oProductsModel.filter(product => product.warehouseId === oCurrentUser.warehouseId);
+
             const oDashboardModel = {
                 managerName: oCurrentUser.name,
-                totalProducts: 10,
+                totalProducts: aProducts.length,
                 completedTransfers: 5,
                 pendingTransfers: 3,
                 rejectedTransfers: 5,
