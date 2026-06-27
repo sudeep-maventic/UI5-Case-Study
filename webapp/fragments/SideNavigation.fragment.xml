@@ -14,7 +14,6 @@
                 <tnt:NavigationListItem key="transfer" text="Transfer Products" icon="sap-icon://shipping-status" />
                 <tnt:NavigationListItem key="history" text="Transfer History" icon="sap-icon://history" />
                 <tnt:NavigationListItem key="vendor" text="Vendor Requests" icon="sap-icon://supplier" />
-                <tnt:NavigationListItem key="profile" text="Profile" icon="sap-icon://employee" />
                 <!-- <tnt:NavigationListItem key="notifications" text="Notifications" icon="sap-icon://bell" /> -->
             </tnt:NavigationList>
         </tnt:SideNavigation>

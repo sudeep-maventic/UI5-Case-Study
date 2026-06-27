@@ -64,6 +64,23 @@ sap.ui.define([
             this.getView().getModel("transferForm").refresh(true);
         },
 
+        onProductChange: function(oEvent) {
+            const sSelectedProduct = oEvent.getSource().getSelectedKey();
+            const sCurrentPath = oEvent.getSource().getBindingContext("transferForm").getPath();
+            const aItems = this.getView().getModel("transferForm").getProperty("/items");
+
+    const bDuplicate = aItems.some((item, index) => {
+        return "/items/" + index !== sCurrentPath &&
+               item.productId === sSelectedProduct;
+    });
+
+    if (bDuplicate) {
+        this.showError("This product has already been selected.");
+        oEvent.getSource().setSelectedKey("");
+        return;
+    }
+        },
+
         onSubmitTransfer: function() {
             const oTransfer = this.getView().getModel("transferForm").getData();
             console.log(oTransfer);

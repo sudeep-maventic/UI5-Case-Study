@@ -1,33 +1,46 @@
-    <mvc:View controllerName="sudeep.inventorytransfer.controller.Inventory"
-        xmlns:mvc="sap.ui.core.mvc"
-        xmlns="sap.m"
-        xmlns:core="sap.ui.core"
-        xmlns:tnt="sap.tnt">
-                <App>
-                    <tnt:ToolPage >
-                        <tnt:header>
-                                <tnt:ToolHeader>
-                                <Button icon="sap-icon://menu2" type="Transparent" press=".onMenuButtonPress"></Button>
-                                <Title text="Inventory Management System" />
-                            </tnt:ToolHeader>
-                        </tnt:header>
+<mvc:View controllerName="sudeep.inventorytransfer.controller.Inventory"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt">
+            <App>
+                <tnt:ToolPage >
+                    <tnt:header>
+                            <tnt:ToolHeader>
+                            <Button icon="sap-icon://menu2" type="Transparent" press=".onMenuButtonPress"></Button>
+                            <Title text="Inventory Management System" />
 
-                        <tnt:sideContent>
-                            <core:Fragment fragmentName="sudeep.inventorytransfer.fragments.SideNavigation" type="XML" />
-                        </tnt:sideContent>
+                            <ToolbarSpacer />
+                            <Text text="Sudeep" class="sapUiTinyMarginEnd"></Text>
+                            <!-- <Avatar id="userAvatar" displayShape="Circle" press=".onProfilePress" class="sapUiTinyMarginEnd"></Avatar>
+                            <Button text="Logout" press=".onLogoutPress" type="Transparent" /> -->
+                            <MenuButton text="Sudeep" icon="sap-icon://employee">
+                                <menu>
+                                    <Menu >
+                                        <MenuItem text="Profile" press=".onProfilePress" />
+                                        <MenuItem text="Logout" press=".onLogoutPress" />
+                                    </Menu>
+                                </menu>
+                            </MenuButton>
+                        </tnt:ToolHeader>
+                    </tnt:header>
 
-                        <tnt:mainContents>
-                            <NavContainer id="NavContainer">
-                                <mvc:XMLView id="dashboardView" viewName="sudeep.inventorytransfer.view.Dashboard" />                            
-                                <mvc:XMLView id="productsView" viewName="sudeep.inventorytransfer.view.InventoryProducts" />
-                                <mvc:XMLView id="transferView" viewName="sudeep.inventorytransfer.view.TransferProducts" />
-                                <mvc:XMLView id="historyView" viewName="sudeep.inventorytransfer.view.TransferHistory" />
-                                <mvc:XMLView id="vendorView" viewName="sudeep.inventorytransfer.view.VendorRequests" />
-                                <!-- <mvc:XMLView id="notificationsView" viewName="sudeep.inventorytransfer.view.Notifications" /> -->
-                                <mvc:XMLView id="profileView" viewName="sudeep.inventorytransfer.view.WarehouseProfile" />
-                                <mvc:XMLView id="transferDetailsView" viewName="sudeep.inventorytransfer.view.TransferDetails" />
-                            </NavContainer>
-                        </tnt:mainContents>
-                    </tnt:ToolPage>
-                </App>
-    </mvc:View>
+                    <tnt:sideContent>
+                        <core:Fragment fragmentName="sudeep.inventorytransfer.fragments.SideNavigation" type="XML" />
+                    </tnt:sideContent>
+
+                    <tnt:mainContents>
+                        <NavContainer id="NavContainer">
+                            <mvc:XMLView id="dashboardView" viewName="sudeep.inventorytransfer.view.Dashboard" />                            
+                            <mvc:XMLView id="productsView" viewName="sudeep.inventorytransfer.view.InventoryProducts" />
+                            <mvc:XMLView id="transferView" viewName="sudeep.inventorytransfer.view.TransferProducts" />
+                            <mvc:XMLView id="historyView" viewName="sudeep.inventorytransfer.view.TransferHistory" />
+                            <mvc:XMLView id="vendorView" viewName="sudeep.inventorytransfer.view.VendorRequests" />
+                            <!-- <mvc:XMLView id="notificationsView" viewName="sudeep.inventorytransfer.view.Notifications" /> -->
+                            <mvc:XMLView id="profileView" viewName="sudeep.inventorytransfer.view.WarehouseProfile" />
+                            <mvc:XMLView id="transferDetailsView" viewName="sudeep.inventorytransfer.view.TransferDetails" />
+                        </NavContainer>
+                    </tnt:mainContents>
+                </tnt:ToolPage>
+            </App>
+</mvc:View>

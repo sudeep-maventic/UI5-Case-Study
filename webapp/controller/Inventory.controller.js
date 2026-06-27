@@ -59,6 +59,16 @@ sap.ui.define([
                 default:
                     MessageToast.show("Unknown navigation item selected.");
             }
+        },
+
+        onProfilePress: function () {
+            const oNavContainer = this.byId("NavContainer");
+            oNavContainer.to(this.byId("profileView"));
+        },
+
+        onLogoutPress: function() {
+            localStorage.removeItem("currentUser");
+            this.getRouter().navTo("RouteLogin");
         }
     });
 });
