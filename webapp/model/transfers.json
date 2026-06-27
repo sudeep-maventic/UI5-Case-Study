@@ -5,7 +5,7 @@
             "fromWarehouse": "W001",
             "toWarehouse": "W002",
             "transferDate": "2024-06-10T10:00:00Z",
-            "status": "In Transit",
+            "status": "Pending",
             "items": [
                 {
                     "productId": "P001",
@@ -21,7 +21,7 @@
         },
         {
             "transferId": "T002",
-            "fromWarehouse": "W002",
+            "fromWarehouse": "W001",
             "toWarehouse": "W003",
             "transferDate": "2024-06-12T14:30:00Z",
             "status": "Completed",

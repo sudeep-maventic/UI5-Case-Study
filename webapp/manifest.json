@@ -154,6 +154,20 @@
           ]
         },
         {
+          "name": "RouteTransferHistory",
+          "pattern": "transfer-history",
+          "target": [
+            "TargetTransferHistory"
+          ]
+        },
+        {
+          "name": "RouteTransferDetails",
+          "pattern": "transferDetails/{transferId}",
+          "target": [
+            "TargetTransferDetails"
+          ]
+        },
+        {
           "name": "RouteVendorRequest",
           "pattern": "vendor/request",
           "target": [
@@ -220,6 +234,14 @@
         "TargetWarehouseRequests": {
           "id": "WarehouseRequests",
           "name": "WarehouseRequests"
+        },
+        "TargetTransferHistory": {
+          "id": "TransferHistory",
+          "name": "TransferHistory"
+        },
+        "TargetTransferDetails": {
+          "id": "TransferDetails",
+          "name": "TransferDetails"
         }
       }
     },

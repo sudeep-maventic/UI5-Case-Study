@@ -22,6 +22,7 @@
             <Select selectedKey="{transferForm>/toWarehouse}"
                     items="{warehouseProfile>/warehouses}"
                     class="sapUiSmallMarginBegin">
+                <core:Item key="" text="Select Location"></core:Item>
                 <core:Item key="{warehouseProfile>warehouseId}" text="{warehouseProfile>location}"></core:Item>
             </Select>
             </HBox>

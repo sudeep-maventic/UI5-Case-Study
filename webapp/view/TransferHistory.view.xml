@@ -1,0 +1,27 @@
+<mvc:View controllerName="sudeep.inventorytransfer.controller.TransferHistory"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Page title="Transfer History">
+        <content>
+            <SearchField width="50%" liveChange=".onSearch" 
+                class="sapUiSmallMarginBottom" placeholder="Search by Transfer ID" />
+
+            <List id="transferList" items="{history>/transfers}">
+                <ObjectListItem title="{history>transferId}" 
+                    number="{history>status}"
+                    numberState="Success"
+                    intro="{history>fromWarehouse} - {history>toWarehouse}"
+                    type="Navigation"
+                    press=".onTransferPress">
+                    <attributes>
+                        <ObjectAttribute text="{
+                            path: 'history>transferDate',
+                            formatter: '.formatter.formatDate'
+                        }" />
+                    </attributes>
+                </ObjectListItem>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

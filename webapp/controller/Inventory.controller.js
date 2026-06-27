@@ -47,6 +47,9 @@ sap.ui.define([
                 case "history":
                     oNavContainer.to(this.byId("historyView"));
                     break;
+                case "transferDetails":
+                    oNavContainer.to(this.byId("transferDetailsView"));
+                    break;
                 case "vendor":
                     oNavContainer.to(this.byId("vendorView"));
                     break;

@@ -10,8 +10,27 @@ sap.ui.define([
             let oTransferModel = this.getOwnerComponent().getModel("transferForm");
             this.getView().setModel(oTransferModel, "transferForm");
 
+            const oWarehouseModel = this.getOwnerComponent().getModel("warehouseProfile");
+            let aWarehouses = oWarehouseModel.getProperty("/warehouses");
+
+            // Add "Select Location" only once
+            if (aWarehouses.length === 0 || aWarehouses[0].warehouseId !== "") {
+                aWarehouses.unshift({
+                warehouseId: "",
+                location: "Select Location"
+                });
+
+                oWarehouseModel.setProperty("/warehouses", aWarehouses);
+            }
+
             const aProducts = this.getOwnerComponent().getModel("products").getProperty("/products");
             const aWarehouseProducts = aProducts.filter(product => product.warehouseId === oCurrentUser.warehouseId);
+
+            aWarehouseProducts.unshift({
+                productId: "",
+                productName: "Select Product",
+            })
+
             this.getView().setModel(new sap.ui.model.json.JSONModel({products: aWarehouseProducts}), "warehouseProducts");
 
             this.getView().getModel("transferForm").setProperty("/fromWarehouse", oCurrentUser.warehouseId);
@@ -49,6 +68,11 @@ sap.ui.define([
             const oTransfer = this.getView().getModel("transferForm").getData();
             console.log(oTransfer);
 
+            if(!oTransfer.toWarehouse){
+                this.showToast("Please select a destination warehouse.");
+                return;
+            }
+
             if(oTransfer.fromWarehouse === oTransfer.toWarehouse) {
                 this.showToast("From and To Warehouse cannot be the same.");
                 return;
@@ -67,6 +91,11 @@ sap.ui.define([
 
                 if(!oProduct) {
                     this.showError(`Product with ID ${items.productId} not found.`);
+                    return;
+                }
+
+                if(items.quantity <= 0) {
+                    this.showError(`Quantity for product ${oProduct.productName} must be greater than zero.`);
                     return;
                 }
 
