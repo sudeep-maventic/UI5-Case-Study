@@ -42,6 +42,21 @@ sap.ui.define([
         onMyProfile: function() {
             const oRouter = this.getRouter();
             oRouter.navTo("RouteVendorProfile");
-        }
+        },
+
+        onLogout: function () {
+            sap.m.MessageBox.confirm("Are you sure you want to logout?", {
+                actions: [sap.m.MessageBox.Action.OK, sap.m.MessageBox.Action.CANCEL],
+                emphasizedAction: sap.m.MessageBox.Action.OK,
+
+                onClose: (sAction) => {
+                    if (sAction === sap.m.MessageBox.Action.OK) {
+                    localStorage.removeItem("currentUser");
+                    this.getRouter().navTo("RouteLogin");
+                    this.showToast("Logged out successfully.");
+                    }
+                }
+            });
+        }       
     });
 });

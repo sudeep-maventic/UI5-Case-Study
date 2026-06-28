@@ -6,10 +6,9 @@
     xmlns:layout="sap.ui.layout"
     xmlns:core="sap.ui.core">
     <Page title="Vendor Dashboard" showNavButton="true" navButtonPress=".onNavBack">
-        <MessageStrip text="View warehouse requests and manage product supplies."
-                    type="Success"
-                    showIcon="true"
-                    class="sapUiSmallMargin"></MessageStrip>
+        <headerContent>
+            <Button icon="sap-icon://log" type="Reject" press=".onLogout" />
+    </headerContent>
 
         <content>
             <VBox class="sapUiMediumMargin">

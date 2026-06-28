@@ -45,23 +45,8 @@
             </layout:Grid>
 
             <HBox width="100%" justifyContent="SpaceAround" class="sapUiLargeMarginTop">
-                <f:Card class="sapUiResponsiveMargin" width="500px">
-                    <f:header>
-                        <cards:Header title="Inventory by Location" subtitle="Current Products" >
-                        </cards:Header>
-                    </f:header>
-                    <f:content>
-                        <mc:InteractiveBarChart id="LocationChart">
-                            <mc:bars>
-                                <mc:InteractiveBarChartBar label="Mumbai" value="20" displayedValue="20"></mc:InteractiveBarChartBar>
-                                <mc:InteractiveBarChartBar label="Bangalore" value="15" displayedValue="15"></mc:InteractiveBarChartBar>
-                                <mc:InteractiveBarChartBar label="Pune" value="25" displayedValue="25"></mc:InteractiveBarChartBar>
-                            </mc:bars>
-                        </mc:InteractiveBarChart>
-                    </f:content>
-                </f:Card>
 
-                <f:Card width="500px" class="sapUiResponsiveMargin">
+                <f:Card width="800px" height="20rem" class="sapUiResponsiveMargin">
                     <f:header>
                         <cards:Header title="Inventory by Category" subtitle="Current Products" >
                         </cards:Header>
