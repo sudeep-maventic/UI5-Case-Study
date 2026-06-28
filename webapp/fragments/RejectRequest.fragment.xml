@@ -1,0 +1,27 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Dialog id="rejectDialog" title="Reject Request">
+        <content>
+            <Label text="Reason"/>
+            <TextArea id="txtReason"
+                rows="4"
+                width="100%"
+                placeholder="Enter rejection reason"/>
+        </content>
+
+        <beginButton>
+            <Button text="Reject"
+                type="Reject"
+                press=".onConfirmReject"/>
+        </beginButton>
+
+        <endButton>
+            <Button text="Cancel"
+                press=".onCloseRejectDialog"/>
+        </endButton>
+
+    </Dialog>
+
+</core:FragmentDefinition>

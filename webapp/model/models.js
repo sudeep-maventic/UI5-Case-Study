@@ -126,6 +126,10 @@ function (JSONModel, Device) {
 
         createWarehouseProductsModel: function() {  
             return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/warehouseProducts.json"));
+        },
+
+        createNotificationsModel: function() {
+            return new JSONModel(sap.ui.require.toUrl("sudeep/inventorytransfer/model/notifications.json"));
         }
     };
 

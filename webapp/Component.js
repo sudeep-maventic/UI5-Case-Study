@@ -36,6 +36,7 @@ sap.ui.define([
 
             this.setModel(models.createVendorsModel(), "vendors");
             this.setModel(models.createVendorsFormModel(), "vendorsForm");
+            this.setModel(models.createNotificationsModel(), "notifications");
 
             // enable routing
             this.getRouter().initialize();

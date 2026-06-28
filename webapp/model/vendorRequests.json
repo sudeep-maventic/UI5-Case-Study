@@ -4,7 +4,7 @@
             "requestId": "VR001",
             "warehouseId": "W001",
             "vendorId": "V001",
-            "status": "Rejected",
+            "status": "Pending",
             "requestDate": "2024-06-01",
             "reason": "Restocking inventory for upcoming sales season.",
             "requestedItems": [
@@ -13,14 +13,16 @@
                     "productName": "Product A",
                     "category": "Electronics",
                     "quantity": 5,
-                    "price": 0
+                    "price": 10,
+                    "supplyQuantity": 5
                 },
                 {
                     "productId": "P002",
                     "productName": "Product B",
                     "category": "Electronics",
                     "quantity": 3,
-                    "price": 0
+                    "price": 80,
+                    "supplyQuantity": 3
                 }
             ]
         }

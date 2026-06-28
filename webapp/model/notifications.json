@@ -1,0 +1,14 @@
+{
+    "notifications": [
+        {
+            "notificationId": "N001",
+            "userId": "W001",
+            "role": "Warehouse Manager",
+            "title": "Vendor Request submitted",
+            "message": "Vendor request has been submitted for approval. Please review the request and take necessary action.",
+            "type": "Information",
+            "timestamp": "2023-06-01T10:30:00Z",
+            "read": false
+        }
+    ]
+}

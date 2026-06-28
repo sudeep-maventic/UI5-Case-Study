@@ -120,7 +120,7 @@
         },
         {
           "name": "RouteVendorSupply",
-          "pattern": "vendor/supply/{ticketId}",
+          "pattern": "vendor/supply/{requestId}",
           "target": [
             "TargetVendorSupply"
           ]

@@ -5,67 +5,60 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
 
-    <Page title="Ticket Details" showNavButton="true" navButtonPress=".onNavBack">
-        <uxap:ObjectPageLayout id="objectPageLayout" 
-            showHeaderContent="true" 
-            showFooter="true">
-                
-            <uxap:headerTitle>
-                <uxap:ObjectPageDynamicHeaderTitle >
-                    <uxap:expandedHeading>
-                        <Text text="{selectedTicket>/ticketId}"></Text>
-                        <!-- <Text text="{tickets>/selectedTicket/productName}" /> -->
-                    </uxap:expandedHeading>
+    <Page title="Supply Products" showNavButton="true" navButtonPress=".onNavBack">
+        <content>
+            <ObjectHeader title="{supply>/requestId}" number="{supply>/status}">
+                <attributes>
+                    <ObjectAttribute title="Warehouse" 
+                                    text="{supply>/warehouseId}">
+                    </ObjectAttribute>
+                    <ObjectAttribute title="Requested Date" 
+                                    text="{supply>/requestDate}"/>
+                </attributes>
+            </ObjectHeader>
 
-                    <uxap:expandedContent>
-                        <VBox >
-                            <Text text="Warehouse: {selectedTicket>/location}"></Text>
-                            <Text text="Manager: {selectedTicket>/managerName}"></Text>
-                            <Text text="Requested Date: {selectedTicket>/requestedDate}"></Text>
-                            <!-- <Text text="Warehouse: {selectedTicket>/location}"></Text> -->
-                        </VBox>
-                    </uxap:expandedContent>
+            <Table items="{supply>/requestedItems}">
+                <columns>
+                    <Column >
+                        <Text text="Product"/>
+                    </Column>
 
-                    <uxap:actions>
-                        <ObjectStatus text="Accepted"
-                                        state="Success"></ObjectStatus>
-                    </uxap:actions>
-                </uxap:ObjectPageDynamicHeaderTitle>
-            </uxap:headerTitle>
+                    <Column >
+                        <Text text="Requested Quantity" />
+                    </Column>
 
-            <uxap:sections>
-                <uxap:ObjectPageSection >
-                    <uxap:ObjectPageSubSection title="Product Information"></uxap:ObjectPageSubSection>
-                    <uxap:subSections>
-                        <uxap:ObjectPageSubSection >
-                            <uxap:blocks>
-                                <List id="productList" items="{selectedTicket>/products}">
-                                    <CustomListItem >
-                                        <HBox justifyContent="SpaceBetween" 
-                                            alignItems="Center" width="100%" class="sapUiSmallMargin">
-                                            <Image src="" height="80px" width="80px"></Image>
-                                            <VBox width="70%">
-                                                <Title text="Product Name: {selectedTicket>productName}" level="H5"></Title>
-                                                <Text text="Product No: {selectedTicket>productNo}" />
-                                                <Text text="Requested Quantity: {selectedTicket>requestedQuantity}" />
-                                                <Text text="Available Quantity: {selectedTicket>availableQuantity}" />
-                                            </VBox>
-                                        </HBox>
-                                    </CustomListItem>
-                                </List>
-                            </uxap:blocks>
-                        </uxap:ObjectPageSubSection>
-                    </uxap:subSections>
-                </uxap:ObjectPageSection>
-            </uxap:sections>
+                    <Column >
+                        <Text text="Supply Quantity" />
+                    </Column>
 
-            <uxap:footer>
-                <OverflowToolbar >
-                    <ToolbarSpacer />
-                    <Button text="Add to Warehouse" type="Emphasized" press=".onAddToWarehouse" icon="sap-icon://shipping-status" />
-                </OverflowToolbar>
-            </uxap:footer>
+                    <Column >
+                        <Text text="Price" />
+                    </Column>
+                </columns>
 
-        </uxap:ObjectPageLayout>    
+                <items>
+                    <ColumnListItem >
+                        <cells>
+                            <Text text="{supply>productName}"></Text>
+                            <ObjectNumber number="{supply>quantity}"></ObjectNumber>
+                            <Input type="Number" 
+                                value="{supply>supplyQuantity}"
+                                editable="{= ${supply>/status} === 'Pending' }"></Input>
+                            <Input type="Number" 
+                                value="{supply>price}"
+                                editable="{= ${supply>/status} === 'Pending'}"></Input>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <Toolbar >
+                <ToolbarSpacer />
+                <Button text="Accept" type="Accept" press=".onAcceptRequest" visible="{= ${supply>/status} === 'Pending' }"></Button>
+                <Button text="Reject" type="Reject" press=".onRejectRequest" visible="{= ${supply>/status} === 'Pending' }"></Button>
+                <Button text="Supply Products" type="Accept" press=".onSupplyProducts" icon="sap-icon://shipping-status" visible="{= ${supply>/status} === 'Accepted' }"></Button>
+            </Toolbar>
+        </footer>
     </Page> 
 </mvc:View>
