@@ -6,7 +6,9 @@
     xmlns:f="sap.f"
     xmlns:cards="sap.f.cards"
     xmlns:layout="sap.ui.layout"
-    xmlns:mc="sap.suite.ui.microchart">
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
     <Page title="Dashboard">
         <content>
 
@@ -25,9 +27,9 @@
                 </TileContent>
             </GenericTile>
 
-            <GenericTile class="tileLayout" header="Pending Transfers" subheader="Transfers to be approved" width="200px" >
+            <GenericTile class="tileLayout" header="Pending Requests" subheader="Requests to be approved" width="200px" >
                 <TileContent unit="INR">
-                    <NumericContent value="{dashboard>/pendingTransfers}" icon="sap-icon://pending"></NumericContent>
+                    <NumericContent value="{dashboard>/pendingRequests}" icon="sap-icon://pending"></NumericContent>
                 </TileContent>
             </GenericTile>
 
@@ -45,52 +47,71 @@
             </layout:Grid>
 
             <HBox width="100%" justifyContent="SpaceAround" class="sapUiLargeMarginTop">
-
-                <f:Card width="800px" height="20rem" class="sapUiResponsiveMargin">
+                <f:Card width="100%" class="sapUiResponsiveMargin">
                     <f:header>
-                        <cards:Header title="Inventory by Category" subtitle="Current Products" >
-                        </cards:Header>
+                        <cards:Header title="Inventory by Category" subtitle="Products grouped by category" />
                     </f:header>
+
                     <f:content>
-                        <mc:InteractiveDonutChart id="CategoryChart">
-                            <mc:InteractiveDonutChartSegment label="Electronics" value="{dashboard>/electronics}"></mc:InteractiveDonutChartSegment>
-                            <mc:InteractiveDonutChartSegment label="Furniture" value="{dashboard>/furniture}"></mc:InteractiveDonutChartSegment>
-                            <mc:InteractiveDonutChartSegment label="Clothing" value="{dashboard>/clothing}"></mc:InteractiveDonutChartSegment>
-                        </mc:InteractiveDonutChart>
+                        <viz:VizFrame id="idCategoryChart" width="400px" height="400px" vizType="stacked_column">
+                            <viz:dataset>
+                                <viz.data:FlattenedDataset data="{dashboard>/categories}">
+                                    <viz.data:dimensions>
+                                        <viz.data:DimensionDefinition name="Category" value="{dashboard>category}" />
+                                    </viz.data:dimensions>
+
+                                    <viz.data:measures>
+                                        <viz.data:MeasureDefinition name="Products" value="{dashboard>count}" />
+                                    </viz.data:measures>
+                                </viz.data:FlattenedDataset>
+                            </viz:dataset>
+
+                            <viz:feeds>
+                                <viz.feeds:FeedItem uid="valueAxis"
+                                            type="Measure"
+                                            values="Products" />
+                                <viz.feeds:FeedItem uid="categoryAxis"
+                                            type="Dimension"
+                                            values="Category" />
+                            </viz:feeds>
+                        </viz:VizFrame>
+                    </f:content>
+                </f:Card>
+
+                <f:Card class="sapUiResponsiveMargin" width="100%">
+                    <f:header>
+                        <cards:Header title="Monthly Transfer Trend"
+                                subtitle="Transfers by Month"/>
+                    </f:header>
+
+                    <f:content>
+                        <viz:VizFrame id="monthlyTransferChart"
+                            vizType="line"
+                            width="400px"
+                            height="400px">
+                        <viz:dataset>
+                            <viz.data:FlattenedDataset data="{dashboard>/monthlyTrend}">
+                                <viz.data:dimensions>
+                                    <viz.data:DimensionDefinition name="Month" value="{dashboard>month}" />
+                                </viz.data:dimensions>
+                                <viz.data:measures>
+                                    <viz.data:MeasureDefinition name="Transfers" value="{dashboard>count}" />
+                                </viz.data:measures>
+                            </viz.data:FlattenedDataset>
+                        </viz:dataset>
+
+                        <viz:feeds> 
+                            <viz.feeds:FeedItem uid="valueAxis"
+                                type="Measure"
+                                values="Transfers"/>
+                            <viz.feeds:FeedItem uid="categoryAxis"
+                                type="Dimension"
+                                values="Month"/>
+                            </viz:feeds>
+                        </viz:VizFrame>
                     </f:content>
                 </f:Card>
             </HBox>
-
-            <Panel headerText="Recent Transfers" class="sapUiLargeMarginTop" width="80%">
-                <Table items="{dashboard>/recentTransfers}" class="sapUiResponsiveMargin" width="80%">
-                    <columns>
-                        <Column>
-                            <Text text="Transfer ID"></Text>
-                        </Column>
-                        <Column>
-                            <Text text="Product Name"></Text>
-                        </Column>
-                        <Column>
-                            <Text text="Quantity"></Text>
-                        </Column>
-                        <Column>
-                            <Text text="Status"></Text>
-                        </Column>
-                    </columns>
-                    <items>
-                        <ColumnListItem type="Active" press=".onTransferPress">
-                            <cells>
-                                <ObjectIdentifier title="{dashboard>transferId}"></ObjectIdentifier>
-                                <ObjectIdentifier title="{dashboard>productName}"></ObjectIdentifier>
-                                <ObjectNumber number="{dashboard>quantity}"></ObjectNumber>
-                                <ObjectStatus text="{dashboard>status}"></ObjectStatus>
-                            </cells>
-                        </ColumnListItem>
-                    </items>
-                </Table>
-            </Panel>
-
         </content>
     </Page>
-
 </mvc:View>

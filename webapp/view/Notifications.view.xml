@@ -4,10 +4,21 @@
     xmlns:layout="sap.ui.layout"
     xmlns:f="sap.f">
 
-    <Page title="Notifications">
+    <Page title="Notifications" id="notificationsPage" showNavButton="false" navButtonPress=".onNavBack">
         <content>
 
-            <SearchField width="100%" placeholder="Search notifications..." liveChange=".onSearch"/>
+            <SearchField width="60%" class="sapUiMediumMarginTop sapUiTinyMarginBegin" placeholder="Search notifications..." liveChange=".onSearch"/>
+
+            <SegmentedButton selectionChange=".onFilterChange"
+                selectedKey="All"
+                class="sapUiSmallMarginTop">
+                <items>
+                    <SegmentedButtonItem key="All" text="All"/>
+                    <SegmentedButtonItem key="Read" text="Read"/>
+                    <SegmentedButtonItem key="Unread" text="Unread"/>
+                </items>
+            </SegmentedButton>
+
             <List id="notificationsList"
                 items="{userNotifications>/notifications}"
                 noDataText="No Notifications found"
