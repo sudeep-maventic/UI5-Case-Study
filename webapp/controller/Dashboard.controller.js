@@ -28,7 +28,7 @@ sap.ui.define([
             console.log("Transfers", aTransfers);
 
             const iTotalProducts = aProducts.length;
-            const iLowStock = aProducts.filter(product => product.quantity < 50).length;
+            const iLowStock = aProducts.filter(product => product.quantity < 20).length;
             const completedTransfers = aTransfers.filter(r => r.status === "Completed").length;
             const pendingRequests = aVendorRequests.filter(r => r.status === "Pending").length;
 

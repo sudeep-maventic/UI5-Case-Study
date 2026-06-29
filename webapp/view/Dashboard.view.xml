@@ -9,38 +9,38 @@
     xmlns:viz="sap.viz.ui5.controls"
     xmlns:viz.data="sap.viz.ui5.data"
     xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds">
-    <Page title="Dashboard">
+    <Page title="{i18n>TitleDashboard}">
         <content>
 
             <VBox class="sapUiSmallMargin">
-                <Title level="H2" text="Welcome {dashboard>/managerName}"></Title>
-                <Text text="Manage your inventory efficiently." />
+                <Title level="H2" text="Welcome, {dashboard>/managerName}"></Title>
+                <Text text="{i18n>SubtitleDashboard}" />
             </VBox>
 
             <layout:Grid defaultSpan="L3 M6 S12" 
                         hSpacing="1"
                         vSpacing="1" class="sapUiLargeMarginTop">
             <GenericTile class="tileLayout" header="Total Products"
-                        subheader="Available Products" width="200px" >
-                <TileContent unit="INR">
+                        subheader="Products in Inventory" width="200px" >
+                <TileContent unit="Products">
                     <NumericContent value="{dashboard>/totalProducts}" icon="sap-icon://product"></NumericContent>
                 </TileContent>
             </GenericTile>
 
-            <GenericTile class="tileLayout" header="Pending Requests" subheader="Requests to be approved" width="200px" >
-                <TileContent unit="INR">
+            <GenericTile class="tileLayout" header="Pending Requests" subheader="Supplier Requests Awaiting Response" width="200px" >
+                <TileContent unit="Requests">
                     <NumericContent value="{dashboard>/pendingRequests}" icon="sap-icon://pending"></NumericContent>
                 </TileContent>
             </GenericTile>
 
-            <GenericTile class="tileLayout" header="Completed Transfers" subheader="Transfers that are complete" width="250px" >
-                <TileContent unit="INR">
+            <GenericTile class="tileLayout" header="Completed Transfers" subheader="Transfers Successfully Completed" width="250px" >
+                <TileContent unit="Transfers">
                     <NumericContent value="{dashboard>/completedTransfers}" icon="sap-icon://complete"></NumericContent>
                 </TileContent>
             </GenericTile>
 
-            <GenericTile class="tileLayout" header="Low Stock Items" subheader="Items with low inventory" width="200px" >
-                <TileContent unit="INR">
+            <GenericTile class="tileLayout" header="Low Stock Items" subheader="Products Requiring Replenishment" width="200px" >
+                <TileContent unit="Items">
                     <NumericContent value="{dashboard>/lowStock}" icon="sap-icon://alert"></NumericContent>
                 </TileContent>
             </GenericTile>
@@ -49,7 +49,7 @@
             <HBox width="100%" justifyContent="SpaceAround" class="sapUiLargeMarginTop">
                 <f:Card width="100%" class="sapUiResponsiveMargin">
                     <f:header>
-                        <cards:Header title="Inventory by Category" subtitle="Products grouped by category" />
+                        <cards:Header title="Inventory Distribution by Category" subtitle="Products Available in Each Category" />
                     </f:header>
 
                     <f:content>
@@ -80,8 +80,8 @@
 
                 <f:Card class="sapUiResponsiveMargin" width="100%">
                     <f:header>
-                        <cards:Header title="Monthly Transfer Trend"
-                                subtitle="Transfers by Month"/>
+                        <cards:Header title="Monthly Stock Transfers"
+                                subtitle="Transfers Completed Each Month"/>
                     </f:header>
 
                     <f:content>

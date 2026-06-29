@@ -17,7 +17,7 @@ sap.ui.define([
             if (aWarehouses.length === 0 || aWarehouses[0].warehouseId !== "") {
                 aWarehouses.unshift({
                 warehouseId: "",
-                location: "Select Location"
+                location: "Select Destination Warehouse"
                 });
 
                 oWarehouseModel.setProperty("/warehouses", aWarehouses);
@@ -28,7 +28,7 @@ sap.ui.define([
 
             aWarehouseProducts.unshift({
                 productId: "",
-                productName: "Select Product",
+                productName: "Select Inventory Product",
             })
 
             this.getView().setModel(new sap.ui.model.json.JSONModel({products: aWarehouseProducts}), "warehouseProducts");

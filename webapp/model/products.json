@@ -186,7 +186,7 @@
             "category": "Furniture",
             "warehouseId": "W001",
             "vendorId": "V003",
-            "status": "Available",
+            "status": "Low Stock",
             "price": 260.00,
             "quantity": 14
         },

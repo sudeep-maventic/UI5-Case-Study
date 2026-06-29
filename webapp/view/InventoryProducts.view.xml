@@ -1,18 +1,21 @@
 <mvc:View controllerName="sudeep.inventorytransfer.controller.InventoryProducts"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page title="Inventory Products">
+    <Page title="Inventory">
         <content>
-            <MessageStrip text="Manage your warehouse products"
+            <MessageStrip text="View Inventory items assigned to your warehouse"
                     type="Information"
                     showIcon="true"
-                    showCloseButton="true" />
+                    showCloseButton="true" class="sapUiSmallMargin" />
 
             <SearchField width="50%" search=".onSearch" liveChange=".onSearch" placeholder="Search by Product Name" class="sapUiSmallMarginTop sapUiSmallMarginBegin" />
-
-            <Button text="Add Product" type="Emphasized" press=".onAddProductPress" class="sapUiSmallMarginTop sapUiSmallMarginBegin" />
-
+            
             <Table id="productsTable" items="{inventory>/products}" class="sapUiResponsiveMargin sapUiSmallMarginTop" width="80%">
+                <headerToolbar>
+                <Toolbar>
+                    <Title text="Inventory Items" level="H2" />
+                </Toolbar>
+                </headerToolbar>
                 <columns>
                     <Column>
                         <Text text="Product ID" />
@@ -24,16 +27,13 @@
                         <Text text="Category" />
                     </Column>
                     <Column >
-                        <Text text="Quantity" />
+                        <Text text="Available Quantity" />
                     </Column>
                     <Column >
-                        <Text text="Price" />
+                        <Text text="Unit Price" />
                     </Column>
                     <Column >
-                        <Text text="Status" />
-                    </Column>
-                    <Column >
-                        <Text text="Actions" />
+                        <Text text="Stock Status" />
                     </Column>
                 </columns>
 
@@ -46,11 +46,6 @@
                             <Text text="{inventory>quantity}" />
                             <Text text="{inventory>price}" />
                             <ObjectStatus text="{inventory>status}" />
-                            <HBox >
-                                <Button icon="sap-icon://edit" type="Transparent" press=".onEditProductPress" class="sapUiSmallMarginEnd" />
-                                <Button icon="sap-icon://delete" type="Transparent" press=".onDeleteProducts" class="sapUiSmallMarginEnd" />
-                                <Button icon="sap-icon://shipping-status" type="Transparent" press=".onTransferProduct" />
-                            </HBox>
                         </cells>
                     </ColumnListItem>
                 </items>

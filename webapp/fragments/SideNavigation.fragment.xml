@@ -10,10 +10,10 @@
         <tnt:SideNavigation itemSelect=".onItemSelect" expanded="true" id="sideNavigation" width="250px">
             <tnt:NavigationList >
                 <tnt:NavigationListItem key="dashboard" text="Dashboard" icon="sap-icon://bar-chart" />
-                <tnt:NavigationListItem key="products" text="Inventory Products" icon="sap-icon://product" />
-                <tnt:NavigationListItem key="transfer" text="Transfer Products" icon="sap-icon://shipping-status" />
+                <tnt:NavigationListItem key="products" text="Inventory" icon="sap-icon://product" />
+                <tnt:NavigationListItem key="transfer" text="Stock Transfers" icon="sap-icon://shipping-status" />
                 <tnt:NavigationListItem key="history" text="Transfer History" icon="sap-icon://history" />
-                <tnt:NavigationListItem key="vendor" text="Vendor Requests" icon="sap-icon://supplier" />
+                <tnt:NavigationListItem key="vendor" text="Supplier Requests" icon="sap-icon://supplier" />
                 <tnt:NavigationListItem key="notifications" text="Notifications" icon="sap-icon://bell" />
             </tnt:NavigationList>
         </tnt:SideNavigation>

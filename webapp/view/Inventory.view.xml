@@ -8,13 +8,13 @@
                     <tnt:header>
                             <tnt:ToolHeader>
                             <Button icon="sap-icon://menu2" type="Transparent" press=".onMenuButtonPress"></Button>
-                            <Title text="Inventory Management System" />
+                            <Title text="{i18n>Title}" />
 
                             <ToolbarSpacer />
                             <MenuButton text="{user>/oCurrentUser/name}" icon="sap-icon://employee">
                                 <menu>
                                     <Menu >
-                                        <MenuItem text="Profile" press=".onProfilePress" />
+                                        <MenuItem text="My Profile" press=".onProfilePress" />
                                         <MenuItem text="Logout" press=".onLogoutPress" />
                                     </Menu>
                                 </menu>

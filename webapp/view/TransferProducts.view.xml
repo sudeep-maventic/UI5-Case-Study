@@ -3,13 +3,16 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
 
-    <Page title="Transfer Products">
-        <MessageStrip text="Transfer multiple products between warehouses"
+    <Page title="Stock Transfer">
+        <MessageStrip text="Create and manage stock transfer between warehouses."
                 type="Information"
-                showIcon="true">
+                showIcon="true"
+                showCloseButton="true"
+                class="sapUiSmallMargin">
         </MessageStrip>
 
-        <VBox class="sapUiSmallMargin">
+        <Panel class="sapUiSmallMargin">
+        <VBox>
             <HBox >
                 <Label text="Source Warehouse" class="sapUiSmallMarginBegin sapUiTinyMarginTop" />
             <Select selectedKey="{transferForm>/fromWarehouse}"
@@ -22,24 +25,28 @@
             <Select selectedKey="{transferForm>/toWarehouse}"
                     items="{warehouseProfile>/warehouses}"
                     class="sapUiSmallMarginBegin">
-                <core:Item key="" text="Select Location"></core:Item>
+                <core:Item key="" text="Select Destination Warehouse"></core:Item>
                 <core:Item key="{warehouseProfile>warehouseId}" text="{warehouseProfile>location}"></core:Item>
             </Select>
-            </HBox>
-
-            <Button text="Add Item"
+            <Button text="Add Transfer Item"
                     icon="sap-icon://add"
                     press=".onAddItem"
                     class="sapUiSmallMarginBegin"></Button>
+            </HBox>
+
 
             <HBox justifyContent="End" width="70%">
-        <Button text="Submit Transfer"
+            <Button text="Submit Transfer"
+                type="Emphasized"
+                icon="sap-icon://paper-plane"
                 press=".onSubmitTransfer"
-                class="sapUiSmallMarginTop sapUiLargeMarginEnd">
+                class="sapUiLargeMarginTop sapUiMediumMarginEnd">
         </Button>
         </HBox>
         </VBox>
+        </Panel>
 
+        <Panel class="sapUiSmallMargin">
         <Table items="{transferForm>/items}" width="80%" class="sapUiSmallMargin">
             <columns>
                 <Column >
@@ -49,7 +56,7 @@
                     <Text text="Quantity"></Text>
                 </Column>
                 <Column >
-                    <Text text="Action"></Text>
+                    <Text text="Actions"></Text>
                 </Column>
             </columns>
             <items>
@@ -62,11 +69,12 @@
                                     text="{warehouseProducts>productName}" />
                         </Select>
                         <Input value="{transferForm>quantity}" type="Number"></Input>
-                        <Button text="Remove" type="Transparent" press=".onRemoveItem"></Button>
+                        <Button text="Remove Item" type="Negative" icon="sap-icon://delete" press=".onRemoveItem"></Button>
                     </cells>
                 </ColumnListItem>
             </items>
         </Table>
+        </Panel>
     </Page>
 
 </mvc:View>
