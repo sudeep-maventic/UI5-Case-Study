@@ -33,7 +33,7 @@
                             <mvc:XMLView id="transferView" viewName="sudeep.inventorytransfer.view.TransferProducts" />
                             <mvc:XMLView id="historyView" viewName="sudeep.inventorytransfer.view.TransferHistory" />
                             <mvc:XMLView id="vendorView" viewName="sudeep.inventorytransfer.view.VendorRequests" />
-                            <!-- <mvc:XMLView id="notificationsView" viewName="sudeep.inventorytransfer.view.Notifications" /> -->
+                            <mvc:XMLView id="notificationsView" viewName="sudeep.inventorytransfer.view.Notifications" />
                             <mvc:XMLView id="profileView" viewName="sudeep.inventorytransfer.view.WarehouseProfile" />
                             <mvc:XMLView id="transferDetailsView" viewName="sudeep.inventorytransfer.view.TransferDetails" />
                         </NavContainer>

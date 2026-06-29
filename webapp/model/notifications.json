@@ -9,6 +9,46 @@
             "type": "Information",
             "timestamp": "2023-06-01T10:30:00Z",
             "read": false
+        },
+        {
+            "notificationId": "N002",
+            "userId": "W001",
+            "role": "Warehouse Manager",
+            "title": "Vendor Request approved",
+            "message": "Vendor request has been approved. You can proceed with the transfer process.",
+            "type": "Success",
+            "timestamp": "2023-06-02T14:45:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N003",
+            "userId": "W001",
+            "role": "Warehouse Manager",
+            "title": "Vendor Request rejected",
+            "message": "Vendor request has been rejected. Please contact the vendor for further clarification.",
+            "type": "Error",
+            "timestamp": "2023-06-03T09:15:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N004",
+            "userId": "V001",
+            "role": "Vendor",
+            "title": "Transfer completed",
+            "message": "The transfer process has been completed successfully. Please check the inventory for updated stock levels.",
+            "type": "Success",
+            "timestamp": "2023-06-04T16:20:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N005",
+            "userId": "V001",
+            "role": "Vendor",
+            "title": "Transfer failed",
+            "message": "The transfer process has failed due to insufficient stock. Please review the inventory and try again.",
+            "type": "Error",
+            "timestamp": "2023-06-05T11:10:00Z",
+            "read": false
         }
     ]
 }

@@ -180,6 +180,13 @@
           "target": [
             "TargetWarehouseRequests"
           ]
+        },
+        {
+          "name": "RouteNotifications",
+          "pattern": "notifications",
+          "target": [
+            "TargetNotifications"
+          ]
         }
       ],
       "targets": {
@@ -242,6 +249,10 @@
         "TargetTransferDetails": {
           "id": "TransferDetails",
           "name": "TransferDetails"
+        },
+        "TargetNotifications": {
+          "id": "Notifications",
+          "name": "Notifications"
         }
       }
     },

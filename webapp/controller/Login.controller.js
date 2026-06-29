@@ -12,9 +12,7 @@ sap.ui.define([
         onLoginPress: function () {
 
             const oLoginModel = this.getOwnerComponent().getModel("login");
-            // const oUsersModel = this.getOwnerComponent().getModel("users");
-
-            // const aUsers = oUsersModel.getData().users || [];
+            const oUsersModel = this.getOwnerComponent().getModel("users");
 
             const sEmail = oLoginModel.getProperty("/email");
             const sPassword = oLoginModel.getProperty("/password");
@@ -24,9 +22,13 @@ sap.ui.define([
                 return;
             }
 
+            const Users = oUsersModel.getData().users || [];
             const oUsersData = JSON.parse(localStorage.getItem("users")) || { users: [] };
+            const aLocalUsers = oUsersData.users || [];
 
-            const oUser = oUsersData.users.find(user =>
+            const aUsers = [...Users, ...aLocalUsers];
+
+            const oUser = aUsers.find(user =>
                 user.email === sEmail &&
                 user.password === sPassword
             );

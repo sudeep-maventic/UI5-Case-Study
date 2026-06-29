@@ -1,0 +1,33 @@
+<mvc:View controllerName="sudeep.inventorytransfer.controller.Notifications"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.f">
+
+    <Page title="Notifications">
+        <content>
+
+            <SearchField width="100%" placeholder="Search notifications..." liveChange=".onSearch"/>
+            <List id="notificationsList"
+                items="{userNotifications>/notifications}"
+                noDataText="No Notifications found"
+                class="sapUiMediumMarginTop">
+
+                <ObjectListItem title="{userNotifications>title}"
+                                intro="{userNotifications>date}"
+                                number="{userNotifications>type}"
+                                type="Inactive">
+                        <attributes>
+                            <ObjectAttribute text="{userNotifications>message}" />
+                        </attributes>
+                        <firstStatus>
+                            <ObjectStatus text="{= ${userNotifications>read} ? 'Read' : 'Unread' }" 
+                                        state="{= ${userNotifications>read} ? 'Success' : 'Warning' }"></ObjectStatus>
+                        </firstStatus>
+                </ObjectListItem>
+                            
+            </List>
+        </content>
+    </Page>
+
+</mvc:View>

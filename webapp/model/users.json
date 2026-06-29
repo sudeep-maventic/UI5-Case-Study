@@ -4,7 +4,7 @@
             "id": "EMP001",
             "email": "manager1@company.com",
             "password": "manager123",
-            "role": "WarehouseManager",
+            "role": "Warehouse Manager",
             "name": "John Doe",
             "warehouseId": "W001",
             "location": "Bangalore"
