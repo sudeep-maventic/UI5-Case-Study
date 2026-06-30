@@ -18,7 +18,10 @@ sap.ui.define([
             const aProducts = oProductsModel.getData().products;
 
             const aFilteredProducts = aProducts.filter(product => product.warehouseId === sWarehouseId);
+            const aCategories = [...new Set(aFilteredProducts.map(product => product.category))];
+            aCategories.unshift("All");
 
+            this.getView().setModel(new JSONModel({ categories: aCategories }), "categoryModel");
             this.getView().setModel(new JSONModel({products: aFilteredProducts}), "inventory");
 
             const oAddProductsModel = this.getOwnerComponent().getModel("addProducts");
@@ -27,18 +30,29 @@ sap.ui.define([
         },
 
         onSearch: function(oEvent) {
-            const sQuery = oEvent.getParameter("newValue");
+            this._sSearch = oEvent.getParameter("newValue");
+            this._applyFilters();
+        },
 
-            const oTable = this.getView().byId("productsTable");
-            const oBinding = oTable.getBinding("items");
+        onCategoryFilter: function(oEvent) {
+            this._sCategoryFilter = oEvent.getSource().getSelectedKey();
+            this._applyFilters();
+        },
 
-            if(sQuery) {
-                const oFilter = new Filter("productName", FilterOperator.Contains, sQuery);
-                oBinding.filter(oFilter);
+        _applyFilters: function() {
+            let oTable = this.byId("productsTable");
+            let oBinding = oTable.getBinding("items");
+            let aFilters = [];
+
+            if(this._sSearch) {
+                aFilters.push(new Filter("productName", FilterOperator.Contains, this._sSearch));
             }
-            else{
-                oBinding.filter([]);
+            
+            if(this._sCategoryFilter && this._sCategoryFilter !== "All") {
+                aFilters.push(new Filter("category", FilterOperator.EQ, this._sCategoryFilter));
             }
+
+            oBinding.filter(aFilters);
         },
 
         onAddProductPress: function() {

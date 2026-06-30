@@ -1,6 +1,7 @@
 <mvc:View controllerName="sudeep.inventorytransfer.controller.InventoryProducts"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
     <Page title="Inventory">
         <content>
             <MessageStrip text="View Inventory items assigned to your warehouse"
@@ -8,7 +9,15 @@
                     showIcon="true"
                     showCloseButton="true" class="sapUiSmallMargin" />
 
-            <SearchField width="50%" search=".onSearch" liveChange=".onSearch" placeholder="Search by Product Name" class="sapUiSmallMarginTop sapUiSmallMarginBegin" />
+            <HBox width="100%">
+            <SearchField width="500px" search=".onSearch" liveChange=".onSearch" placeholder="Search by Product Name" class="sapUiSmallMarginTop sapUiSmallMarginBegin" />
+
+            <Select id="categoryFilter" width="220px" selectedKey="All"
+                    change=".onCategoryFilter" items="{categoryModel>/categories}" class="sapUiSmallMarginTop sapUiSmallMarginBegin">
+                <core:Item key="" text="All Categories" />
+                <core:Item key="{categoryModel>}" text="{categoryModel>}" />
+            </Select>
+            </HBox>
             
             <Table id="productsTable" items="{inventory>/products}" class="sapUiResponsiveMargin sapUiSmallMarginTop" width="80%">
                 <headerToolbar>

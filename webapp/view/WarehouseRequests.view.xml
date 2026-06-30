@@ -9,6 +9,13 @@
                         class="sapUiSmallMargin">            
             </MessageStrip>
 
+            <HBox class="sapUiSmallMargin">
+            <SearchField width="500px"
+                placeholder="Search by Request ID or Warehouse Location"
+                liveChange=".onSearchRequests"
+                search=".onSearchRequests"/>
+            </HBox>
+
             <Table id="requestTable" 
                    items="{warehouseRequests>/requests}" 
                    class="sapUiResponsiveMargin" 

@@ -3,8 +3,10 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageToast",
     "sap/m/MessageBox",
-    "sap/m/MessageStrip"
-], function (BaseController, JSONModel, MessageToast, MessageBox, MessageStrip) {
+    "sap/m/MessageStrip",
+    "sap/ui/model/Filter",
+    "sap/ui/model/FilterOperator"
+], function (BaseController, JSONModel, MessageToast, MessageBox, MessageStrip, Filter, FilterOperator) {
     "use strict";
 
     return BaseController.extend("sudeep.inventorytransfer.controller.WarehouseRequests", {
@@ -39,6 +41,25 @@ sap.ui.define([
         onNavBack: function() {
             const oRouter = this.getOwnerComponent().getRouter();
             oRouter.navTo("RouteVendor");
+        },
+
+        onSearchRequests: function(oEvent) {
+            const sValue = oEvent.getParameter("newValue");
+            const oTable = this.byId("requestTable");
+            const oBinding = oTable.getBinding("items");
+            
+            if (sValue) {
+                const oFilter = new Filter({
+                    filters: [
+                        new Filter("requestId", FilterOperator.Contains, sValue),
+                        new Filter("location", FilterOperator.Contains, sValue)
+                    ],
+                    and: false
+                });
+                oBinding.filter(oFilter);
+            } else {
+                oBinding.filter([]);
+            }
         }
 
     });
