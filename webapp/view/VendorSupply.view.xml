@@ -5,9 +5,9 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
 
-    <Page title="Supply Products" showNavButton="true" navButtonPress=".onNavBack">
+    <Page title="Request Details" showNavButton="true" navButtonPress=".onNavBack">
         <content>
-            <ObjectHeader title="{supply>/requestId}" number="{supply>/status}">
+            <ObjectHeader title="Request Id {supply>/requestId}" number="{supply>/status}">
                 <attributes>
                     <ObjectAttribute title="Warehouse" 
                                     text="{supply>/warehouseId}">
@@ -20,19 +20,19 @@
             <Table items="{supply>/requestedItems}">
                 <columns>
                     <Column >
-                        <Text text="Product"/>
+                        <Text text="Product Name"/>
                     </Column>
 
                     <Column >
-                        <Text text="Requested Quantity" />
+                        <Text text="Requested Qty" />
                     </Column>
 
                     <Column >
-                        <Text text="Supply Quantity" />
+                        <Text text="Quantity to Supply" />
                     </Column>
 
                     <Column >
-                        <Text text="Price" />
+                        <Text text="Unit Price" />
                     </Column>
                 </columns>
 

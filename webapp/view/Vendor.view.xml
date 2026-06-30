@@ -5,7 +5,7 @@
     xmlns:card="sap.f.cards"
     xmlns:layout="sap.ui.layout"
     xmlns:core="sap.ui.core">
-    <Page title="Vendor Dashboard" showNavButton="true" navButtonPress=".onNavBack">
+    <Page title="Supplier Portal">
         <headerContent>
             <Button press=".onNotifications" icon="sap-icon://bell" />
             <Button icon="sap-icon://log" type="Reject" press=".onLogout" />
@@ -13,11 +13,11 @@
 
         <content>
             <VBox class="sapUiMediumMargin">
-                <Title text="Welcome {dashboard>/company}" level="H2" />
-                <Text text="Manage warehouse requests and supplies" class="sapUiSmallMarginBottom" />
+                <Title text="Welcome, {dashboard>/company}" level="H2" />
+                <Text text="Review warehouse requests and manage product supplies." class="sapUiSmallMarginBottom" />
 
                 <HBox justifyContent="End" class="sapUiSmallMarginEnd">
-                    <Button text="Warehouse Requests" 
+                    <Button text="View Requests" 
                             icon="sap-icon://shipping-status"
                             type="Emphasized"
                             press=".onWarehouseRequests" />
@@ -30,42 +30,42 @@
                 
                 <HBox justifyContent="SpaceAround">
                 
-                <GenericTile frameType="OneByOne" width="250px" header="Pending Requests" subheader="Awaiting vendor action" class="sapUiTinyMargin">
+                <GenericTile frameType="OneByOne" width="250px" header="Pending Requests" subheader="Requests awaiting your response" class="sapUiTinyMargin">
                     <TileContent >
                         <NumericContent value="{dashboard>/pending}" icon="sap-icon://pending"></NumericContent>
                     </TileContent>
                 </GenericTile>
 
-                <GenericTile frameType="OneByOne" width="250px" header="Accepted Requests" subheader="Approved requests" class="sapUiTinyMargin">
+                <GenericTile frameType="OneByOne" width="250px" header="Approved Requests" subheader="Requests approved for supply" class="sapUiTinyMargin">
                     <TileContent >
                         <NumericContent value="{dashboard>/accepted}" icon="sap-icon://accept"></NumericContent>
                     </TileContent>
                 </GenericTile>
             
-                <GenericTile frameType="OneByOne" width="250px" header="Rejected Requests" subheader="Declined requests" class="sapUiTinyMargin">
+                <GenericTile frameType="OneByOne" width="250px" header="Rejected Requests" subheader="Requests that were rejected" class="sapUiTinyMargin">
                     <TileContent >
                         <NumericContent value="{dashboard>/rejected}" icon="sap-icon://decline"></NumericContent>
                     </TileContent>
                 </GenericTile>
 
-                <GenericTile frameType="OneByOne" width="250px" header="Products Offered" subheader="Available vendor catalog" class="sapUiTinyMargin">
+                <GenericTile frameType="OneByOne" width="250px" header="Products Catalog" subheader="Products available for supply" class="sapUiTinyMargin">
                     <TileContent >
                         <NumericContent value="{dashboard>/products}" icon="sap-icon://product"></NumericContent>
                     </TileContent>
                 </GenericTile>
                 </HBox>
 
-                <Panel backgroundDesign="Transparent" headerText="Recent Warehouse Requests" class="sapUiLargeMarginTop">
+                <Panel backgroundDesign="Transparent" headerText="Recent Requests" class="sapUiLargeMarginTop">
                     <Table id="recentTicketsTable" items="{dashboard>/recentRequests}" class="sapUiResponsiveMargin" width="80%">
                         <columns>
                             <Column>
                                 <Text text="Request ID" />
                             </Column>
                             <Column>
-                                <Text text="Warehouse" />
+                                <Text text="Warehouse Location" />
                             </Column>
                             <Column>
-                                <Text text="Items" />
+                                <Text text="Requested Items" />
                             </Column>
                             <Column>
                                 <Text text="Status" />

@@ -7,7 +7,7 @@
                 <Avatar initials="{= ${profile>/name}.substring(0, 2).toUpperCase() }" displaySize="XL" displayShape="Circle" class="sapUiMediumMarginBottom" />
                 <Title text="{profile>/name}" visible="{= !${viewState>/editMode}}" level="H2" class="sapUiMediumMarginBottom" />
                 <Input value="{profile>/name}" visible="{= ${viewState>/editMode}}" class="sapUiMediumMarginBottom" />
-                <Text text="Email: {profile>/email}" visible="{= !${viewState>/editMode}}" />
+                <Text text="Email Address: {profile>/email}" />
                 <Input value="{profile>/email}" visible="{= ${viewState>/editMode}}" class="sapUiMediumMarginBottom" />
 
                 <Button text="Edit Profile" press="onEditProfile" visible="{= !${viewState>/editMode}}" class="sapUiMediumMarginTop" type="Emphasized" icon="sap-icon://edit" />

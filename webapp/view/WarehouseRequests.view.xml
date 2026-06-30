@@ -1,9 +1,9 @@
 <mvc:View controllerName="sudeep.inventorytransfer.controller.WarehouseRequests"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page title="Warehouse Requests" showNavButton="true" navButtonPress=".onNavBack">
+    <Page title="Product Requests" showNavButton="true" navButtonPress=".onNavBack">
         <content>
-            <MessageStrip text="Manage warehouse requests and update their status"
+            <MessageStrip text="Review incoming product requests from warehouses."
                         type="Information"
                         showIcon="true">            
             </MessageStrip>
@@ -17,16 +17,16 @@
                         <Text text="Request ID" />
                     </Column>
                     <Column>
-                        <Text text="Location" />
+                        <Text text="Warehouse Location" />
                     </Column>
                     <Column>
-                        <Text text="Items" />
+                        <Text text="Requested Items" />
                     </Column>
                     <Column>
                         <Text text="Status" />
                     </Column>
                     <Column>
-                        <Text text="Actions" />
+                        <Text text="Action" />
                     </Column>
                 </columns>
                 <items>
@@ -37,7 +37,7 @@
                             <Text text="{= ${warehouseRequests>requestedItems}.length + ' Items'}" />
                             <ObjectStatus text="{warehouseRequests>status}" state="{= ${warehouseRequests>status} === 'Accepted' ? 'Success' : ${warehouseRequests>status} === 'Rejected' ? 'Error' : 'Warning'}" />
                             <HBox >
-                                <Button text="View" icon="sap-icon://display" press=".onViewRequest" />
+                                <Button text="View Details" icon="sap-icon://display" press=".onViewRequest" />
                             </HBox>
                         </cells>
                     </ColumnListItem>
