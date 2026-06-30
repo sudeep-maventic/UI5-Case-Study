@@ -77,7 +77,10 @@
                                     <ObjectIdentifier title="{dashboard>requestId}" />
                                     <Text text="{dashboard>warehouseId}" />
                                     <Text text="{= ${dashboard>requestedItems}.length + ' Items' }" />
-                                    <ObjectStatus text="{dashboard>status}" state="Warning" />
+                                    <ObjectStatus text="{dashboard>status}" 
+                                                state="{ path: 'dashboard>status',
+                                                formatter: '.formatter.formatStatus'
+                                                }" />
                                 </cells>
                             </ColumnListItem>
                         </items>

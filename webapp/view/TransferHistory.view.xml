@@ -5,7 +5,7 @@
     <Page title="Transfer History">
         <content>
             <SearchField width="50%" liveChange=".onSearch" 
-                class="sapUiSmallMarginBottom" placeholder="Search by Transfer ID" />
+                class="sapUiSmallMargin" placeholder="Search by Transfer ID" />
 
             <List id="transferList" items="{history>/transfers}">
                 <ObjectListItem title="Transfer ID: {history>transferId}" 

@@ -8,7 +8,7 @@
             <MessageStrip text="Create a Purchase request for products from a supplier."
                 type="Information"
                 showIcon="true"
-                class="sapUiSmallMarginBottom"/>
+                class="sapUiSmallMargin"/>
 
             <Panel class="sapUiSmallMargin">
             <VBox class="sapUiMediumMargin">
@@ -24,24 +24,17 @@
 
                 </ComboBox>
 
-                <HBox class="sapUiSmallMarginTop">
-                    <Button
-                        text="Add Item"
-                        icon="sap-icon://add"
-                        type="Emphasized"
-                        press=".onAddItem"/>
-                    <ToolbarSpacer/>
-                    <Button
-                        class="sapUiLargeMarginBegin"
-                        text="Submit Purchase Request"
-                        icon="sap-icon://paper-plane"
-                        type="Accept"
-                        press=".onSubmitRequest"/>
-                </HBox>
             </VBox>
             </Panel>
 
+            <Panel >
+            <Button text="Add Item"
+                        icon="sap-icon://add"
+                        type="Emphasized"
+                        press=".onAddItem"
+                        class="sapUiSmallMarginBegin"/>
             <Table id="vendorRequestTable"
+                width="80%"
                 noDataText="Click 'Add Item' to create a product request"
                 items="{RequestsForm>/requestedItems}"
                 class="sapUiMediumMargin">
@@ -83,8 +76,9 @@
                                     placeholder="Enter Category"
                                     type="Text" />
 
-                            <Input value="{RequestsForm>quantity}"
-                                type="Number"/>
+                            <StepInput value="{RequestsForm>quantity}"
+                                min="0"
+                                step="1"/>
 
                             <Button icon="sap-icon://delete"
                                 type="Reject"
@@ -95,6 +89,15 @@
                 </items>
             </Table>
 
+            <HBox class="sapUiSmallMarginTop" justifyContent="End">
+                    <Button
+                        class="sapUiLargeMarginEnd"
+                        text="Submit Purchase Request"
+                        icon="sap-icon://paper-plane"
+                        type="Accept"
+                        press=".onSubmitRequest"/>
+                </HBox>
+            </Panel >
         </content>
     </Page>
 </mvc:View>

@@ -7,7 +7,7 @@
 
     <Page title="Request Details" showNavButton="true" navButtonPress=".onNavBack">
         <content>
-            <ObjectHeader title="Request Id {supply>/requestId}" number="{supply>/status}">
+            <ObjectHeader title="Request Id: {supply>/requestId}" number="{supply>/status}">
                 <attributes>
                     <ObjectAttribute title="Warehouse" 
                                     text="{supply>/warehouseId}">
@@ -17,21 +17,22 @@
                 </attributes>
             </ObjectHeader>
 
-            <Table items="{supply>/requestedItems}">
+            <Panel class="sapUiTinyMargin">
+            <Table items="{supply>/requestedItems}" width="80%" class="sapUiSmallMargin">
                 <columns>
-                    <Column >
+                    <Column>
                         <Text text="Product Name"/>
                     </Column>
 
-                    <Column >
+                    <Column>
                         <Text text="Requested Qty" />
                     </Column>
 
-                    <Column >
+                    <Column>
                         <Text text="Quantity to Supply" />
                     </Column>
 
-                    <Column >
+                    <Column>
                         <Text text="Unit Price" />
                     </Column>
                 </columns>
@@ -41,16 +42,17 @@
                         <cells>
                             <Text text="{supply>productName}"></Text>
                             <ObjectNumber number="{supply>quantity}"></ObjectNumber>
-                            <Input type="Number" 
+                            <StepInput min="0" step="1"
                                 value="{supply>supplyQuantity}"
-                                editable="{= ${supply>/status} === 'Pending' }"></Input>
-                            <Input type="Number" 
+                                editable="{= ${supply>/status} === 'Pending' }"></StepInput>
+                            <StepInput min="0" step="0.01"
                                 value="{supply>price}"
-                                editable="{= ${supply>/status} === 'Pending'}"></Input>
+                                editable="{= ${supply>/status} === 'Pending'}"></StepInput>
                         </cells>
                     </ColumnListItem>
                 </items>
             </Table>
+            </Panel>
         </content>
         <footer>
             <Toolbar >

@@ -30,6 +30,22 @@ sap.ui.define([], function () {
                 month: "long",
                 day: "2-digit"
             });
+        },
+
+        formatStatus: function(sStatus) {
+            console.log("Formatting status:", sStatus); // Debugging line
+            switch (sStatus) {
+                case "Pending":
+                    return "Warning";
+                case "Accepted":
+                    return "Success";
+                case "Rejected":
+                    return "Error";
+                case "Supplied":
+                    return "Information";
+                default:
+                    return "None";
+            }
         }
     }
 })

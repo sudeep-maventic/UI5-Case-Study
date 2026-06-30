@@ -2,11 +2,15 @@ sap.ui.define([
     "sudeep/inventorytransfer/controller/BaseController",
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageToast",
-    "sap/m/MessageBox"
-], (BaseController, JSONModel, MessageToast, MessageBox) => {
+    "sap/m/MessageBox",
+    "sudeep/inventorytransfer/model/formatter"
+], (BaseController, JSONModel, MessageToast, MessageBox, formatter) => {
     "use strict";
 
     return BaseController.extend("sudeep.inventorytransfer.controller.Inventory", {
+
+        formatter: formatter,
+
         onInit() {
             const oCurrentUser = this.getCurrentUser();
             const sVendorId = oCurrentUser.vendorId;

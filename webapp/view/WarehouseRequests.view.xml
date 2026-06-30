@@ -5,7 +5,8 @@
         <content>
             <MessageStrip text="Review incoming product requests from warehouses."
                         type="Information"
-                        showIcon="true">            
+                        showIcon="true"
+                        class="sapUiSmallMargin">            
             </MessageStrip>
 
             <Table id="requestTable" 

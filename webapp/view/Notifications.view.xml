@@ -7,11 +7,11 @@
     <Page title="Notifications" id="notificationsPage" showNavButton="false" navButtonPress=".onNavBack">
         <content>
 
-            <SearchField width="60%" class="sapUiMediumMarginTop sapUiTinyMarginBegin" placeholder="Search notifications..." liveChange=".onSearch"/>
+            <SearchField width="60%" class="sapUiMediumMargin" placeholder="Search notifications..." liveChange=".onSearch"/>
 
             <SegmentedButton selectionChange=".onFilterChange"
                 selectedKey="All"
-                class="sapUiSmallMarginTop">
+                class="sapUiSmallMarginBegin">
                 <items>
                     <SegmentedButtonItem key="All" text="All"/>
                     <SegmentedButtonItem key="Read" text="Read"/>
