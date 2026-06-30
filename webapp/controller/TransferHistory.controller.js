@@ -53,6 +53,7 @@ sap.ui.define([
             }
             const aFilters = [
                 new Filter("transferId", FilterOperator.Contains, sValue),
+                new Filter("toWarehouse", FilterOperator.Contains, sValue),
             ];
 
             oBinding.filter(new Filter({

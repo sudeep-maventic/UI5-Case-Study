@@ -89,12 +89,6 @@ sap.ui.define([
                     return;
                 }
 
-                const bDuplicate = new Set(oRequest.requestedItems.map(item => item.productName.trim().toLowerCase())).size !== oRequest.requestedItems.length;
-                if (bDuplicate) {
-                    this.showError("Duplicate products found in the request.");
-                    return;
-                }
-
                 for (let item of oRequest.requestedItems) {
                     if(!item.productName.trim()){
                         this.showError("Please enter a Product Name");
@@ -105,6 +99,12 @@ sap.ui.define([
                         this.showError("Quantity must be greater than 0 for product: " + item.productName);
                         return;
                     }
+                }
+
+                const bDuplicate = new Set(oRequest.requestedItems.map(item => item.productName.trim().toLowerCase())).size !== oRequest.requestedItems.length;
+                if (bDuplicate) {
+                    this.showError("Duplicate products found in the request.");
+                    return;
                 }
 
                 const oVendorRequestModel = this.getOwnerComponent().getModel("vendorRequests");
