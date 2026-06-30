@@ -126,7 +126,7 @@ sap.ui.define([
                 const oProduct = aProducts.find(product => product.productId === items.productId);
 
                 if(!oProduct) {
-                    this.showError(`Product with ID ${items.productId} not found.`);
+                    this.showError(`Please add the Products to transfer.`);
                     return;
                 }
 

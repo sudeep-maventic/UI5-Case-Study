@@ -14,10 +14,40 @@
                     "price": 850.00
                 },
                 {
-                    "productId": "P002",
-                    "productName": "Logitech Wireless Mouse",
+                    "productId": "P013",
+                    "productName": "USB Flash Drive 64GB",
                     "category": "Electronics",
-                    "price": 25.00
+                    "price": 20.00
+                },
+                {
+                    "productId": "P014",
+                    "productName": "External Hard Drive 1TB",
+                    "category": "Electronics",
+                    "price": 75.00
+                },
+                {
+                    "productId": "P015",
+                    "productName": "Wireless Router",
+                    "category": "Networking",
+                    "price": 65.00
+                },
+                {
+                    "productId": "P016",
+                    "productName": "Network Switch 8-Port",
+                    "category": "Networking",
+                    "price": 90.00
+                },
+                {
+                    "productId": "P033",
+                    "productName": "HDMI Cable",
+                    "category": "Electronics",
+                    "price": 10.00
+                },
+                {
+                    "productId": "P034",
+                    "productName": "Ethernet Cable",
+                    "category": "Networking",
+                    "price": 8.00
                 }
             ]
         },
@@ -39,90 +69,30 @@
                     "productName": "Canon Scanner",
                     "category": "Office Equipment",
                     "price": 180.00
-                }
-            ]
-        },
-        {
-            "vendorId": "V003",
-            "company": "Global Office Mart",
-            "contactEmail": "info@globalofficemart.com",
-            "address": "12 Connaught Place, New Delhi, India",
-            "phone": "+91 98111 22334",
-            "items": [
-                {
-                    "productId": "P005",
-                    "productName": "Office Chair",
-                    "category": "Furniture",
-                    "price": 145.00
                 },
                 {
-                    "productId": "P006",
-                    "productName": "Wooden Office Desk",
-                    "category": "Furniture",
-                    "price": 320.00
-                }
-            ]
-        },
-        {
-            "vendorId": "V004",
-            "company": "Prime Electronics",
-            "contactEmail": "support@primeelectronics.com",
-            "address": "78 Anna Salai, Chennai, India",
-            "phone": "+91 94444 55667",
-            "items": [
-                {
-                    "productId": "P007",
-                    "productName": "Samsung 27-inch Monitor",
-                    "category": "Electronics",
-                    "price": 280.00
+                    "productId": "P028",
+                    "productName": "Paper Shredder",
+                    "category": "Office Equipment",
+                    "price": 130.00
                 },
                 {
-                    "productId": "P008",
-                    "productName": "Mechanical Keyboard",
-                    "category": "Electronics",
-                    "price": 95.00
-                }
-            ]
-        },
-        {
-            "vendorId": "V005",
-            "company": "Industrial Tools Hub",
-            "contactEmail": "orders@industrialtoolshub.com",
-            "address": "56 Banjara Hills, Hyderabad, India",
-            "phone": "+91 97000 44556",
-            "items": [
-                {
-                    "productId": "P009",
-                    "productName": "Electric Drill",
-                    "category": "Tools",
-                    "price": 110.00
+                    "productId": "P035",
+                    "productName": "Laptop Backpack",
+                    "category": "Accessories",
+                    "price": 45.00
                 },
                 {
-                    "productId": "P010",
-                    "productName": "Tool Kit Set",
-                    "category": "Tools",
-                    "price": 85.00
-                }
-            ]
-        },
-        {
-            "vendorId": "V006",
-            "company": "GreenLeaf Stationers",
-            "contactEmail": "sales@greenleafstationers.com",
-            "address": "90 FC Road, Pune, India",
-            "phone": "+91 98222 77889",
-            "items": [
-                {
-                    "productId": "P011",
-                    "productName": "A4 Copy Paper Box",
-                    "category": "Stationery",
-                    "price": 40.00
+                    "productId": "P036",
+                    "productName": "Power Bank 20000mAh",
+                    "category": "Accessories",
+                    "price": 55.00
                 },
                 {
-                    "productId": "P012",
-                    "productName": "Premium Ball Pen Pack",
-                    "category": "Stationery",
-                    "price": 18.00
+                    "productId": "P040",
+                    "productName": "Barcode Scanner",
+                    "category": "Office Equipment",
+                    "price": 140.00
                 }
             ]
         }

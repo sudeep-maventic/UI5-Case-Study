@@ -49,6 +49,326 @@
             "type": "Error",
             "timestamp": "2023-06-05T11:10:00Z",
             "read": false
+        },
+        {
+            "notificationId": "N006",
+            "userId": "W002",
+            "role": "Warehouse Manager",
+            "title": "Vendor request submitted",
+            "message": "Your purchase request has been submitted to Vendor V002 for approval.",
+            "type": "Information",
+            "timestamp": "2024-06-06T09:15:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N007",
+            "userId": "W002",
+            "role": "Warehouse Manager",
+            "title": "Vendor request accepted",
+            "message": "Vendor V002 has accepted your purchase request.",
+            "type": "Success",
+            "timestamp": "2024-06-06T10:45:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N008",
+            "userId": "W003",
+            "role": "Warehouse Manager",
+            "title": "Vendor request rejected",
+            "message": "Vendor V003 rejected your request due to insufficient stock availability.",
+            "type": "Error",
+            "timestamp": "2024-06-07T08:30:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N009",
+            "userId": "W003",
+            "role": "Warehouse Manager",
+            "title": "Inventory updated",
+            "message": "Inventory has been updated after receiving products from Vendor V003.",
+            "type": "Success",
+            "timestamp": "2024-06-07T15:10:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N010",
+            "userId": "W004",
+            "role": "Warehouse Manager",
+            "title": "Transfer request submitted",
+            "message": "Warehouse transfer request has been submitted successfully.",
+            "type": "Information",
+            "timestamp": "2024-06-08T09:00:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N011",
+            "userId": "W004",
+            "role": "Warehouse Manager",
+            "title": "Transfer completed",
+            "message": "Products have been transferred successfully to Warehouse W006.",
+            "type": "Success",
+            "timestamp": "2024-06-08T16:45:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N012",
+            "userId": "W005",
+            "role": "Warehouse Manager",
+            "title": "Low stock alert",
+            "message": "Safety Helmets are running low. Please create a vendor request.",
+            "type": "Warning",
+            "timestamp": "2024-06-09T11:30:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N013",
+            "userId": "W005",
+            "role": "Warehouse Manager",
+            "title": "Vendor shipment received",
+            "message": "Products supplied by Vendor V005 have been received successfully.",
+            "type": "Success",
+            "timestamp": "2024-06-09T17:15:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N014",
+            "userId": "W006",
+            "role": "Warehouse Manager",
+            "title": "Vendor request pending",
+            "message": "Your request is awaiting confirmation from Vendor V006.",
+            "type": "Information",
+            "timestamp": "2024-06-10T08:00:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N015",
+            "userId": "W006",
+            "role": "Warehouse Manager",
+            "title": "Products supplied",
+            "message": "Vendor V006 has supplied the requested stationery items.",
+            "type": "Success",
+            "timestamp": "2024-06-10T15:20:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N016",
+            "userId": "V001",
+            "role": "Vendor",
+            "title": "New purchase request",
+            "message": "Warehouse W001 has requested additional networking equipment.",
+            "type": "Information",
+            "timestamp": "2024-06-11T09:30:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N017",
+            "userId": "V002",
+            "role": "Vendor",
+            "title": "Order accepted",
+            "message": "You have accepted the purchase request from Warehouse W002.",
+            "type": "Success",
+            "timestamp": "2024-06-11T14:10:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N018",
+            "userId": "V003",
+            "role": "Vendor",
+            "title": "Order rejected",
+            "message": "The request was rejected because the requested furniture is out of stock.",
+            "type": "Error",
+            "timestamp": "2024-06-12T10:25:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N019",
+            "userId": "V004",
+            "role": "Vendor",
+            "title": "Shipment dispatched",
+            "message": "Electronics shipment has been dispatched to Warehouse W004.",
+            "type": "Information",
+            "timestamp": "2024-06-12T16:40:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N020",
+            "userId": "V004",
+            "role": "Vendor",
+            "title": "Delivery confirmed",
+            "message": "Warehouse W004 has confirmed receipt of the shipment.",
+            "type": "Success",
+            "timestamp": "2024-06-13T13:00:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N021",
+            "userId": "V005",
+            "role": "Vendor",
+            "title": "Supply delayed",
+            "message": "Delivery has been delayed due to transportation issues.",
+            "type": "Warning",
+            "timestamp": "2024-06-14T09:40:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N022",
+            "userId": "V005",
+            "role": "Vendor",
+            "title": "Supply completed",
+            "message": "All requested safety equipment has been delivered successfully.",
+            "type": "Success",
+            "timestamp": "2024-06-14T18:20:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N023",
+            "userId": "V006",
+            "role": "Vendor",
+            "title": "New stationery request",
+            "message": "Warehouse W006 has placed a new stationery order.",
+            "type": "Information",
+            "timestamp": "2024-06-15T10:50:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N024",
+            "userId": "V006",
+            "role": "Vendor",
+            "title": "Order supplied",
+            "message": "The requested stationery items have been supplied successfully.",
+            "type": "Success",
+            "timestamp": "2024-06-15T16:45:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N025",
+            "userId": "W001",
+            "role": "Warehouse Manager",
+            "title": "Transfer completed",
+            "message": "Products received from Warehouse W002 have been added to inventory successfully.",
+            "type": "Success",
+            "timestamp": "2024-06-16T09:30:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N026",
+            "userId": "W001",
+            "role": "Warehouse Manager",
+            "title": "Vendor request submitted",
+            "message": "Vendor request VR001 has been submitted to Vendor V001 for approval.",
+            "type": "Information",
+            "timestamp": "2024-06-17T09:00:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N027",
+            "userId": "W001",
+            "role": "Warehouse Manager",
+            "title": "Vendor request accepted",
+            "message": "Vendor V001 has accepted vendor request VR002.",
+            "type": "Success",
+            "timestamp": "2024-06-17T11:30:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N028",
+            "userId": "W001",
+            "role": "Warehouse Manager",
+            "title": "Vendor request rejected",
+            "message": "Vendor request VR003 was rejected due to insufficient stock.",
+            "type": "Error",
+            "timestamp": "2024-06-18T10:15:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N029",
+            "userId": "W001",
+            "role": "Warehouse Manager",
+            "title": "Products supplied",
+            "message": "Vendor V001 has supplied all items for vendor request VR004.",
+            "type": "Success",
+            "timestamp": "2024-06-19T15:20:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N030",
+            "userId": "W001",
+            "role": "Warehouse Manager",
+            "title": "Transfer request submitted",
+            "message": "Transfer request T011 from Warehouse W001 to Warehouse W002 has been submitted.",
+            "type": "Information",
+            "timestamp": "2024-06-20T09:10:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N031",
+            "userId": "W001",
+            "role": "Warehouse Manager",
+            "title": "Transfer completed",
+            "message": "Transfer T011 to Warehouse W002 has been completed successfully.",
+            "type": "Success",
+            "timestamp": "2024-06-20T17:00:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N032",
+            "userId": "W002",
+            "role": "Warehouse Manager",
+            "title": "Vendor request submitted",
+            "message": "Vendor request VR021 has been submitted to Vendor V002.",
+            "type": "Information",
+            "timestamp": "2024-06-21T09:30:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N033",
+            "userId": "W002",
+            "role": "Warehouse Manager",
+            "title": "Vendor request accepted",
+            "message": "Vendor V002 has accepted vendor request VR022.",
+            "type": "Success",
+            "timestamp": "2024-06-21T14:45:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N034",
+            "userId": "W002",
+            "role": "Warehouse Manager",
+            "title": "Vendor request rejected",
+            "message": "Vendor request VR023 was rejected because the requested quantity exceeded available stock.",
+            "type": "Error",
+            "timestamp": "2024-06-22T10:20:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N035",
+            "userId": "W002",
+            "role": "Warehouse Manager",
+            "title": "Products supplied",
+            "message": "Vendor V002 has supplied all products for vendor request VR024.",
+            "type": "Success",
+            "timestamp": "2024-06-22T16:30:00Z",
+            "read": true
+        },
+        {
+            "notificationId": "N036",
+            "userId": "W002",
+            "role": "Warehouse Manager",
+            "title": "Transfer request submitted",
+            "message": "Transfer request T012 from Warehouse W002 to Warehouse W001 has been submitted.",
+            "type": "Information",
+            "timestamp": "2024-06-23T08:45:00Z",
+            "read": false
+        },
+        {
+            "notificationId": "N037",
+            "userId": "W002",
+            "role": "Warehouse Manager",
+            "title": "Transfer completed",
+            "message": "Transfer T012 to Warehouse W001 has been completed successfully.",
+            "type": "Success",
+            "timestamp": "2024-06-23T17:10:00Z",
+            "read": true
         }
     ]
 }

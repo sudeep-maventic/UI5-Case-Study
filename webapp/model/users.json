@@ -31,7 +31,7 @@
             "id": "EMP004", 
             "email": "manager2@company.com",
             "password": "manager456",
-            "role": "WarehouseManager",
+            "role": "Warehouse Manager",
             "name": "Alice Brown",
             "warehouseId": "W002",
             "location": "Mumbai"

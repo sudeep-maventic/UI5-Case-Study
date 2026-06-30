@@ -3,9 +3,10 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "sap/m/MessageToast",
     "sap/m/MessageBox",
+    "sap/ui/core/Fragment",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator"
-], (BaseController, JSONModel, MessageToast, MessageBox, Filter, FilterOperator) => {
+], (BaseController, JSONModel, MessageToast, MessageBox, Fragment, Filter, FilterOperator) => {
     "use strict";
 
     return BaseController.extend("sudeep.inventorytransfer.controller.Notifications", {
@@ -58,6 +59,39 @@ sap.ui.define([
             }
 
             oBinding.filter(aFilters);
+        },
+
+         onNotificationPress: async function (oEvent) {
+            const oItem = oEvent.getParameter("listItem");
+            const oContext = oItem.getBindingContext("userNotifications");
+
+            if(!this._oNotificationDialog) {
+                this._oNotificationDialog = await Fragment.load({
+                    id: this.getView().getId(),
+                    name: "sudeep.inventorytransfer.fragments.NotificationDialog",
+                    controller: this
+                });
+                
+                this.getView().addDependent(this._oNotificationDialog);
+            }
+
+            this._oNotificationDialog.setBindingContext(oContext, "userNotifications");
+            const oModel = this.getView().getModel("userNotifications");
+            const sPath = oContext.getPath();
+
+            if (!oModel.getProperty(sPath + "/read")) {
+                oModel.setProperty(sPath + "/read", true);
+                oModel.refresh(true);
+            }
+            
+            this._oNotificationDialog.open();
+
+        },
+
+        onCloseNotification: function () {
+
+            this._oNotificationDialog.close();
+
         }
     });
 });

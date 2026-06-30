@@ -7,7 +7,7 @@
                 <tnt:ToolPage >
                     <tnt:header>
                             <tnt:ToolHeader>
-                            <Button icon="sap-icon://menu2" type="Transparent" press=".onMenuButtonPress"></Button>
+                            <Button icon="sap-icon://menu2" tooltip="Menu" type="Transparent" press=".onMenuButtonPress"></Button>
                             <Title text="{i18n>Title}" />
 
                             <ToolbarSpacer />

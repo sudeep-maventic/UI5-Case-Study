@@ -65,8 +65,20 @@ sap.ui.define([
         },
 
         onLogoutPress: function() {
-            localStorage.removeItem("currentUser");
-            this.getRouter().navTo("RouteLogin");
+
+            MessageBox.confirm("Are you sure you want to logout?", {
+                title: "Confirm Logout",
+                icon: MessageBox.Icon.QUESTION,
+                actions: [MessageBox.Action.YES, MessageBox.Action.NO],
+                emphasizedAction: MessageBox.Action.YES,
+                onClose: (sAction) => {
+                    if (sAction === MessageBox.Action.YES) {
+                        localStorage.removeItem("currentUser");
+                        this.getRouter().navTo("RouteLogin", {}, true);
+                        this.showToast("Logged out successfully."); 
+                    }
+                }
+            });
         }
     });
 });

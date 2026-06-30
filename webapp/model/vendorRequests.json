@@ -6,23 +6,777 @@
             "vendorId": "V001",
             "status": "Pending",
             "requestDate": "2024-06-01",
-            "reason": "Restocking inventory for upcoming sales season.",
+            "reason": "Monthly restocking",
+            "requestedItems": [
+                {
+                    "productId": "P015",
+                    "productName": "Wireless Router",
+                    "category": "Networking",
+                    "quantity": 13,
+                    "price": 65,
+                    "supplyQuantity": 13
+                },
+                {
+                    "productId": "P001",
+                    "productName": "Dell Latitude 5440",
+                    "category": "Electronics",
+                    "quantity": 22,
+                    "price": 850,
+                    "supplyQuantity": 22
+                }
+            ]
+        },
+        {
+            "requestId": "VR002",
+            "warehouseId": "W001",
+            "vendorId": "V002",
+            "status": "Accepted",
+            "requestDate": "2024-06-02",
+            "reason": "Low inventory",
+            "requestedItems": [
+                {
+                    "productId": "P015",
+                    "productName": "Wireless Router",
+                    "category": "Networking",
+                    "quantity": 6,
+                    "price": 65,
+                    "supplyQuantity": 6
+                },
+                {
+                    "productId": "P001",
+                    "productName": "Dell Latitude 5440",
+                    "category": "Electronics",
+                    "quantity": 9,
+                    "price": 850,
+                    "supplyQuantity": 9
+                }
+            ]
+        },
+        {
+            "requestId": "VR003",
+            "warehouseId": "W002",
+            "vendorId": "V001",
+            "status": "Rejected",
+            "requestDate": "2024-06-03",
+            "reason": "Seasonal demand",
             "requestedItems": [
                 {
                     "productId": "P001",
-                    "productName": "Product A",
+                    "productName": "Dell Latitude 5440",
                     "category": "Electronics",
-                    "quantity": 5,
+                    "quantity": 20,
+                    "price": 850,
+                    "supplyQuantity": 0
+                },
+                {
+                    "productId": "P033",
+                    "productName": "HDMI Cable",
+                    "category": "Electronics",
+                    "quantity": 8,
                     "price": 10,
+                    "supplyQuantity": 0
+                }
+            ]
+        },
+        {
+            "requestId": "VR004",
+            "warehouseId": "W001",
+            "vendorId": "V002",
+            "status": "Supplied",
+            "requestDate": "2024-06-04",
+            "reason": "Warehouse expansion",
+            "requestedItems": [
+                {
+                    "productId": "P015",
+                    "productName": "Wireless Router",
+                    "category": "Networking",
+                    "quantity": 19,
+                    "price": 65,
+                    "supplyQuantity": 19
+                },
+                {
+                    "productId": "P001",
+                    "productName": "Dell Latitude 5440",
+                    "category": "Electronics",
+                    "quantity": 23,
+                    "price": 850,
+                    "supplyQuantity": 23
+                }
+            ]
+        },
+        {
+            "requestId": "VR005",
+            "warehouseId": "W001",
+            "vendorId": "V001",
+            "status": "Pending",
+            "requestDate": "2024-06-05",
+            "reason": "Project requirement",
+            "requestedItems": [
+                {
+                    "productId": "P013",
+                    "productName": "USB Flash Drive 64GB",
+                    "category": "Electronics",
+                    "quantity": 19,
+                    "price": 20,
+                    "supplyQuantity": 19
+                },
+                {
+                    "productId": "P033",
+                    "productName": "HDMI Cable",
+                    "category": "Electronics",
+                    "quantity": 23,
+                    "price": 10,
+                    "supplyQuantity": 23
+                }
+            ]
+        },
+        {
+            "requestId": "VR006",
+            "warehouseId": "W002",
+            "vendorId": "V001",
+            "status": "Accepted",
+            "requestDate": "2024-06-06",
+            "reason": "Monthly restocking",
+            "requestedItems": [
+                {
+                    "productId": "P015",
+                    "productName": "Wireless Router",
+                    "category": "Networking",
+                    "quantity": 10,
+                    "price": 65,
+                    "supplyQuantity": 10
+                },
+                {
+                    "productId": "P033",
+                    "productName": "HDMI Cable",
+                    "category": "Electronics",
+                    "quantity": 13,
+                    "price": 10,
+                    "supplyQuantity": 13
+                }
+            ]
+        },
+        {
+            "requestId": "VR007",
+            "warehouseId": "W006",
+            "vendorId": "V001",
+            "status": "Rejected",
+            "requestDate": "2024-06-07",
+            "reason": "Low inventory",
+            "requestedItems": [
+                {
+                    "productId": "P015",
+                    "productName": "Wireless Router",
+                    "category": "Networking",
+                    "quantity": 18,
+                    "price": 65,
+                    "supplyQuantity": 0
+                },
+                {
+                    "productId": "P001",
+                    "productName": "Dell Latitude 5440",
+                    "category": "Electronics",
+                    "quantity": 20,
+                    "price": 850,
+                    "supplyQuantity": 0
+                }
+            ]
+        },
+        {
+            "requestId": "VR008",
+            "warehouseId": "W001",
+            "vendorId": "V001",
+            "status": "Supplied",
+            "requestDate": "2024-06-08",
+            "reason": "Seasonal demand",
+            "requestedItems": [
+                {
+                    "productId": "P001",
+                    "productName": "Dell Latitude 5440",
+                    "category": "Electronics",
+                    "quantity": 21,
+                    "price": 850,
+                    "supplyQuantity": 21
+                },
+                {
+                    "productId": "P013",
+                    "productName": "USB Flash Drive 64GB",
+                    "category": "Electronics",
+                    "quantity": 22,
+                    "price": 20,
+                    "supplyQuantity": 22
+                }
+            ]
+        },
+        {
+            "requestId": "VR009",
+            "warehouseId": "W001",
+            "vendorId": "V001",
+            "status": "Pending",
+            "requestDate": "2024-06-09",
+            "reason": "Warehouse expansion",
+            "requestedItems": [
+                {
+                    "productId": "P001",
+                    "productName": "Dell Latitude 5440",
+                    "category": "Electronics",
+                    "quantity": 11,
+                    "price": 850,
+                    "supplyQuantity": 11
+                },
+                {
+                    "productId": "P013",
+                    "productName": "USB Flash Drive 64GB",
+                    "category": "Electronics",
+                    "quantity": 15,
+                    "price": 20,
+                    "supplyQuantity": 15
+                }
+            ]
+        },
+        {
+            "requestId": "VR010",
+            "warehouseId": "W001",
+            "vendorId": "V001",
+            "status": "Accepted",
+            "requestDate": "2024-06-10",
+            "reason": "Project requirement",
+            "requestedItems": [
+                {
+                    "productId": "P001",
+                    "productName": "Dell Latitude 5440",
+                    "category": "Electronics",
+                    "quantity": 24,
+                    "price": 850,
+                    "supplyQuantity": 24
+                },
+                {
+                    "productId": "P033",
+                    "productName": "HDMI Cable",
+                    "category": "Electronics",
+                    "quantity": 9,
+                    "price": 10,
+                    "supplyQuantity": 9
+                }
+            ]
+        },
+        {
+            "requestId": "VR011",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Rejected",
+            "requestDate": "2024-06-11",
+            "reason": "Monthly restocking",
+            "requestedItems": [
+                {
+                    "productId": "P035",
+                    "productName": "Laptop Backpack",
+                    "category": "Accessories",
+                    "quantity": 9,
+                    "price": 45,
+                    "supplyQuantity": 0
+                },
+                {
+                    "productId": "P036",
+                    "productName": "Power Bank 20000mAh",
+                    "category": "Accessories",
+                    "quantity": 16,
+                    "price": 55,
+                    "supplyQuantity": 0
+                }
+            ]
+        },
+        {
+            "requestId": "VR012",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Supplied",
+            "requestDate": "2024-06-12",
+            "reason": "Low inventory",
+            "requestedItems": [
+                {
+                    "productId": "P003",
+                    "productName": "HP LaserJet Pro Printer",
+                    "category": "Office Equipment",
+                    "quantity": 20,
+                    "price": 220,
+                    "supplyQuantity": 20
+                },
+                {
+                    "productId": "P004",
+                    "productName": "Canon Scanner",
+                    "category": "Office Equipment",
+                    "quantity": 9,
+                    "price": 180,
+                    "supplyQuantity": 9
+                }
+            ]
+        },
+        {
+            "requestId": "VR013",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Pending",
+            "requestDate": "2024-06-13",
+            "reason": "Seasonal demand",
+            "requestedItems": [
+                {
+                    "productId": "P004",
+                    "productName": "Canon Scanner",
+                    "category": "Office Equipment",
+                    "quantity": 20,
+                    "price": 180,
+                    "supplyQuantity": 20
+                },
+                {
+                    "productId": "P035",
+                    "productName": "Laptop Backpack",
+                    "category": "Accessories",
+                    "quantity": 24,
+                    "price": 45,
+                    "supplyQuantity": 24
+                }
+            ]
+        },
+        {
+            "requestId": "VR014",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Accepted",
+            "requestDate": "2024-06-14",
+            "reason": "Warehouse expansion",
+            "requestedItems": [
+                {
+                    "productId": "P040",
+                    "productName": "Barcode Scanner",
+                    "category": "Office Equipment",
+                    "quantity": 5,
+                    "price": 140,
                     "supplyQuantity": 5
                 },
                 {
-                    "productId": "P002",
-                    "productName": "Product B",
+                    "productId": "P028",
+                    "productName": "Paper Shredder",
+                    "category": "Office Equipment",
+                    "quantity": 3,
+                    "price": 130,
+                    "supplyQuantity": 3
+                }
+            ]
+        },
+        {
+            "requestId": "VR015",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Rejected",
+            "requestDate": "2024-06-15",
+            "reason": "Project requirement",
+            "requestedItems": [
+                {
+                    "productId": "P003",
+                    "productName": "HP LaserJet Pro Printer",
+                    "category": "Office Equipment",
+                    "quantity": 12,
+                    "price": 220,
+                    "supplyQuantity": 0
+                },
+                {
+                    "productId": "P036",
+                    "productName": "Power Bank 20000mAh",
+                    "category": "Accessories",
+                    "quantity": 24,
+                    "price": 55,
+                    "supplyQuantity": 0
+                }
+            ]
+        },
+        {
+            "requestId": "VR016",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Supplied",
+            "requestDate": "2024-06-16",
+            "reason": "Monthly restocking",
+            "requestedItems": [
+                {
+                    "productId": "P028",
+                    "productName": "Paper Shredder",
+                    "category": "Office Equipment",
+                    "quantity": 23,
+                    "price": 130,
+                    "supplyQuantity": 23
+                },
+                {
+                    "productId": "P040",
+                    "productName": "Barcode Scanner",
+                    "category": "Office Equipment",
+                    "quantity": 15,
+                    "price": 140,
+                    "supplyQuantity": 15
+                }
+            ]
+        },
+        {
+            "requestId": "VR017",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Pending",
+            "requestDate": "2024-06-17",
+            "reason": "Low inventory",
+            "requestedItems": [
+                {
+                    "productId": "P003",
+                    "productName": "HP LaserJet Pro Printer",
+                    "category": "Office Equipment",
+                    "quantity": 14,
+                    "price": 220,
+                    "supplyQuantity": 14
+                },
+                {
+                    "productId": "P035",
+                    "productName": "Laptop Backpack",
+                    "category": "Accessories",
+                    "quantity": 15,
+                    "price": 45,
+                    "supplyQuantity": 15
+                }
+            ]
+        },
+        {
+            "requestId": "VR018",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Accepted",
+            "requestDate": "2024-06-18",
+            "reason": "Seasonal demand",
+            "requestedItems": [
+                {
+                    "productId": "P003",
+                    "productName": "HP LaserJet Pro Printer",
+                    "category": "Office Equipment",
+                    "quantity": 16,
+                    "price": 220,
+                    "supplyQuantity": 16
+                },
+                {
+                    "productId": "P028",
+                    "productName": "Paper Shredder",
+                    "category": "Office Equipment",
+                    "quantity": 5,
+                    "price": 130,
+                    "supplyQuantity": 5
+                }
+            ]
+        },
+        {
+            "requestId": "VR019",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Rejected",
+            "requestDate": "2024-06-19",
+            "reason": "Warehouse expansion",
+            "requestedItems": [
+                {
+                    "productId": "P036",
+                    "productName": "Power Bank 20000mAh",
+                    "category": "Accessories",
+                    "quantity": 6,
+                    "price": 55,
+                    "supplyQuantity": 0
+                },
+                {
+                    "productId": "P003",
+                    "productName": "HP LaserJet Pro Printer",
+                    "category": "Office Equipment",
+                    "quantity": 19,
+                    "price": 220,
+                    "supplyQuantity": 0
+                }
+            ]
+        },
+        {
+            "requestId": "VR020",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Supplied",
+            "requestDate": "2024-06-20",
+            "reason": "Project requirement",
+            "requestedItems": [
+                {
+                    "productId": "P028",
+                    "productName": "Paper Shredder",
+                    "category": "Office Equipment",
+                    "quantity": 22,
+                    "price": 130,
+                    "supplyQuantity": 22
+                },
+                {
+                    "productId": "P003",
+                    "productName": "HP LaserJet Pro Printer",
+                    "category": "Office Equipment",
+                    "quantity": 13,
+                    "price": 220,
+                    "supplyQuantity": 13
+                }
+            ]
+        },
+        {
+            "requestId": "VR021",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Pending",
+            "requestDate": "2024-06-21",
+            "reason": "Monthly inventory replenishment.",
+            "requestedItems": [
+                {
+                    "productId": "P003",
+                    "productName": "HP LaserJet Pro Printer",
+                    "category": "Office Equipment",
+                    "quantity": 4,
+                    "price": 220,
+                    "supplyQuantity": 4
+                },
+                {
+                    "productId": "P040",
+                    "productName": "Barcode Scanner",
+                    "category": "Office Equipment",
+                    "quantity": 8,
+                    "price": 140,
+                    "supplyQuantity": 8
+                }
+            ]
+        },
+        {
+            "requestId": "VR022",
+            "warehouseId": "W003",
+            "vendorId": "V003",
+            "status": "Accepted",
+            "requestDate": "2024-06-22",
+            "reason": "Furniture restocking.",
+            "requestedItems": [
+                {
+                    "productId": "P005",
+                    "productName": "Office Chair",
+                    "category": "Furniture",
+                    "quantity": 15,
+                    "price": 145,
+                    "supplyQuantity": 15
+                },
+                {
+                    "productId": "P006",
+                    "productName": "Wooden Office Desk",
+                    "category": "Furniture",
+                    "quantity": 6,
+                    "price": 320,
+                    "supplyQuantity": 6
+                }
+            ]
+        },
+        {
+            "requestId": "VR023",
+            "warehouseId": "W003",
+            "vendorId": "V003",
+            "status": "Supplied",
+            "requestDate": "2024-06-23",
+            "reason": "Office expansion.",
+            "requestedItems": [
+                {
+                    "productId": "P017",
+                    "productName": "LED Desk Lamp",
+                    "category": "Furniture",
+                    "quantity": 20,
+                    "price": 35,
+                    "supplyQuantity": 20
+                },
+                {
+                    "productId": "P018",
+                    "productName": "Bookshelf",
+                    "category": "Furniture",
+                    "quantity": 10,
+                    "price": 150,
+                    "supplyQuantity": 10
+                }
+            ]
+        },
+        {
+            "requestId": "VR024",
+            "warehouseId": "W004",
+            "vendorId": "V001",
+            "status": "Rejected",
+            "requestDate": "2024-06-24",
+            "reason": "Budget approval pending.",
+            "requestedItems": [
+                {
+                    "productId": "P029",
+                    "productName": "Projector",
                     "category": "Electronics",
                     "quantity": 3,
-                    "price": 80,
-                    "supplyQuantity": 3
+                    "price": 450,
+                    "supplyQuantity": 0
+                },
+                {
+                    "productId": "P030",
+                    "productName": "Webcam HD",
+                    "category": "Electronics",
+                    "quantity": 10,
+                    "price": 60,
+                    "supplyQuantity": 0
+                }
+            ]
+        },
+        {
+            "requestId": "VR025",
+            "warehouseId": "W004",
+            "vendorId": "V001",
+            "status": "Accepted",
+            "requestDate": "2024-06-25",
+            "reason": "Conference room equipment.",
+            "requestedItems": [
+                {
+                    "productId": "P031",
+                    "productName": "Bluetooth Speaker",
+                    "category": "Electronics",
+                    "quantity": 12,
+                    "price": 75,
+                    "supplyQuantity": 12
+                },
+                {
+                    "productId": "P039",
+                    "productName": "Air Purifier",
+                    "category": "Electronics",
+                    "quantity": 5,
+                    "price": 210,
+                    "supplyQuantity": 5
+                }
+            ]
+        },
+        {
+            "requestId": "VR026",
+            "warehouseId": "W005",
+            "vendorId": "V005",
+            "status": "Supplied",
+            "requestDate": "2024-06-26",
+            "reason": "Safety stock replenishment.",
+            "requestedItems": [
+                {
+                    "productId": "P021",
+                    "productName": "Safety Helmet",
+                    "category": "Safety",
+                    "quantity": 40,
+                    "price": 30,
+                    "supplyQuantity": 40
+                },
+                {
+                    "productId": "P022",
+                    "productName": "Reflective Safety Vest",
+                    "category": "Safety",
+                    "quantity": 50,
+                    "price": 15,
+                    "supplyQuantity": 50
+                }
+            ]
+        },
+        {
+            "requestId": "VR027",
+            "warehouseId": "W005",
+            "vendorId": "V005",
+            "status": "Pending",
+            "requestDate": "2024-06-27",
+            "reason": "Warehouse safety compliance.",
+            "requestedItems": [
+                {
+                    "productId": "P023",
+                    "productName": "Industrial Gloves",
+                    "category": "Safety",
+                    "quantity": 60,
+                    "price": 12,
+                    "supplyQuantity": 60
+                },
+                {
+                    "productId": "P024",
+                    "productName": "Safety Goggles",
+                    "category": "Safety",
+                    "quantity": 45,
+                    "price": 18,
+                    "supplyQuantity": 45
+                }
+            ]
+        },
+        {
+            "requestId": "VR028",
+            "warehouseId": "W006",
+            "vendorId": "V006",
+            "status": "Accepted",
+            "requestDate": "2024-06-28",
+            "reason": "Stationery replenishment.",
+            "requestedItems": [
+                {
+                    "productId": "P011",
+                    "productName": "A4 Copy Paper Box",
+                    "category": "Stationery",
+                    "quantity": 100,
+                    "price": 40,
+                    "supplyQuantity": 100
+                },
+                {
+                    "productId": "P012",
+                    "productName": "Premium Ball Pen Pack",
+                    "category": "Stationery",
+                    "quantity": 150,
+                    "price": 18,
+                    "supplyQuantity": 150
+                }
+            ]
+        },
+        {
+            "requestId": "VR029",
+            "warehouseId": "W006",
+            "vendorId": "V006",
+            "status": "Supplied",
+            "requestDate": "2024-06-29",
+            "reason": "Monthly office supplies.",
+            "requestedItems": [
+                {
+                    "productId": "P025",
+                    "productName": "Notebook Pack",
+                    "category": "Stationery",
+                    "quantity": 120,
+                    "price": 12,
+                    "supplyQuantity": 120
+                },
+                {
+                    "productId": "P026",
+                    "productName": "Sticky Notes",
+                    "category": "Stationery",
+                    "quantity": 250,
+                    "price": 5,
+                    "supplyQuantity": 250
+                }
+            ]
+        },
+        {
+            "requestId": "VR030",
+            "warehouseId": "W006",
+            "vendorId": "V006",
+            "status": "Rejected",
+            "requestDate": "2024-06-30",
+            "reason": "Requested quantity exceeds vendor capacity.",
+            "requestedItems": [
+                {
+                    "productId": "P027",
+                    "productName": "Whiteboard Marker Set",
+                    "category": "Stationery",
+                    "quantity": 80,
+                    "price": 14,
+                    "supplyQuantity": 0
+                },
+                {
+                    "productId": "P037",
+                    "productName": "Coffee Mug",
+                    "category": "Office Supplies",
+                    "quantity": 70,
+                    "price": 9,
+                    "supplyQuantity": 0
                 }
             ]
         }

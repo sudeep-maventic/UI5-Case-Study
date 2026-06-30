@@ -41,6 +41,46 @@
             "quantity": 12
         },
         {
+            "productId": "P001",
+            "productName": "Dell Latitude 5440",
+            "category": "Electronics",
+            "warehouseId": "W002",
+            "vendorId": "V001",
+            "status": "Available",
+            "price": 850.00,
+            "quantity": 10
+        },
+        {
+            "productId": "P002",
+            "productName": "Polo T-Shirt",
+            "category": "Apparel",
+            "warehouseId": "W002",
+            "vendorId": "V002",
+            "status": "Available",
+            "price": 25.00,
+            "quantity": 5
+        },
+        {
+            "productId": "P009",
+            "productName": "Electric Drill",
+            "category": "Tools",
+            "warehouseId": "W002",
+            "vendorId": "V005",
+            "status": "Available",
+            "price": 110.00,
+            "quantity": 5
+        },
+        {
+            "productId": "P016",
+            "productName": "Network Switch 8-Port",
+            "category": "Networking",
+            "warehouseId": "W002",
+            "vendorId": "V001",
+            "status": "Available",
+            "price": 90.00,
+            "quantity": 4
+        },
+        {
             "productId": "P005",
             "productName": "Office Chair",
             "category": "Furniture",
@@ -399,6 +439,46 @@
             "status": "Available",
             "price": 140.00,
             "quantity": 19
+        },
+        {
+            "productId": "P017",
+            "productName": "LED Desk Lamp",
+            "category": "Furniture",
+            "warehouseId": "W001",
+            "vendorId": "V003",
+            "status": "Available",
+            "price": 35.00,
+            "quantity": 7
+        },
+        {
+            "productId": "P023",
+            "productName": "Industrial Gloves",
+            "category": "Safety",
+            "warehouseId": "W001",
+            "vendorId": "V005",
+            "status": "Available",
+            "price": 12.00,
+            "quantity": 25
+        },
+        {
+            "productId": "P029",
+            "productName": "Projector",
+            "category": "Electronics",
+            "warehouseId": "W001",
+            "vendorId": "V004",
+            "status": "Available",
+            "price": 450.00,
+            "quantity": 2
+        },
+        {
+            "productId": "P030",
+            "productName": "Webcam HD",
+            "category": "Electronics",
+            "warehouseId": "W001",
+            "vendorId": "V004",
+            "status": "Available",
+            "price": 60.00,
+            "quantity": 8
         }
     ]
 }
