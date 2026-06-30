@@ -10,12 +10,16 @@
                 {
                     "productId": "P001",
                     "productName": "Product A",
-                    "quantity": 10
+                    "category": "Electronics",
+                    "quantity": 10,
+                    "price": 100.0
                 },
                 {
                     "productId": "P002",
                     "productName": "Product B",
-                    "quantity": 5
+                    "category": "Electronics",
+                    "quantity": 5,
+                    "price": 50.0
                 }
             ]
         },
@@ -29,7 +33,9 @@
                 {
                     "productId": "P003",
                     "productName": "Product C",
-                    "quantity": 20
+                    "category": "Furniture",
+                    "quantity": 20,
+                    "price": 200.0
                 }
             ]
         }

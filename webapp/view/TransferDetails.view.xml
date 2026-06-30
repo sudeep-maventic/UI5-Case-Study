@@ -1,10 +1,10 @@
-<mvc:View controllerName="sudeep.inventorytransfer.controller.TransferDetails"
+<mvc:View xmlns:tnt="sap.tnt" controllerName="sudeep.inventorytransfer.controller.TransferDetails"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
     <Page title="Transfer Details" showNavButton="true" navButtonPress=".onNavBack">
         <content>
-            <ObjectHeader title="{transferDetails>/transferId}"
+            <ObjectHeader title="Transfer ID: {transferDetails>/transferId}"
                     number="{transferDetails>/status}">
                 <attributes>
                     <ObjectAttribute title="Source Warehouse"
@@ -18,7 +18,13 @@
                 </attributes>        
             </ObjectHeader>
 
-            <Table items="{transferDetails>/items}" width="80%">
+            <Panel class="sapUiSmallMargin">
+            <Table  items="{transferDetails>/items}" showSeparators="All" width="80%">
+                <headerToolbar>
+                    <tnt:ToolHeader >
+                        <Text text="Transferred Products"></Text>
+                    </tnt:ToolHeader>
+                </headerToolbar>
                 <columns>
                     <Column>
                         <Text text="Product Id" />
@@ -27,7 +33,13 @@
                         <Text text="Product Name" />
                     </Column>
                     <Column>
+                        <Text text="Category" />
+                    </Column>
+                    <Column>
                         <Text text="Quantity" />
+                    </Column>
+                    <Column >
+                        <Text text="Unit Price" />
                     </Column>
                 </columns>
                 <items>
@@ -35,11 +47,14 @@
                         <cells>
                             <Text text="{transferDetails>productId}" />
                             <Text text="{transferDetails>productName}" />
+                            <Text text="{transferDetails>category}" />
                             <Text text="{transferDetails>quantity}" />
+                            <Text text="{transferDetails>price}" />
                         </cells>
                     </ColumnListItem>
                 </items>
             </Table>
+            </Panel>
         </content>
     </Page>
 </mvc:View>

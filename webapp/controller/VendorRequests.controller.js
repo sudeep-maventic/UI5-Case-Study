@@ -125,7 +125,7 @@ sap.ui.define([
                 oVendorRequestModel.setProperty("/vendorRequests", aRequests);
                 oVendorRequestModel.refresh(true);
 
-                this.showToast("Vendor Request Submitted Successfully");
+                this.showToast("Purchase Request Submitted Successfully");
 
                 oRequestModel.setData({
                     vendorId: "",

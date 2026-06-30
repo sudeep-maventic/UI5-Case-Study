@@ -56,6 +56,12 @@
                     <Text text="Quantity"></Text>
                 </Column>
                 <Column >
+                    <Text text="Category"></Text>
+                </Column>
+                <Column >
+                    <Text text="Price"></Text>
+                </Column>
+                <Column >
                     <Text text="Actions"></Text>
                 </Column>
             </columns>
@@ -69,6 +75,8 @@
                                     text="{warehouseProducts>productName}" />
                         </Select>
                         <Input value="{transferForm>quantity}" type="Number"></Input>
+                        <Text text="{transferForm>category}"></Text>
+                        <Text text="{transferForm>price}"></Text>
                         <Button text="Remove Item" type="Negative" icon="sap-icon://delete" press=".onRemoveItem"></Button>
                     </cells>
                 </ColumnListItem>

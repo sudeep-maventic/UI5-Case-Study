@@ -8,14 +8,15 @@
                 class="sapUiSmallMarginBottom" placeholder="Search by Transfer ID" />
 
             <List id="transferList" items="{history>/transfers}">
-                <ObjectListItem title="{history>transferId}" 
+                <ObjectListItem title="Transfer ID: {history>transferId}" 
                     number="{history>status}"
                     numberState="Success"
                     intro="{history>fromWarehouse} - {history>toWarehouse}"
                     type="Navigation"
                     press=".onTransferPress">
                     <attributes>
-                        <ObjectAttribute text="{
+                        <ObjectAttribute title="Transfer Date"
+                         text="{
                             path: 'history>transferDate',
                             formatter: '.formatter.formatDate'
                         }" />

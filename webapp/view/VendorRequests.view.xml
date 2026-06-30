@@ -3,18 +3,20 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
-    <Page title="Vendor Requests">
+    <Page title="Create Purchase Requests">
         <content>
-            <MessageStrip text="Create Product Requests"
+            <MessageStrip text="Create a Purchase request for products from a supplier."
                 type="Information"
                 showIcon="true"
                 class="sapUiSmallMarginBottom"/>
+
+            <Panel class="sapUiSmallMargin">
             <VBox class="sapUiMediumMargin">
-                <Label text="Select Vendor"/>
+                <Label text="Supplier"/>
                 <ComboBox selectedKey="{RequestsForm>/vendorId}"
                     change=".onVendorChange"
                     items="{vendorList>/vendors}"
-                    placeholder="Select a vendor">
+                    placeholder="Select a supplier">
 
                     <core:Item
                         key="{vendorList>vendorId}"
@@ -31,12 +33,13 @@
                     <ToolbarSpacer/>
                     <Button
                         class="sapUiLargeMarginBegin"
-                        text="Submit Request"
+                        text="Submit Purchase Request"
                         icon="sap-icon://paper-plane"
                         type="Accept"
                         press=".onSubmitRequest"/>
                 </HBox>
             </VBox>
+            </Panel>
 
             <Table id="vendorRequestTable"
                 noDataText="Click 'Add Item' to create a product request"
@@ -61,7 +64,7 @@
                     </Column>
 
                     <Column width="6rem">
-                        <Text text="Action"/>
+                        <Text text="Actions"/>
                     </Column>
 
                 </columns>

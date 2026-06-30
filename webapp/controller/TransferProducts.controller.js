@@ -29,6 +29,9 @@ sap.ui.define([
             aWarehouseProducts.unshift({
                 productId: "",
                 productName: "Select Inventory Product",
+                quantity: 0,
+                price: 0,
+                category: ""
             })
 
             this.getView().setModel(new sap.ui.model.json.JSONModel({products: aWarehouseProducts}), "warehouseProducts");
@@ -44,7 +47,9 @@ sap.ui.define([
             aItems.push({
                 productId: "",
                 productName: "",
-                quantity: 0
+                quantity: 0,
+                price: 0,
+                category: ""
             })
 
             oTransferModel.setProperty("/items", aItems);
@@ -64,20 +69,35 @@ sap.ui.define([
             this.getView().getModel("transferForm").refresh(true);
         },
 
-        onProductChange: function(oEvent) {
-            const sSelectedProduct = oEvent.getSource().getSelectedKey();
-            const sCurrentPath = oEvent.getSource().getBindingContext("transferForm").getPath();
-            const aItems = this.getView().getModel("transferForm").getProperty("/items");
+        onProductChange: function (oEvent) {
+            const oComboBox = oEvent.getSource();
+            const sSelectedProductId = oComboBox.getSelectedKey();
+            const sCurrentPath = oComboBox.getBindingContext("transferForm").getPath();
+            const oTransferModel = this.getView().getModel("transferForm");
+            const aItems = oTransferModel.getProperty("/items");
 
+            // Check duplicate products
             const bDuplicate = aItems.some((item, index) => {
-                return "/items/" + index !== sCurrentPath &&
-                    item.productId === sSelectedProduct;
+                return ("/items/" + index) !== sCurrentPath && item.productId === sSelectedProductId;
             });
 
             if (bDuplicate) {
                 this.showError("This product has already been selected.");
-                oEvent.getSource().setSelectedKey("");
+                oComboBox.setSelectedKey("");
                 return;
+            }
+
+            // Get selected product details
+            const aProducts = this.getOwnerComponent().getModel("products").getProperty("/products") || [];
+
+            const oSelectedProduct = aProducts.find(product =>
+                product.productId === sSelectedProductId
+            );
+
+            if (oSelectedProduct) {
+                oTransferModel.setProperty(sCurrentPath + "/productName", oSelectedProduct.productName);
+                oTransferModel.setProperty(sCurrentPath + "/category", oSelectedProduct.category);
+                oTransferModel.setProperty(sCurrentPath + "/price", oSelectedProduct.price);
             }
         },
 
@@ -123,7 +143,9 @@ sap.ui.define([
                 aTransferItems.push({
                     productId: oProduct.productId,
                     productName: oProduct.productName,
-                    quantity: items.quantity
+                    quantity: items.quantity,
+                    price: oProduct.price,
+                    category: oProduct.category
                 });
 
                 oProduct.quantity -= items.quantity;

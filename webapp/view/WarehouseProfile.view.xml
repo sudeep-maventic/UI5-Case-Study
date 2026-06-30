@@ -7,53 +7,64 @@
     xmlns:form="sap.ui.layout.form"
     xmlns:cards="sap.f.cards">
 
-    <Page title="Profile">
+    <Page title="My Profile">
         <content>
             <HBox justifyContent="End">
                 <Button text="Edit" type="Emphasized" press=".onEditProfilePress" visible="{= !${viewState>/editMode}}" />
             </HBox>
-            <f:Card class="sapUiMediumMargin" width="60%">
-                <f:header>
-                    <cards:Header title="{profile>/oCurrentUser/name}" subtitle="{profile>/oCurrentUser/role}" iconSrc="sap-icon://employee"></cards:Header>
-                </f:header>                
+            <HBox justifyContent="Start">
+            <f:Card class="sapUiMediumMarginBegin" width="800px">
                 <f:content>
-                    <form:SimpleForm
-                        editable="{viewState>/editMode}"
-                        layout="ResponsiveGridLayout"
-                        labelSpanXL="3"
-                        labelSpanL="3"
-                        labelSpanM="4"
-                        labelSpanS="12"
-                        class="sapUiMediumMargin"
-                        >
-                            <Label text="Name" class="sapUiMediumMarginEnd"/>
+                    <VBox >
+                        <ObjectHeader title="Employee Information" number="{profile>/oCurrentUser/id}" numberUnit="Employee ID">
+                            <attributes>
+                                <ObjectAttribute title="Warehouse" text="{profile>/oCurrentUser/warehouseId}" />
+                                <ObjectAttribute title="Location" text="{profile>/oCurrentUser/location}" />
+                            </attributes>
+                        </ObjectHeader>
+                        <HBox class="sapUiMediumMarginBegin sapUiSmallMarginTop">
+                            <Label text="Full Name" class="sapUiMediumMarginEnd"/>
                             <Text text="{profile>/oCurrentUser/name}" visible="{= !${viewState>/editMode}}" />
                             <Input value="{profile>/oCurrentUser/name}" visible="{= ${viewState>/editMode}}" />
+                        </HBox>
 
-                            <Label text="Email" class="sapUiMediumMarginEnd"/>
+                        <HBox class="sapUiMediumMarginBegin sapUiSmallMarginTop">
+                            <Label text="Email Address" class="sapUiMediumMarginEnd"/>
                             <Text text="{profile>/oCurrentUser/email}" visible="{= !${viewState>/editMode}}" />
                             <Input value="{profile>/oCurrentUser/email}" visible="{= ${viewState>/editMode}}" />
+                        </HBox>
 
+                        <HBox class="sapUiMediumMarginBegin sapUiSmallMarginTop">
                             <Label text="Employee Id" class="sapUiMediumMarginEnd"/>
                             <Text text="{profile>/oCurrentUser/id}" visible="{= !${viewState>/editMode}}" />
                             <Input value="{profile>/oCurrentUser/id}" visible="{= ${viewState>/editMode}}" />
+                        </HBox>
 
+                        <HBox class="sapUiMediumMarginBegin sapUiSmallMarginTop">
                             <Label text="Warehouse Id" class="sapUiMediumMarginEnd"/>
                             <Text text="{profile>/oCurrentUser/warehouseId}" visible="{= !${viewState>/editMode}}" />
                             <Input value="{profile>/oCurrentUser/warehouseId}" visible="{= ${viewState>/editMode}}" />
+                        </HBox>
 
-                            <Label text="Location" class="sapUiMediumMarginEnd"/>
+                        <HBox class="sapUiMediumMarginBegin sapUiSmallMarginTop">
+                            <Label text="Warehouse Location" class="sapUiMediumMarginEnd"/>
                             <Text text="{profile>/oCurrentUser/location}" visible="{= !${viewState>/editMode}}" />
                             <Input value="{profile>/oCurrentUser/location}" visible="{= ${viewState>/editMode}}" />
+                        </HBox>
 
+                        <HBox class="sapUiMediumMarginBegin sapUiSmallMarginTop sapUiSmallMarginBottom">
                             <Label text="Role" class="sapUiMediumMarginEnd"/>
                             <Text text="{profile>/oCurrentUser/role}" visible="{= !${viewState>/editMode}}"/>
                             <Input value="{profile>/oCurrentUser/role}" visible="{= ${viewState>/editMode}}" />
-                        </form:SimpleForm>
+                        </HBox>
+                        
+                    </VBox>
+                    
                 </f:content>
             </f:Card>
-            <HBox width="60%" justifyContent="SpaceAround" class="sapUiMediumMarginTop">                          
-                <Button text="Save" type="Emphasized" press=".onSaveProfilePress" class="sapUiMediumMarginEnd" visible="{= ${viewState>/editMode}}" />
+            </HBox>
+            <HBox width="60%" justifyContent="Start" class="sapUiMediumMarginTop">                          
+                <Button text="Save" type="Emphasized" press=".onSaveProfilePress" class="sapUiSmallMarginBegin sapUiMediumMarginEnd" visible="{= ${viewState>/editMode}}" />
                 <Button text="Cancel" type="Default" press=".onCancelEditPress" visible="{= ${viewState>/editMode}}" />
             </HBox>
         </content>
