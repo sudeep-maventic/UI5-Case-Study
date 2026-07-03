@@ -45,9 +45,10 @@
                             <StepInput min="0" step="1"
                                 value="{supply>supplyQuantity}"
                                 editable="{= ${supply>/status} === 'Pending' }"></StepInput>
-                            <StepInput min="0" step="0.01"
+                            <Input type="Number"
                                 value="{supply>price}"
-                                editable="{= ${supply>/status} === 'Pending'}"></StepInput>
+                                editable="{= ${supply>/status} === 'Pending'}"
+                                liveChange=".onPriceChange"></Input>
                         </cells>
                     </ColumnListItem>
                 </items>

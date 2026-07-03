@@ -64,7 +64,7 @@
                             <core:Item key="{warehouseProducts>productId}"
                                     text="{warehouseProducts>productName}" />
                         </Select>
-                        <StepInput value="{transferForm>quantity}" min="1" step="1"></StepInput>
+                        <StepInput value="{transferForm>quantity}" min="0" step="1"></StepInput>
                         <Text text="{transferForm>category}"></Text>
                         <Text text="{transferForm>price}"></Text>
                         <Button text="Remove Item" type="Negative" icon="sap-icon://delete" press=".onRemoveItem"></Button>

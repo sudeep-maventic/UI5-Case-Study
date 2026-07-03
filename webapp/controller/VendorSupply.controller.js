@@ -43,12 +43,25 @@ sap.ui.define([
         },
 
         onAcceptRequest: function () {
-            const oSupply = this.getView().getModel("supply");
-            oSupply.getProperty("/requestId");
+            const oSupplyModel = this.getView().getModel("supply");
+            const oSupply = oSupplyModel.getData();
 
-            const sRequestId = oSupply.getProperty("/requestId");
+            const sRequestId = oSupplyModel.getProperty("/requestId");
             const aRequests = this.getOwnerComponent().getModel("vendorRequests").getProperty("/vendorRequests") || [];
             const oRequest = aRequests.find(request => request.requestId === sRequestId);
+
+            for(let i=0; i < oSupply.requestedItems.length; i++) {
+                const oItem = oSupply.requestedItems[i];
+
+                if(oItem.supplyQuantity <= 0 ) {
+                    MessageToast.show("Invalid supply quantity for item: " + oItem.productName);
+                    return;
+                }
+                if(oItem.price <= 0) {
+                    MessageToast.show("Invalid price for item: " + oItem.productName);
+                    return;
+                }
+            }
 
             if(oRequest) {
                 oRequest.status = "Accepted";
@@ -107,6 +120,7 @@ sap.ui.define([
             }
 
             const aProducts = this.getOwnerComponent().getModel("products").getProperty("/products") || [];
+
             for(let i=0; i < oSupply.requestedItems.length; i++) {
                 const oItem = oSupply.requestedItems[i];
 
@@ -187,6 +201,21 @@ sap.ui.define([
                 requestDate: "",
                 requestedItems: []
             }), "supply");
+        },
+
+        onPriceChange: function (oEvent) {
+        const oInput = oEvent.getSource();
+        const sValue = oInput.getValue();
+
+        // Allow only positive decimal numbers
+        const bValid = '/^\d+(\.\d+)?$/.test(sValue) && parseFloat(sValue) > 0';
+
+        if (!bValid && sValue !== "") {
+            oInput.setValueState("Error");
+            oInput.setValueStateText("Enter a value greater than 0");
+        } else {
+            oInput.setValueState("None");
+        }
         }
     });
 });
