@@ -39,19 +39,19 @@
                     class="sapUiSmallMarginBegin"></Button>
         <Table items="{transferForm>/items}" width="80%" class="sapUiSmallMargin">
             <columns>
-                <Column >
+                <Column width="22rem">
                     <Text text="Product"></Text>
                 </Column>
-                <Column >
+                <Column width="8rem">
                     <Text text="Quantity"></Text>
                 </Column>
-                <Column >
+                <Column width="12rem">
                     <Text text="Category"></Text>
                 </Column>
-                <Column >
+                <Column width="8rem">
                     <Text text="Unit Price"></Text>
                 </Column>
-                <Column >
+                <Column width="12rem">
                     <Text text="Actions"></Text>
                 </Column>
             </columns>

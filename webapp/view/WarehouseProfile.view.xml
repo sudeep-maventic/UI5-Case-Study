@@ -16,7 +16,7 @@
             <f:Card class="sapUiMediumMarginBegin" width="800px">
                 <f:content>
                     <VBox >
-                        <ObjectHeader title="Employee Information" number="{profile>/oCurrentUser/id}" numberUnit="Employee ID">
+                        <ObjectHeader title="{profile>/oCurrentUser/id}">
                             <attributes>
                                 <ObjectAttribute title="Warehouse" text="{profile>/oCurrentUser/warehouseId}" />
                                 <ObjectAttribute title="Location" text="{profile>/oCurrentUser/location}" />
