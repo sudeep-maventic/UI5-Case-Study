@@ -24,16 +24,20 @@
                         <Text text="Product Name"/>
                     </Column>
 
-                    <Column>
+                    <Column hAlign="Center">
                         <Text text="Requested Qty" />
                     </Column>
 
-                    <Column>
+                    <Column hAlign="Center">
                         <Text text="Quantity to Supply" />
                     </Column>
 
-                    <Column>
+                    <Column hAlign="Center">
                         <Text text="Unit Price" />
+                    </Column>
+
+                    <Column hAlign="End">
+                        <Text  text="Total Amount"></Text>
                     </Column>
                 </columns>
 
@@ -44,11 +48,13 @@
                             <ObjectNumber number="{supply>quantity}"></ObjectNumber>
                             <StepInput min="0" step="1"
                                 value="{supply>supplyQuantity}"
-                                editable="{= ${supply>/status} === 'Pending' }"></StepInput>
+                                editable="{= ${supply>/status} === 'Pending' }"
+                                change=".onQuantityChange"></StepInput>
                             <Input type="Number"
                                 value="{supply>price}"
                                 editable="{= ${supply>/status} === 'Pending'}"
                                 liveChange=".onPriceChange"></Input>
+                            <ObjectNumber number="{supply>totalPrice}"/>
                         </cells>
                     </ColumnListItem>
                 </items>

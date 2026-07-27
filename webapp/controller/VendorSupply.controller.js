@@ -31,6 +31,8 @@ sap.ui.define([
             oRequest.requestedItems.forEach(item => {
                 if(!item.supplyQuantity) {
                     item.supplyQuantity = item.quantity;
+                    item.price = 0;
+                    item.totalPrice = item.supplyQuantity * item.price;
                 }
             });
 
@@ -203,19 +205,38 @@ sap.ui.define([
             }), "supply");
         },
 
+        onQuantityChange: function (oEvent) {
+            const oStepInput = oEvent.getSource();
+            const oContext = oStepInput.getBindingContext("supply");
+            const oItem = oContext.getObject();
+        
+            oItem.supplyQuantity = oStepInput.getValue();
+            oItem.totalPrice = oItem.supplyQuantity * oItem.price;
+
+            oContext.getModel().refresh(true);
+        },
+
         onPriceChange: function (oEvent) {
-        const oInput = oEvent.getSource();
-        const sValue = oInput.getValue();
+            const oInput = oEvent.getSource();
+            const sValue = oInput.getValue();
 
-        // Allow only positive decimal numbers
-        const bValid = '/^\d+(\.\d+)?$/.test(sValue) && parseFloat(sValue) > 0';
+            // Validate positive decimal number
+            const bValid = /^\d+(\.\d+)?$/.test(sValue) && parseFloat(sValue) > 0;
 
-        if (!bValid && sValue !== "") {
-            oInput.setValueState("Error");
-            oInput.setValueStateText("Enter a value greater than 0");
-        } else {
-            oInput.setValueState("None");
-        }
+            if (!bValid && sValue !== "") {
+                oInput.setValueState("Error");
+                oInput.setValueStateText("Enter a value greater than 0");
+                return;
+            } else {
+                oInput.setValueState("None");
+            }
+            // Update total amount
+            const oContext = oInput.getBindingContext("supply");
+            const oItem = oContext.getObject();
+            oItem.price = parseFloat(sValue) || 0;
+            oItem.totalPrice = (oItem.supplyQuantity || 0) * oItem.price;
+
+            oContext.getModel().refresh(true);
         }
     });
 });

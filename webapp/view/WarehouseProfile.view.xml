@@ -9,9 +9,9 @@
 
     <Page title="My Profile">
         <content>
-            <HBox justifyContent="End">
+            <!-- <HBox justifyContent="End">
                 <Button text="Edit" type="Emphasized" press=".onEditProfilePress" visible="{= !${viewState>/editMode}}" />
-            </HBox>
+            </HBox> -->
             <HBox justifyContent="Start">
             <f:Card class="sapUiMediumMarginBegin" width="800px">
                 <f:content>

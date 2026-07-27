@@ -12,17 +12,19 @@
                     "productId": "P015",
                     "productName": "Wireless Router",
                     "category": "Networking",
-                    "quantity": 13,
-                    "price": 65,
-                    "supplyQuantity": 13
+                    "quantity": 1,
+                    "price": 4,
+                    "totalPrice": 4,
+                    "supplyQuantity": 1
                 },
                 {
                     "productId": "P001",
                     "productName": "Dell Latitude 5440",
                     "category": "Electronics",
                     "quantity": 22,
-                    "price": 850,
-                    "supplyQuantity": 22
+                    "price": 0,
+                    "totalPrice": 0,
+                    "supplyQuantity": 0
                 }
             ]
         },
@@ -40,7 +42,8 @@
                     "category": "Networking",
                     "quantity": 6,
                     "price": 65,
-                    "supplyQuantity": 6
+                    "supplyQuantity": 6,
+                    "totalPrice": 390
                 },
                 {
                     "productId": "P001",
@@ -48,7 +51,8 @@
                     "category": "Electronics",
                     "quantity": 9,
                     "price": 850,
-                    "supplyQuantity": 9
+                    "supplyQuantity": 9,
+                    "totalPrice": 7650
                 }
             ]
         },
@@ -66,7 +70,8 @@
                     "category": "Electronics",
                     "quantity": 20,
                     "price": 850,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 },
                 {
                     "productId": "P033",
@@ -74,7 +79,8 @@
                     "category": "Electronics",
                     "quantity": 8,
                     "price": 10,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 }
             ]
         },
@@ -92,7 +98,8 @@
                     "category": "Networking",
                     "quantity": 19,
                     "price": 65,
-                    "supplyQuantity": 19
+                    "supplyQuantity": 19,
+                    "totalPrice": 1235
                 },
                 {
                     "productId": "P001",
@@ -100,7 +107,8 @@
                     "category": "Electronics",
                     "quantity": 23,
                     "price": 850,
-                    "supplyQuantity": 23
+                    "supplyQuantity": 23,
+                    "totalPrice": 19550
                 }
             ]
         },
@@ -118,7 +126,8 @@
                     "category": "Electronics",
                     "quantity": 19,
                     "price": 20,
-                    "supplyQuantity": 19
+                    "supplyQuantity": 19,
+                    "totalPrice": 380
                 },
                 {
                     "productId": "P033",
@@ -126,7 +135,8 @@
                     "category": "Electronics",
                     "quantity": 23,
                     "price": 10,
-                    "supplyQuantity": 23
+                    "supplyQuantity": 23,
+                    "totalPrice": 230
                 }
             ]
         },
@@ -144,7 +154,8 @@
                     "category": "Networking",
                     "quantity": 10,
                     "price": 65,
-                    "supplyQuantity": 10
+                    "supplyQuantity": 10,
+                    "totalPrice": 650
                 },
                 {
                     "productId": "P033",
@@ -152,7 +163,8 @@
                     "category": "Electronics",
                     "quantity": 13,
                     "price": 10,
-                    "supplyQuantity": 13
+                    "supplyQuantity": 13,
+                    "totalPrice": 130
                 }
             ]
         },
@@ -170,7 +182,8 @@
                     "category": "Networking",
                     "quantity": 18,
                     "price": 65,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 },
                 {
                     "productId": "P001",
@@ -178,7 +191,8 @@
                     "category": "Electronics",
                     "quantity": 20,
                     "price": 850,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 }
             ]
         },
@@ -196,7 +210,8 @@
                     "category": "Electronics",
                     "quantity": 21,
                     "price": 850,
-                    "supplyQuantity": 21
+                    "supplyQuantity": 21,
+                    "totalPrice": 17850
                 },
                 {
                     "productId": "P013",
@@ -204,7 +219,8 @@
                     "category": "Electronics",
                     "quantity": 22,
                     "price": 20,
-                    "supplyQuantity": 22
+                    "supplyQuantity": 22,
+                    "totalPrice": 440
                 }
             ]
         },
@@ -222,7 +238,8 @@
                     "category": "Electronics",
                     "quantity": 11,
                     "price": 850,
-                    "supplyQuantity": 11
+                    "supplyQuantity": 11,
+                    "totalPrice": 9350
                 },
                 {
                     "productId": "P013",
@@ -230,7 +247,8 @@
                     "category": "Electronics",
                     "quantity": 15,
                     "price": 20,
-                    "supplyQuantity": 15
+                    "supplyQuantity": 15,
+                    "totalPrice": 300
                 }
             ]
         },
@@ -248,7 +266,8 @@
                     "category": "Electronics",
                     "quantity": 24,
                     "price": 850,
-                    "supplyQuantity": 24
+                    "supplyQuantity": 24,
+                    "totalPrice": 20400
                 },
                 {
                     "productId": "P033",
@@ -256,7 +275,8 @@
                     "category": "Electronics",
                     "quantity": 9,
                     "price": 10,
-                    "supplyQuantity": 9
+                    "supplyQuantity": 9,
+                    "totalPrice": 90
                 }
             ]
         },
@@ -274,7 +294,8 @@
                     "category": "Accessories",
                     "quantity": 9,
                     "price": 45,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 },
                 {
                     "productId": "P036",
@@ -282,7 +303,8 @@
                     "category": "Accessories",
                     "quantity": 16,
                     "price": 55,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 }
             ]
         },
@@ -300,7 +322,8 @@
                     "category": "Office Equipment",
                     "quantity": 20,
                     "price": 220,
-                    "supplyQuantity": 20
+                    "supplyQuantity": 20,
+                    "totalPrice": 4400
                 },
                 {
                     "productId": "P004",
@@ -308,7 +331,8 @@
                     "category": "Office Equipment",
                     "quantity": 9,
                     "price": 180,
-                    "supplyQuantity": 9
+                    "supplyQuantity": 9,
+                    "totalPrice": 1620
                 }
             ]
         },
@@ -326,7 +350,8 @@
                     "category": "Office Equipment",
                     "quantity": 20,
                     "price": 180,
-                    "supplyQuantity": 20
+                    "supplyQuantity": 20,
+                    "totalPrice": 3600
                 },
                 {
                     "productId": "P035",
@@ -334,7 +359,8 @@
                     "category": "Accessories",
                     "quantity": 24,
                     "price": 45,
-                    "supplyQuantity": 24
+                    "supplyQuantity": 24,
+                    "totalPrice": 1080
                 }
             ]
         },
@@ -352,7 +378,8 @@
                     "category": "Office Equipment",
                     "quantity": 5,
                     "price": 140,
-                    "supplyQuantity": 5
+                    "supplyQuantity": 5,
+                    "totalPrice": 700
                 },
                 {
                     "productId": "P028",
@@ -360,7 +387,8 @@
                     "category": "Office Equipment",
                     "quantity": 3,
                     "price": 130,
-                    "supplyQuantity": 3
+                    "supplyQuantity": 3,
+                    "totalPrice": 390
                 }
             ]
         },
@@ -378,7 +406,8 @@
                     "category": "Office Equipment",
                     "quantity": 12,
                     "price": 220,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 },
                 {
                     "productId": "P036",
@@ -386,7 +415,8 @@
                     "category": "Accessories",
                     "quantity": 24,
                     "price": 55,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 }
             ]
         },
@@ -404,7 +434,8 @@
                     "category": "Office Equipment",
                     "quantity": 23,
                     "price": 130,
-                    "supplyQuantity": 23
+                    "supplyQuantity": 23,
+                    "totalPrice": 2990
                 },
                 {
                     "productId": "P040",
@@ -412,7 +443,8 @@
                     "category": "Office Equipment",
                     "quantity": 15,
                     "price": 140,
-                    "supplyQuantity": 15
+                    "supplyQuantity": 15,
+                    "totalPrice": 2100
                 }
             ]
         },
@@ -430,7 +462,8 @@
                     "category": "Office Equipment",
                     "quantity": 14,
                     "price": 220,
-                    "supplyQuantity": 14
+                    "supplyQuantity": 14,
+                    "totalPrice": 3080
                 },
                 {
                     "productId": "P035",
@@ -438,7 +471,8 @@
                     "category": "Accessories",
                     "quantity": 15,
                     "price": 45,
-                    "supplyQuantity": 15
+                    "supplyQuantity": 15,
+                    "totalPrice": 675
                 }
             ]
         },
@@ -456,7 +490,8 @@
                     "category": "Office Equipment",
                     "quantity": 16,
                     "price": 220,
-                    "supplyQuantity": 16
+                    "supplyQuantity": 16,
+                    "totalPrice": 3520
                 },
                 {
                     "productId": "P028",
@@ -464,7 +499,8 @@
                     "category": "Office Equipment",
                     "quantity": 5,
                     "price": 130,
-                    "supplyQuantity": 5
+                    "supplyQuantity": 5,
+                    "totalPrice": 650
                 }
             ]
         },
@@ -482,7 +518,8 @@
                     "category": "Accessories",
                     "quantity": 6,
                     "price": 55,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 },
                 {
                     "productId": "P003",
@@ -490,7 +527,8 @@
                     "category": "Office Equipment",
                     "quantity": 19,
                     "price": 220,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 }
             ]
         },
@@ -508,7 +546,8 @@
                     "category": "Office Equipment",
                     "quantity": 22,
                     "price": 130,
-                    "supplyQuantity": 22
+                    "supplyQuantity": 22,
+                    "totalPrice": 2860
                 },
                 {
                     "productId": "P003",
@@ -516,7 +555,8 @@
                     "category": "Office Equipment",
                     "quantity": 13,
                     "price": 220,
-                    "supplyQuantity": 13
+                    "supplyQuantity": 13,
+                    "totalPrice": 2860
                 }
             ]
         },
@@ -534,7 +574,8 @@
                     "category": "Office Equipment",
                     "quantity": 4,
                     "price": 220,
-                    "supplyQuantity": 4
+                    "supplyQuantity": 4,
+                    "totalPrice": 880
                 },
                 {
                     "productId": "P040",
@@ -542,7 +583,8 @@
                     "category": "Office Equipment",
                     "quantity": 8,
                     "price": 140,
-                    "supplyQuantity": 8
+                    "supplyQuantity": 8,
+                    "totalPrice": 1120
                 }
             ]
         },
@@ -560,7 +602,8 @@
                     "category": "Furniture",
                     "quantity": 15,
                     "price": 145,
-                    "supplyQuantity": 15
+                    "supplyQuantity": 15,
+                    "totalPrice": 2175
                 },
                 {
                     "productId": "P006",
@@ -568,7 +611,8 @@
                     "category": "Furniture",
                     "quantity": 6,
                     "price": 320,
-                    "supplyQuantity": 6
+                    "supplyQuantity": 6,
+                    "totalPrice": 1920
                 }
             ]
         },
@@ -586,7 +630,8 @@
                     "category": "Furniture",
                     "quantity": 20,
                     "price": 35,
-                    "supplyQuantity": 20
+                    "supplyQuantity": 20,
+                    "totalPrice": 700
                 },
                 {
                     "productId": "P018",
@@ -594,7 +639,8 @@
                     "category": "Furniture",
                     "quantity": 10,
                     "price": 150,
-                    "supplyQuantity": 10
+                    "supplyQuantity": 10,
+                    "totalPrice": 1500
                 }
             ]
         },
@@ -612,7 +658,8 @@
                     "category": "Electronics",
                     "quantity": 3,
                     "price": 450,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 },
                 {
                     "productId": "P030",
@@ -620,7 +667,8 @@
                     "category": "Electronics",
                     "quantity": 10,
                     "price": 60,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 }
             ]
         },
@@ -638,7 +686,8 @@
                     "category": "Electronics",
                     "quantity": 12,
                     "price": 75,
-                    "supplyQuantity": 12
+                    "supplyQuantity": 12,
+                    "totalPrice": 900
                 },
                 {
                     "productId": "P039",
@@ -646,7 +695,8 @@
                     "category": "Electronics",
                     "quantity": 5,
                     "price": 210,
-                    "supplyQuantity": 5
+                    "supplyQuantity": 5,
+                    "totalPrice": 1050
                 }
             ]
         },
@@ -664,7 +714,8 @@
                     "category": "Safety",
                     "quantity": 40,
                     "price": 30,
-                    "supplyQuantity": 40
+                    "supplyQuantity": 40,
+                    "totalPrice": 1200
                 },
                 {
                     "productId": "P022",
@@ -672,7 +723,8 @@
                     "category": "Safety",
                     "quantity": 50,
                     "price": 15,
-                    "supplyQuantity": 50
+                    "supplyQuantity": 50,
+                    "totalPrice": 750
                 }
             ]
         },
@@ -690,7 +742,8 @@
                     "category": "Safety",
                     "quantity": 60,
                     "price": 12,
-                    "supplyQuantity": 60
+                    "supplyQuantity": 60,
+                    "totalPrice": 720
                 },
                 {
                     "productId": "P024",
@@ -698,7 +751,8 @@
                     "category": "Safety",
                     "quantity": 45,
                     "price": 18,
-                    "supplyQuantity": 45
+                    "supplyQuantity": 45,
+                    "totalPrice": 810
                 }
             ]
         },
@@ -716,7 +770,8 @@
                     "category": "Stationery",
                     "quantity": 100,
                     "price": 40,
-                    "supplyQuantity": 100
+                    "supplyQuantity": 100,
+                    "totalPrice": 4000
                 },
                 {
                     "productId": "P012",
@@ -724,7 +779,8 @@
                     "category": "Stationery",
                     "quantity": 150,
                     "price": 18,
-                    "supplyQuantity": 150
+                    "supplyQuantity": 150,
+                    "totalPrice": 2700
                 }
             ]
         },
@@ -742,7 +798,8 @@
                     "category": "Stationery",
                     "quantity": 120,
                     "price": 12,
-                    "supplyQuantity": 120
+                    "supplyQuantity": 120,
+                    "totalPrice": 1440
                 },
                 {
                     "productId": "P026",
@@ -750,7 +807,8 @@
                     "category": "Stationery",
                     "quantity": 250,
                     "price": 5,
-                    "supplyQuantity": 250
+                    "supplyQuantity": 250,
+                    "totalPrice": 1250
                 }
             ]
         },
@@ -768,7 +826,8 @@
                     "category": "Stationery",
                     "quantity": 80,
                     "price": 14,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 },
                 {
                     "productId": "P037",
@@ -776,7 +835,8 @@
                     "category": "Office Supplies",
                     "quantity": 70,
                     "price": 9,
-                    "supplyQuantity": 0
+                    "supplyQuantity": 0,
+                    "totalPrice": 0
                 }
             ]
         }

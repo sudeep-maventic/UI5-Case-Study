@@ -10,7 +10,7 @@
                 <Text text="Email Address: {profile>/email}" />
                 <Input value="{profile>/email}" visible="{= ${viewState>/editMode}}" class="sapUiMediumMarginBottom" />
 
-                <Button text="Edit Profile" press="onEditProfile" visible="{= !${viewState>/editMode}}" class="sapUiMediumMarginTop" type="Emphasized" icon="sap-icon://edit" />
+                <!-- <Button text="Edit Profile" press="onEditProfile" visible="{= !${viewState>/editMode}}" class="sapUiMediumMarginTop" type="Emphasized" icon="sap-icon://edit" /> -->
                 
                 <Panel width="500px" class="sapUiMediumMarginTop">
                     <form:SimpleForm editable="false">

@@ -188,6 +188,13 @@
           "target": [
             "TargetNotifications"
           ]
+        },
+        {
+          "name": "RouteProductCatalog",
+          "pattern": "catalog",
+          "target": [
+            "TargetCatalog"
+          ]
         }
       ],
       "targets": {
@@ -254,6 +261,10 @@
         "TargetNotifications": {
           "id": "Notifications",
           "name": "Notifications"
+        },
+        "TargetCatalog": {
+          "id": "ProductCatalog",
+          "name": "ProductCatalog"
         }
       }
     },
