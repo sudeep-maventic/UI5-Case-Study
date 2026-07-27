@@ -59,6 +59,10 @@
                     </ColumnListItem>
                 </items>
             </Table>
+            <HBox justifyContent="End" class="sapUiMediumMarginTop sapUiLargeMarginEnd">
+                <Title text="Grand Total : " level="H4" class="sapUiTinyMarginEnd"/>
+                <ObjectNumber number="{supply>/grandTotal}" emphasized="true" state="Success"/>
+            </HBox>
             </Panel>
         </content>
         <footer>

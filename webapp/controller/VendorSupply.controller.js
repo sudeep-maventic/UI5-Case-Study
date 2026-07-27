@@ -28,13 +28,19 @@ sap.ui.define([
                 return;
             }
 
+            let fGrandTotal = 0;
+
             oRequest.requestedItems.forEach(item => {
                 if(!item.supplyQuantity) {
                     item.supplyQuantity = item.quantity;
                     item.price = 0;
                     item.totalPrice = item.supplyQuantity * item.price;
                 }
+
+                fGrandTotal += item.totalPrice;
             });
+
+            oRequest.grandTotal = fGrandTotal;
 
             this.getView().setModel(new JSONModel(oRequest), "supply");
             console.log(this.getView().getModel("supply").getData());
@@ -209,9 +215,16 @@ sap.ui.define([
             const oStepInput = oEvent.getSource();
             const oContext = oStepInput.getBindingContext("supply");
             const oItem = oContext.getObject();
+            const oSupply = this.getView().getModel("supply").getData();
         
             oItem.supplyQuantity = oStepInput.getValue();
             oItem.totalPrice = oItem.supplyQuantity * oItem.price;
+
+            let fGrandTotal = 0;
+            oSupply.requestedItems.forEach(function (oProduct) {
+                fGrandTotal += oProduct.totalPrice;
+            });
+            oSupply.grandTotal = fGrandTotal;
 
             oContext.getModel().refresh(true);
         },
@@ -233,9 +246,17 @@ sap.ui.define([
             // Update total amount
             const oContext = oInput.getBindingContext("supply");
             const oItem = oContext.getObject();
+            const oSupply = this.getView().getModel("supply").getData();
+
             oItem.price = parseFloat(sValue) || 0;
             oItem.totalPrice = (oItem.supplyQuantity || 0) * oItem.price;
+            
+            let fGrandTotal = 0;
 
+            oSupply.requestedItems.forEach(function (oProduct) {
+                fGrandTotal += Number(oProduct.totalPrice || 0);
+            });
+            oSupply.grandTotal = fGrandTotal;
             oContext.getModel().refresh(true);
         }
     });
