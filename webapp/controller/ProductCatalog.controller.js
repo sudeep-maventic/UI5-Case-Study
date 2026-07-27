@@ -55,11 +55,8 @@ sap.ui.define([
         },
 
         onRefresh: function () {
-
             this._loadVendorProducts();
-
             this.showToast("Product catalog refreshed successfully.");
-
         },
 
         onNavBack: function () {    
