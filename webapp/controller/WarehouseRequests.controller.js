@@ -23,7 +23,7 @@ sap.ui.define([
                             const oWarehouse = aWarehouses.find(warehouse => warehouse.warehouseId === request.warehouseId);
                             return {
                                 ...request,
-                                location: oWarehouse ? oWarehouse.warehouseName : "Unknown Warehouse"
+                                location: oWarehouse ? oWarehouse.location : "Unknown Warehouse"
                             };
                         });
 
