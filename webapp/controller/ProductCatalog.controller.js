@@ -60,6 +60,10 @@ sap.ui.define([
 
             this.showToast("Product catalog refreshed successfully.");
 
+        },
+
+        onNavBack: function () {    
+            this.getOwnerComponent().getRouter().navTo("RouteVendor");
         }
 
     });

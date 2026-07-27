@@ -66,6 +66,10 @@ sap.ui.define([
         onNotifications: function() {
             const oRouter = this.getRouter();
             oRouter.navTo("RouteNotifications");
+        },
+
+        onProductCatalog: function() {
+            this.getRouter().navTo("RouteProductCatalog");
         }
     });
 });

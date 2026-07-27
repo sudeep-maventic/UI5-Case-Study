@@ -3,7 +3,7 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
-    <Page title="Product Catalog">
+    <Page title="Product Catalog" showNavButton="true" navButtonPress=".onNavBack">
         <content>
 
             <Toolbar class="sapUiSmallMarginTop sapUiSmallMarginBegin sapUiSmallMarginEnd">

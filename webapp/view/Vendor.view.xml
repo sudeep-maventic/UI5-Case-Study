@@ -17,19 +17,21 @@
                 <Text text="Review warehouse requests and manage product supplies." class="sapUiSmallMarginBottom" />
 
                 <HBox justifyContent="End" class="sapUiSmallMarginEnd">
+                    <Button text="Product Catalog"
+                            icon="sap-icon://product"
+                            press=".onProductCatalog"/>
                     <Button text="View Requests" 
                             icon="sap-icon://shipping-status"
                             type="Emphasized"
+                            class="sapUiTinyMarginBegin"
                             press=".onWarehouseRequests" />
                     <Button text="My Profile" 
                             icon="sap-icon://employee"
                             press=".onMyProfile"
                             class="sapUiTinyMarginBegin" />
                 </HBox>
-
-                
-                <HBox justifyContent="SpaceAround">
-                
+              
+                <HBox justifyContent="SpaceAround" class="sapUiSmallMarginTop">                
                 <GenericTile frameType="OneByOne" width="250px" header="Pending Requests" subheader="Requests awaiting your response" class="sapUiTinyMargin">
                     <TileContent >
                         <NumericContent value="{dashboard>/pending}" icon="sap-icon://pending"></NumericContent>
