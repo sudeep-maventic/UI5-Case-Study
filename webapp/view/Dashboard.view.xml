@@ -21,25 +21,25 @@
                         hSpacing="1"
                         vSpacing="1" class="sapUiLargeMarginTop">
             <GenericTile class="tileLayout" header="Total Products"
-                        subheader="Products in Inventory" width="200px" >
+                        subheader="Products in Inventory" width="280px" >
                 <TileContent unit="Products">
                     <NumericContent value="{dashboard>/totalProducts}" icon="sap-icon://product"></NumericContent>
                 </TileContent>
             </GenericTile>
 
-            <GenericTile class="tileLayout" header="Pending Requests" subheader="Supplier Requests Awaiting Response" width="200px" >
+            <GenericTile class="tileLayout" header="Pending Requests" subheader="Supplier Requests Awaiting Response" width="280px" >
                 <TileContent unit="Requests">
                     <NumericContent value="{dashboard>/pendingRequests}" icon="sap-icon://pending"></NumericContent>
                 </TileContent>
             </GenericTile>
 
-            <GenericTile class="tileLayout" header="Completed Transfers" subheader="Transfers Successfully Completed" width="250px" >
+            <GenericTile class="tileLayout" header="Completed Transfers" subheader="Transfers Successfully Completed" width="280px" >
                 <TileContent unit="Transfers">
                     <NumericContent value="{dashboard>/completedTransfers}" icon="sap-icon://complete"></NumericContent>
                 </TileContent>
             </GenericTile>
 
-            <GenericTile class="tileLayout" header="Low Stock Items" subheader="Products Requiring Replenishment" width="200px" >
+            <GenericTile class="tileLayout" header="Low Stock Items" subheader="Products Requiring Replenishment" width="280px" >
                 <TileContent unit="Items">
                     <NumericContent value="{dashboard>/lowStock}" icon="sap-icon://alert"></NumericContent>
                 </TileContent>

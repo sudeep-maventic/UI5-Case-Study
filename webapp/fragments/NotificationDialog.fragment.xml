@@ -16,8 +16,10 @@
                     'Information'}"/>
                 <Label text="Message" class="sapUiMediumMarginTop"/>
                 <Text text="{userNotifications>message}" wrapping="true"/>
-                <Label text="Date Time" class="sapUiMediumMarginTop"/>
-                <Text text="{userNotifications>timestamp}"/>
+                <Label text="Date" class="sapUiMediumMarginTop"/>
+                <Text text="{
+                        path: 'userNotifications>timestamp',
+                        formatter: '.formatter.formatDate'}"/>
                 <Label text="Status" class="sapUiMediumMarginTop"/>
                 <ObjectStatus text="{= ${userNotifications>read} ? 'Read' : 'Unread'}"
                         state="{= ${userNotifications>read} ? 'Success' : 'Warning'}"/>

@@ -62,7 +62,8 @@ sap.ui.define([
                 productName: "",
                 category: "",
                 quantity: 0,
-                price: 0
+                price: 0,
+                totalPrice: 0
             });
 
             if(!this._oAddProductDialog) {

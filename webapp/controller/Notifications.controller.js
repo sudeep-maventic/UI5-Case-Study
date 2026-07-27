@@ -5,11 +5,15 @@ sap.ui.define([
     "sap/m/MessageBox",
     "sap/ui/core/Fragment",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator"
-], (BaseController, JSONModel, MessageToast, MessageBox, Fragment, Filter, FilterOperator) => {
+    "sap/ui/model/FilterOperator",
+    "sudeep/inventorytransfer/model/formatter"
+], (BaseController, JSONModel, MessageToast, MessageBox, Fragment, Filter, FilterOperator, formatter) => {
     "use strict";
 
     return BaseController.extend("sudeep.inventorytransfer.controller.Notifications", {
+
+        formatter: formatter,
+
         onInit() {
             const oCurrentUser = this.getCurrentUser();
             const aNotifications = this.getOwnerComponent().getModel("notifications").getProperty("/notifications") || [];

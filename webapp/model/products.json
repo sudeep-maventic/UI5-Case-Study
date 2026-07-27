@@ -7,7 +7,8 @@
             "warehouseId": "W001",
             "vendorId": "V001",
             "status": "Available",
-            "price": 850.00,
+            "price": 850.0,
+            "totalPrice": 42500.0,
             "quantity": 50
         },
         {
@@ -17,8 +18,9 @@
             "warehouseId": "W002",
             "vendorId": "V002",
             "status": "Out of Stock",
-            "price": 25.00,
-            "quantity": 0
+            "price": 25.0,
+            "quantity": 0,
+            "totalPrice": 0.0
         },
         {
             "productId": "P003",
@@ -26,9 +28,10 @@
             "category": "Office Equipment",
             "warehouseId": "W003",
             "vendorId": "V002",
-            "status": "Available",
-            "price": 220.00,
-            "quantity": 18
+            "status": "Low Stock",
+            "price": 220.0,
+            "quantity": 18,
+            "totalPrice": 3960.0
         },
         {
             "productId": "P004",
@@ -36,9 +39,10 @@
             "category": "Office Equipment",
             "warehouseId": "W004",
             "vendorId": "V002",
-            "status": "Available",
-            "price": 180.00,
-            "quantity": 12
+            "status": "Low Stock",
+            "price": 180.0,
+            "quantity": 12,
+            "totalPrice": 2160.0
         },
         {
             "productId": "P001",
@@ -46,9 +50,10 @@
             "category": "Electronics",
             "warehouseId": "W002",
             "vendorId": "V001",
-            "status": "Available",
-            "price": 850.00,
-            "quantity": 10
+            "status": "Low Stock",
+            "price": 850.0,
+            "quantity": 10,
+            "totalPrice": 8500.0
         },
         {
             "productId": "P002",
@@ -56,9 +61,10 @@
             "category": "Apparel",
             "warehouseId": "W002",
             "vendorId": "V002",
-            "status": "Available",
-            "price": 25.00,
-            "quantity": 5
+            "status": "Low Stock",
+            "price": 25.0,
+            "quantity": 5,
+            "totalPrice": 125.0
         },
         {
             "productId": "P009",
@@ -66,9 +72,10 @@
             "category": "Tools",
             "warehouseId": "W002",
             "vendorId": "V005",
-            "status": "Available",
-            "price": 110.00,
-            "quantity": 5
+            "status": "Low Stock",
+            "price": 110.0,
+            "quantity": 5,
+            "totalPrice": 550.0
         },
         {
             "productId": "P016",
@@ -76,9 +83,10 @@
             "category": "Networking",
             "warehouseId": "W002",
             "vendorId": "V001",
-            "status": "Available",
-            "price": 90.00,
-            "quantity": 4
+            "status": "Low Stock",
+            "price": 90.0,
+            "quantity": 4,
+            "totalPrice": 360.0
         },
         {
             "productId": "P005",
@@ -87,8 +95,9 @@
             "warehouseId": "W005",
             "vendorId": "V003",
             "status": "Available",
-            "price": 145.00,
-            "quantity": 35
+            "price": 145.0,
+            "quantity": 35,
+            "totalPrice": 5075.0
         },
         {
             "productId": "P006",
@@ -97,8 +106,9 @@
             "warehouseId": "W006",
             "vendorId": "V003",
             "status": "Available",
-            "price": 320.00,
-            "quantity": 20
+            "price": 320.0,
+            "quantity": 20,
+            "totalPrice": 6400.0
         },
         {
             "productId": "P007",
@@ -107,8 +117,9 @@
             "warehouseId": "W001",
             "vendorId": "V004",
             "status": "Available",
-            "price": 280.00,
-            "quantity": 24
+            "price": 280.0,
+            "quantity": 24,
+            "totalPrice": 6720.0
         },
         {
             "productId": "P008",
@@ -117,8 +128,9 @@
             "warehouseId": "W002",
             "vendorId": "V004",
             "status": "Available",
-            "price": 95.00,
-            "quantity": 40
+            "price": 95.0,
+            "quantity": 40,
+            "totalPrice": 3800.0
         },
         {
             "productId": "P009",
@@ -126,9 +138,10 @@
             "category": "Tools",
             "warehouseId": "W003",
             "vendorId": "V005",
-            "status": "Available",
-            "price": 110.00,
-            "quantity": 16
+            "status": "Low Stock",
+            "price": 110.0,
+            "quantity": 16,
+            "totalPrice": 1760.0
         },
         {
             "productId": "P010",
@@ -137,8 +150,9 @@
             "warehouseId": "W004",
             "vendorId": "V005",
             "status": "Low Stock",
-            "price": 85.00,
-            "quantity": 8
+            "price": 85.0,
+            "quantity": 8,
+            "totalPrice": 680.0
         },
         {
             "productId": "P011",
@@ -147,8 +161,9 @@
             "warehouseId": "W005",
             "vendorId": "V006",
             "status": "Available",
-            "price": 40.00,
-            "quantity": 150
+            "price": 40.0,
+            "quantity": 150,
+            "totalPrice": 6000.0
         },
         {
             "productId": "P012",
@@ -157,8 +172,9 @@
             "warehouseId": "W006",
             "vendorId": "V006",
             "status": "Available",
-            "price": 18.00,
-            "quantity": 250
+            "price": 18.0,
+            "quantity": 250,
+            "totalPrice": 4500.0
         },
         {
             "productId": "P013",
@@ -167,8 +183,9 @@
             "warehouseId": "W001",
             "vendorId": "V001",
             "status": "Available",
-            "price": 20.00,
-            "quantity": 80
+            "price": 20.0,
+            "quantity": 80,
+            "totalPrice": 1600.0
         },
         {
             "productId": "P014",
@@ -177,8 +194,9 @@
             "warehouseId": "W002",
             "vendorId": "V001",
             "status": "Available",
-            "price": 75.00,
-            "quantity": 30
+            "price": 75.0,
+            "quantity": 30,
+            "totalPrice": 2250.0
         },
         {
             "productId": "P015",
@@ -187,8 +205,9 @@
             "warehouseId": "W003",
             "vendorId": "V001",
             "status": "Available",
-            "price": 65.00,
-            "quantity": 28
+            "price": 65.0,
+            "quantity": 28,
+            "totalPrice": 1820.0
         },
         {
             "productId": "P016",
@@ -196,9 +215,10 @@
             "category": "Networking",
             "warehouseId": "W004",
             "vendorId": "V001",
-            "status": "Available",
-            "price": 90.00,
-            "quantity": 15
+            "status": "Low Stock",
+            "price": 90.0,
+            "quantity": 15,
+            "totalPrice": 1350.0
         },
         {
             "productId": "P017",
@@ -207,8 +227,9 @@
             "warehouseId": "W005",
             "vendorId": "V003",
             "status": "Available",
-            "price": 35.00,
-            "quantity": 60
+            "price": 35.0,
+            "quantity": 60,
+            "totalPrice": 2100.0
         },
         {
             "productId": "P018",
@@ -217,8 +238,9 @@
             "warehouseId": "W006",
             "vendorId": "V003",
             "status": "Low Stock",
-            "price": 150.00,
-            "quantity": 5
+            "price": 150.0,
+            "quantity": 5,
+            "totalPrice": 750.0
         },
         {
             "productId": "P019",
@@ -227,8 +249,9 @@
             "warehouseId": "W001",
             "vendorId": "V003",
             "status": "Low Stock",
-            "price": 260.00,
-            "quantity": 14
+            "price": 260.0,
+            "quantity": 14,
+            "totalPrice": 3640.0
         },
         {
             "productId": "P020",
@@ -237,8 +260,9 @@
             "warehouseId": "W002",
             "vendorId": "V003",
             "status": "Available",
-            "price": 180.00,
-            "quantity": 22
+            "price": 180.0,
+            "quantity": 22,
+            "totalPrice": 3960.0
         },
         {
             "productId": "P021",
@@ -247,8 +271,9 @@
             "warehouseId": "W003",
             "vendorId": "V005",
             "status": "Available",
-            "price": 30.00,
-            "quantity": 70
+            "price": 30.0,
+            "quantity": 70,
+            "totalPrice": 2100.0
         },
         {
             "productId": "P022",
@@ -257,8 +282,9 @@
             "warehouseId": "W004",
             "vendorId": "V005",
             "status": "Available",
-            "price": 15.00,
-            "quantity": 90
+            "price": 15.0,
+            "quantity": 90,
+            "totalPrice": 1350.0
         },
         {
             "productId": "P023",
@@ -267,8 +293,9 @@
             "warehouseId": "W005",
             "vendorId": "V005",
             "status": "Available",
-            "price": 12.00,
-            "quantity": 110
+            "price": 12.0,
+            "quantity": 110,
+            "totalPrice": 1320.0
         },
         {
             "productId": "P024",
@@ -277,8 +304,9 @@
             "warehouseId": "W006",
             "vendorId": "V005",
             "status": "Available",
-            "price": 18.00,
-            "quantity": 95
+            "price": 18.0,
+            "quantity": 95,
+            "totalPrice": 1710.0
         },
         {
             "productId": "P025",
@@ -287,8 +315,9 @@
             "warehouseId": "W001",
             "vendorId": "V006",
             "status": "Available",
-            "price": 12.00,
-            "quantity": 200
+            "price": 12.0,
+            "quantity": 200,
+            "totalPrice": 2400.0
         },
         {
             "productId": "P026",
@@ -297,8 +326,9 @@
             "warehouseId": "W002",
             "vendorId": "V006",
             "status": "Available",
-            "price": 5.00,
-            "quantity": 300
+            "price": 5.0,
+            "quantity": 300,
+            "totalPrice": 1500.0
         },
         {
             "productId": "P027",
@@ -307,8 +337,9 @@
             "warehouseId": "W003",
             "vendorId": "V006",
             "status": "Available",
-            "price": 14.00,
-            "quantity": 120
+            "price": 14.0,
+            "quantity": 120,
+            "totalPrice": 1680.0
         },
         {
             "productId": "P028",
@@ -316,9 +347,10 @@
             "category": "Office Equipment",
             "warehouseId": "W004",
             "vendorId": "V002",
-            "status": "Available",
-            "price": 130.00,
-            "quantity": 10
+            "status": "Low Stock",
+            "price": 130.0,
+            "quantity": 10,
+            "totalPrice": 1300.0
         },
         {
             "productId": "P029",
@@ -326,9 +358,10 @@
             "category": "Electronics",
             "warehouseId": "W005",
             "vendorId": "V004",
-            "status": "Available",
-            "price": 450.00,
-            "quantity": 9
+            "status": "Low Stock",
+            "price": 450.0,
+            "quantity": 9,
+            "totalPrice": 4050.0
         },
         {
             "productId": "P030",
@@ -337,8 +370,9 @@
             "warehouseId": "W006",
             "vendorId": "V004",
             "status": "Available",
-            "price": 60.00,
-            "quantity": 34
+            "price": 60.0,
+            "quantity": 34,
+            "totalPrice": 2040.0
         },
         {
             "productId": "P031",
@@ -347,8 +381,9 @@
             "warehouseId": "W001",
             "vendorId": "V004",
             "status": "Available",
-            "price": 75.00,
-            "quantity": 26
+            "price": 75.0,
+            "quantity": 26,
+            "totalPrice": 1950.0
         },
         {
             "productId": "P032",
@@ -357,8 +392,9 @@
             "warehouseId": "W002",
             "vendorId": "V004",
             "status": "Low Stock",
-            "price": 120.00,
-            "quantity": 6
+            "price": 120.0,
+            "quantity": 6,
+            "totalPrice": 720.0
         },
         {
             "productId": "P033",
@@ -367,8 +403,9 @@
             "warehouseId": "W003",
             "vendorId": "V001",
             "status": "Available",
-            "price": 10.00,
-            "quantity": 180
+            "price": 10.0,
+            "quantity": 180,
+            "totalPrice": 1800.0
         },
         {
             "productId": "P034",
@@ -377,8 +414,9 @@
             "warehouseId": "W004",
             "vendorId": "V001",
             "status": "Available",
-            "price": 8.00,
-            "quantity": 220
+            "price": 8.0,
+            "quantity": 220,
+            "totalPrice": 1760.0
         },
         {
             "productId": "P035",
@@ -387,8 +425,9 @@
             "warehouseId": "W005",
             "vendorId": "V002",
             "status": "Available",
-            "price": 45.00,
-            "quantity": 55
+            "price": 45.0,
+            "quantity": 55,
+            "totalPrice": 2475.0
         },
         {
             "productId": "P036",
@@ -397,8 +436,9 @@
             "warehouseId": "W006",
             "vendorId": "V002",
             "status": "Available",
-            "price": 55.00,
-            "quantity": 48
+            "price": 55.0,
+            "quantity": 48,
+            "totalPrice": 2640.0
         },
         {
             "productId": "P037",
@@ -407,8 +447,9 @@
             "warehouseId": "W001",
             "vendorId": "V006",
             "status": "Available",
-            "price": 9.00,
-            "quantity": 140
+            "price": 9.0,
+            "quantity": 140,
+            "totalPrice": 1260.0
         },
         {
             "productId": "P038",
@@ -417,8 +458,9 @@
             "warehouseId": "W002",
             "vendorId": "V003",
             "status": "Available",
-            "price": 28.00,
-            "quantity": 32
+            "price": 28.0,
+            "quantity": 32,
+            "totalPrice": 896.0
         },
         {
             "productId": "P039",
@@ -426,9 +468,10 @@
             "category": "Electronics",
             "warehouseId": "W003",
             "vendorId": "V004",
-            "status": "Available",
-            "price": 210.00,
-            "quantity": 13
+            "status": "Low Stock",
+            "price": 210.0,
+            "quantity": 13,
+            "totalPrice": 2730.0
         },
         {
             "productId": "P040",
@@ -436,9 +479,10 @@
             "category": "Office Equipment",
             "warehouseId": "W004",
             "vendorId": "V002",
-            "status": "Available",
-            "price": 140.00,
-            "quantity": 19
+            "status": "Low Stock",
+            "price": 140.0,
+            "quantity": 19,
+            "totalPrice": 2660.0
         },
         {
             "productId": "P017",
@@ -446,9 +490,10 @@
             "category": "Furniture",
             "warehouseId": "W001",
             "vendorId": "V003",
-            "status": "Available",
-            "price": 35.00,
-            "quantity": 7
+            "status": "Low Stock",
+            "price": 35.0,
+            "quantity": 7,
+            "totalPrice": 245.0
         },
         {
             "productId": "P023",
@@ -457,8 +502,9 @@
             "warehouseId": "W001",
             "vendorId": "V005",
             "status": "Available",
-            "price": 12.00,
-            "quantity": 25
+            "price": 12.0,
+            "quantity": 25,
+            "totalPrice": 300.0
         },
         {
             "productId": "P029",
@@ -466,9 +512,10 @@
             "category": "Electronics",
             "warehouseId": "W001",
             "vendorId": "V004",
-            "status": "Available",
-            "price": 450.00,
-            "quantity": 2
+            "status": "Low Stock",
+            "price": 450.0,
+            "quantity": 2,
+            "totalPrice": 900.0
         },
         {
             "productId": "P030",
@@ -476,9 +523,10 @@
             "category": "Electronics",
             "warehouseId": "W001",
             "vendorId": "V004",
-            "status": "Available",
-            "price": 60.00,
-            "quantity": 8
+            "status": "Low Stock",
+            "price": 60.0,
+            "quantity": 8,
+            "totalPrice": 480.0
         }
     ]
 }

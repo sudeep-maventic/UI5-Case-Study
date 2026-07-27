@@ -42,6 +42,9 @@
                         <Text text="Unit Price" />
                     </Column>
                     <Column >
+                        <Text text="Total Price"></Text>
+                    </Column>
+                    <Column >
                         <Text text="Stock Status" />
                     </Column>
                 </columns>
@@ -54,6 +57,7 @@
                             <Text text="{inventory>category}" />
                             <Text text="{inventory>quantity}" />
                             <Text text="{inventory>price}" />
+                            <Text text="{inventory>totalPrice}"/>
                             <ObjectStatus text="{inventory>status}" />
                         </cells>
                     </ColumnListItem>
