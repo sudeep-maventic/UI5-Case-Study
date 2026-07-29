@@ -12,14 +12,16 @@
           "productName": "Dell Latitude 5440",
           "category": "Electronics",
           "quantity": 10,
-          "price": 850.0
+          "price": 850.0,
+          "totalPrice": 8500.0
         },
         {
           "productId": "P002",
           "productName": "Polo T-Shirt",
           "category": "Apparel",
           "quantity": 5,
-          "price": 25.0
+          "price": 25.0,
+          "totalPrice": 125.0
         }
       ]
     },
@@ -35,7 +37,8 @@
           "productName": "HP LaserJet Pro Printer",
           "category": "Office Equipment",
           "quantity": 2,
-          "price": 220.0
+          "price": 220.0,
+          "totalPrice": 440.0
         }
       ]
     },
@@ -51,14 +54,16 @@
           "productName": "Canon Scanner",
           "category": "Office Equipment",
           "quantity": 3,
-          "price": 180.0
+          "price": 180.0,
+          "totalPrice": 540.0
         },
         {
           "productId": "P005",
           "productName": "Office Chair",
           "category": "Furniture",
           "quantity": 4,
-          "price": 145.0
+          "price": 145.0,
+          "totalPrice": 580.0
         }
       ]
     },
@@ -74,7 +79,8 @@
           "productName": "Wooden Office Desk",
           "category": "Furniture",
           "quantity": 2,
-          "price": 320.0
+          "price": 320.0,
+          "totalPrice": 640.0
         }
       ]
     },
@@ -90,14 +96,16 @@
           "productName": "Samsung 27-inch Monitor",
           "category": "Electronics",
           "quantity": 6,
-          "price": 280.0
+          "price": 280.0,
+          "totalPrice": 1680.0
         },
         {
           "productId": "P008",
           "productName": "Mechanical Keyboard",
           "category": "Electronics",
           "quantity": 10,
-          "price": 95.0
+          "price": 95.0,
+          "totalPrice": 950.0
         }
       ]
     },
@@ -113,7 +121,8 @@
           "productName": "Electric Drill",
           "category": "Tools",
           "quantity": 5,
-          "price": 110.0
+          "price": 110.0,
+          "totalPrice": 550.0
         }
       ]
     },
@@ -129,14 +138,16 @@
           "productName": "Tool Kit Set",
           "category": "Tools",
           "quantity": 3,
-          "price": 85.0
+          "price": 85.0,
+          "totalPrice": 255.0
         },
         {
           "productId": "P011",
           "productName": "A4 Copy Paper Box",
           "category": "Stationery",
           "quantity": 20,
-          "price": 40.0
+          "price": 40.0,
+          "totalPrice": 800.0
         }
       ]
     },
@@ -152,7 +163,8 @@
           "productName": "Premium Ball Pen Pack",
           "category": "Stationery",
           "quantity": 30,
-          "price": 18.0
+          "price": 18.0,
+          "totalPrice": 540.0
         }
       ]
     },
@@ -168,7 +180,8 @@
           "productName": "USB Flash Drive 64GB",
           "category": "Electronics",
           "quantity": 12,
-          "price": 20.0
+          "price": 20.0,
+          "totalPrice": 240.0
         }
       ]
     },
@@ -184,14 +197,16 @@
           "productName": "External Hard Drive 1TB",
           "category": "Electronics",
           "quantity": 5,
-          "price": 75.0
+          "price": 75.0,
+          "totalPrice": 375.0
         },
         {
           "productId": "P015",
           "productName": "Wireless Router",
           "category": "Networking",
           "quantity": 8,
-          "price": 65.0
+          "price": 65.0,
+          "totalPrice": 520.0
         }
       ]
     },
@@ -207,7 +222,8 @@
           "productName": "Network Switch 8-Port",
           "category": "Networking",
           "quantity": 4,
-          "price": 90.0
+          "price": 90.0,
+          "totalPrice": 360.0
         }
       ]
     },
@@ -223,7 +239,8 @@
           "productName": "LED Desk Lamp",
           "category": "Furniture",
           "quantity": 7,
-          "price": 35.0
+          "price": 35.0,
+          "totalPrice": 245.0
         }
       ]
     },
@@ -239,7 +256,8 @@
           "productName": "Bookshelf",
           "category": "Furniture",
           "quantity": 2,
-          "price": 150.0
+          "price": 150.0,
+          "totalPrice": 300.0
         }
       ]
     },
@@ -255,7 +273,8 @@
           "productName": "Executive Office Chair",
           "category": "Furniture",
           "quantity": 3,
-          "price": 260.0
+          "price": 260.0,
+          "totalPrice": 780.0
         }
       ]
     },
@@ -271,7 +290,8 @@
           "productName": "Filing Cabinet",
           "category": "Furniture",
           "quantity": 2,
-          "price": 180.0
+          "price": 180.0,
+          "totalPrice": 360.0
         }
       ]
     },
@@ -287,14 +307,16 @@
           "productName": "Safety Helmet",
           "category": "Safety",
           "quantity": 15,
-          "price": 30.0
+          "price": 30.0,
+          "totalPrice": 450.0
         },
         {
           "productId": "P022",
           "productName": "Reflective Safety Vest",
           "category": "Safety",
           "quantity": 20,
-          "price": 15.0
+          "price": 15.0,
+          "totalPrice": 300.0
         }
       ]
     },
@@ -310,7 +332,8 @@
           "productName": "Industrial Gloves",
           "category": "Safety",
           "quantity": 25,
-          "price": 12.0
+          "price": 12.0,
+          "totalPrice": 300.0
         }
       ]
     },
@@ -326,7 +349,8 @@
           "productName": "Safety Goggles",
           "category": "Safety",
           "quantity": 18,
-          "price": 18.0
+          "price": 18.0,
+          "totalPrice": 324.0
         }
       ]
     },
@@ -342,7 +366,8 @@
           "productName": "Notebook Pack",
           "category": "Stationery",
           "quantity": 40,
-          "price": 12.0
+          "price": 12.0,
+          "totalPrice": 480.0
         }
       ]
     },
@@ -358,14 +383,16 @@
           "productName": "Sticky Notes",
           "category": "Stationery",
           "quantity": 50,
-          "price": 5.0
+          "price": 5.0,
+          "totalPrice": 250.0
         },
         {
           "productId": "P027",
           "productName": "Whiteboard Marker Set",
           "category": "Stationery",
           "quantity": 10,
-          "price": 14.0
+          "price": 14.0,
+          "totalPrice": 140.0
         }
       ]
     },
@@ -381,7 +408,8 @@
           "productName": "Paper Shredder",
           "category": "Office Equipment",
           "quantity": 2,
-          "price": 130.0
+          "price": 130.0,
+          "totalPrice": 260.0
         }
       ]
     },
@@ -397,14 +425,16 @@
           "productName": "Projector",
           "category": "Electronics",
           "quantity": 2,
-          "price": 450.0
+          "price": 450.0,
+          "totalPrice": 900.0
         },
         {
           "productId": "P030",
           "productName": "Webcam HD",
           "category": "Electronics",
           "quantity": 8,
-          "price": 60.0
+          "price": 60.0,
+          "totalPrice": 480.0
         }
       ]
     }

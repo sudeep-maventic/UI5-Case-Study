@@ -41,6 +41,9 @@
                     <Column >
                         <Text text="Unit Price" />
                     </Column>
+                    <Column >
+                        <Text text="Total Price" />
+                    </Column>
                 </columns>
                 <items>
                     <ColumnListItem>
@@ -50,6 +53,7 @@
                             <Text text="{transferDetails>category}" />
                             <Text text="{transferDetails>quantity}" />
                             <Text text="{transferDetails>price}" />
+                            <Text text="{transferDetails>totalPrice}" />
                         </cells>
                     </ColumnListItem>
                 </items>
